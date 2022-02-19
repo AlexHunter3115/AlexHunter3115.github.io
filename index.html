@@ -1,9 +1,49 @@
-gif download<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <title>Alessandro Bufalino</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+
+
+<style>
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+    }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 250px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 100%;
+            left: 33%;
+            margin-left: -60px;
+            /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+</style>
+
+
+
+
+
+
 <body style="background-color:gray">
 
     <!-- Navbar (sit on top) -->
@@ -22,8 +62,9 @@ gif download<!DOCTYPE html>
 
     <!-- Header // this is for the main thing in the middle-->
     <header class="w3-display-container w3-content w3-wide" style="max-width:1900px;" id="home">
+        <br>
         <video width="1900" height="900" autoplay muted loop>
-            <source src="montage number 2.mp4" type="video/mp4">
+            <source src="montage vid.mp4" type="video/mp4">
         </video>
 
         <div class="w3-display-middle w3-margin-top w3-center">
@@ -69,147 +110,160 @@ gif download<!DOCTYPE html>
             <!--this is one image setting-->
             <div class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
-                    <div class="w3-display-topleft w3-black w3-padding"> Python: Snake </div>
+                    <div class="tooltip">
+                        <div class="w3-display-topleft w3-black w3-padding"> Python: Snake</div>
 
-                    <a href="https://github.com/AlessandroBufalino3115/Basics-of-python-snake-game" target="_blank">
-                        <!--everythingis inside the a so same pic-->
-                        <img src="placeholder.png" alt="House" style="width:100%" title="Python 1st worksheet">   <!--title has been added to some text can be used whe hovering-->
-                    </a>
+                        <a href="https://github.com/AlessandroBufalino3115/breakout" target="_blank">
+                            <img src="placeholder.png" alt="House" style="width:100%">
+                        </a>
+                        <span class="tooltiptext">Tooltip text 
+                        is this a new line
+                        is this also a new line</span>
+                    </div>
 
                 </div>
-            </div>
+            </div>     <!-- Python: Snake-->
             <!--this is one image setting-->
             <!--this is one image setting-->
 
             <div class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
-                    <div class="w3-display-topleft w3-black w3-padding"> Python: Idle clicker </div>
-                    <a href="https://github.com/AlessandroBufalino3115/Queue-idle-clicker-game" target="_blank">
-                        <img src="placeholder.png" alt="House" style="width:100%" title="Python 2nd worksheet">   <!--title has been added to some text can be used whe hovering-->
-                    </a>
-                </div>
-            </div>
+                    <div class="tooltip">
+                        <div class="w3-display-topleft w3-black w3-padding"> Python: idle clicker</div>
 
+                        <a href="https://github.com/AlessandroBufalino3115/breakout" target="_blank">
+                            <img src="placeholder.png" alt="House" style="width:100%">
+                        </a>
+                        <span class="tooltiptext">Tooltip text does this work</span>
+                    </div>
+                </div>
+            </div>       <!-- Python: idle clicker-->
 
             <div class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
-                    <div class="w3-display-topleft w3-black w3-padding"> Python: Asteroid simulator </div>
-                    <a href="https://github.com/AlessandroBufalino3115/Sorting-_algos-Asteroid-sim" target="_blank">
-                        <img src="placeholder.png" alt="House" style="width:100%" title="Python 3rd worksheet">   <!--title has been added to some text can be used whe hovering-->
-                    </a>
+                    <div class="tooltip">
+                        <div class="w3-display-topleft w3-black w3-padding">Python: Asteroid simulator</div>
+
+                        <a href="https://github.com/AlessandroBufalino3115/breakout" target="_blank">
+                            <img src="placeholder.png" alt="House" style="width:100%">
+                        </a>
+                        <span class="tooltiptext">Tooltip text does this work</span>
+                    </div>
                 </div>
-            </div>
+            </div>   <!-- Python: asteroid sim-->
 
             <div class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
-                    <div class="w3-display-topleft w3-black w3-padding"> Python: AI pathfinding </div>
-                    <a href="https://github.com/AlessandroBufalino3115/AI-pathfinding-pirate-game" target="_blank">
-                        <img src="placeholder.png" alt="House" style="width:100%" title="Python 4th worksheet">   <!--title has been added to some text can be used whe hovering-->
-                    </a>
+                    <div class="tooltip">
+                        <div class="w3-display-topleft w3-black w3-padding">Python: AI pathfinding</div>
+
+                        <a href="https://github.com/AlessandroBufalino3115/breakout" target="_blank">
+                            <img src="placeholder.png" alt="House" style="width:100%">
+                        </a>
+                        <span class="tooltiptext">Tooltip text does this work</span>
+                    </div>
                 </div>
-            </div>
+            </div>       <!-- Python: AI pathfinding -->
 
             <div class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
-                    <div class="w3-display-topleft w3-black w3-padding"> Python: Dangeon crawler </div>
-                    <a href="https://github.com/AlessandroBufalino3115/Dungeon-crawler-game-not-working-" target="_blank">
-                        <img src="placeholder.png" alt="House" style="width:100%" title="Python group project">   <!--title has been added to some text can be used whe hovering-->
-                    </a>
+                    <div class="tooltip">
+                        <div class="w3-display-topleft w3-black w3-padding">Python: Dangeon crawler</div>
+
+                        <a href="https://github.com/AlessandroBufalino3115/breakout" target="_blank">
+                            <img src="placeholder.png" alt="House" style="width:100%">
+                        </a>
+                        <span class="tooltiptext">Tooltip text does this work</span>
+                    </div>
                 </div>
-            </div>
+            </div>     <!-- Python: Dangeon crawler -->
 
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="tooltip">
+                        <div class="w3-display-topleft w3-black w3-padding">C++: breakout</div>
 
+                        <a href="https://github.com/AlessandroBufalino3115/breakout" target="_blank">
+                            <img src="placeholder.png" alt="House" style="width:100%">
+                        </a>
+                        <span class="tooltiptext">Tooltip text does this work</span>
+                    </div>
+                </div>
+            </div>        <!-- c++: breakout -->
 
-            <div class="w3-row-padding">
-                <div class="w3-col l3 m6 w3-margin-bottom">
-                    <div class="w3-display-container">
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="tooltip">
+                        <div class="w3-display-topleft w3-black w3-padding">C++: space invader</div>
+
+                        <a href="https://github.com/AlessandroBufalino3115/breakout" target="_blank">
+                            <img src="placeholder.png" alt="House" style="width:100%">
+                        </a>
+                        <span class="tooltiptext">Tooltip text does this work</span>
+                    </div>
+                </div>
+            </div>       <!-- C++: space invader -->
+
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="tooltip">
                         <div class="w3-display-topleft w3-black w3-padding">C++: Pong</div>
-                        <a href="https://github.com/AlessandroBufalino3115/pong" target="_blank">
-                            <img src="placeholder.png" alt="House" style="width:100%" title="C++ pong game using SFML">   <!--title has been added to some text can be used whe hovering-->
-                        </a>
-                    </div>
-                </div>
 
-
-                <div class="w3-col l3 m6 w3-margin-bottom">
-                    <div class="w3-display-container">
-                        <div class="w3-display-topleft w3-black w3-padding">C++: Breakout</div>
                         <a href="https://github.com/AlessandroBufalino3115/breakout" target="_blank">
-                            <img src="placeholder.png" alt="House" style="width:100%" title="C++ Breakout game using SFML">   <!--title has been added to some text can be used whe hovering-->
+                            <img src="placeholder.png" alt="House" style="width:100%">
                         </a>
+                        <span class="tooltiptext">Tooltip text does this work</span>
                     </div>
                 </div>
+            </div>        <!-- C++: Pong -->
 
-
-                <div class="w3-col l3 m6 w3-margin-bottom">
-                    <div class="w3-display-container">
-                        <div class="w3-display-topleft w3-black w3-padding">C++: Space invaders</div>
-                        <a href="https://github.com/AlessandroBufalino3115/breakout" target="_blank">
-                            <img src="placeholder.png" alt="House" style="width:100%" title="C++ Space invaders game using SFML">   <!--title has been added to some text can be used whe hovering-->
-                        </a>
-                    </div>
-                </div>
-
-
-                <div class="w3-col l3 m6 w3-margin-bottom">
-                    <div class="w3-display-container">
-                        <div class="w3-display-topleft w3-black w3-padding">C++: Whack-a-mole</div>
-                        <a href="https://github.com/AlessandroBufalino3115/breakout" target="_blank">
-                            <img src="placeholder.png" alt="House" style="width:100%" title="C++ whack-a-mole game using SFML">   <!--title has been added to some text can be used whe hovering-->
-                        </a>
-                    </div>
-                </div>
-                <!-- ending of set pictures -->
-
-
-                <div class="w3-col l3 m6 w3-margin-bottom">
-                    <div class="w3-display-container">
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="tooltip">
                         <div class="w3-display-topleft w3-black w3-padding">C++: Angry birds</div>
+
                         <a href="https://github.com/AlessandroBufalino3115/breakout" target="_blank">
-                            <img src="placeholder.png" alt="House" style="width:100%" title="C++ Angry birds game using SFML">   <!--title has been added to some text can be used whe hovering-->
+                            <img src="placeholder.png" alt="House" style="width:100%">
                         </a>
+                        <span class="tooltiptext">Tooltip text does this work</span>
                     </div>
                 </div>
-                <!-- ending of set pictures -->
-            </div>
-
-
-
+            </div>        <!-- C++: Angry birds -->
             <!-- ending of project section -->
             <!-- Project Section -->
             <div class="w3-container w3-padding-32" id="projects">
                 <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Uni projects second year 2021/2022</h3>
             </div>
 
+
+
             <div class="w3-row-padding">
 
-                <!--this is one image setting-->
                 <div class="w3-col l3 m6 w3-margin-bottom">
                     <div class="w3-display-container">
-                        <div class="w3-display-topleft w3-black w3-padding">Summer House 8 </div>
+                        <div class="tooltip">
+                            <div class="w3-display-topleft w3-black w3-padding"> Python: idle clicker</div>
 
-                        <a href="https://www.youtube.com" target="_blank">
-                            <video width="350" autoplay muted loop>
-                                <source src="Vid GEA progress 3.mp4" type="video/mp4">
-                                Your browser does not support HTML video.
-                            </video>
-                        </a>
-
-                    </div>
-                </div>
-                <!--this is one image setting-->
-
-                <div class="w3-row-padding">
-                    <div class="w3-col l3 m6 w3-margin-bottom">
-                        <div class="w3-display-container">
-                            <div class="w3-display-topleft w3-black w3-padding">Summer House 12</div>
-                            <img src="placeholder.png" alt="House" style="width:99%">
+                            <a href="https://github.com/AlessandroBufalino3115/breakout" target="_blank">
+                                <img src="placeholder.png" alt="House" style="width:100%">
+                            </a>
+                            <span class="tooltiptext">Tooltip text does this work</span>
                         </div>
                     </div>
+                </div>       <!-- Python: idle clicker-->
 
+                <div class="w3-col l3 m6 w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <div class="tooltip">
+                            <div class="w3-display-topleft w3-black w3-padding">Python: Asteroid simulator</div>
 
-                    <!-- ending of set pictures -->
-                </div>
+                            <a href="https://github.com/AlessandroBufalino3115/breakout" target="_blank">
+                                <img src="placeholder.png" alt="House" style="width:100%">
+                            </a>
+                            <span class="tooltiptext">Tooltip text does this work</span>
+                        </div>
+                    </div>
+                </div>   <!-- Python: asteroid sim-->
                 <!-- ending of project section -->
                 <!-- Project Section -->
                 <div class="w3-container w3-padding-32" id="projects">
@@ -218,31 +272,31 @@ gif download<!DOCTYPE html>
 
                 <div class="w3-row-padding">
 
-                    <!--this is one image setting-->
                     <div class="w3-col l3 m6 w3-margin-bottom">
                         <div class="w3-display-container">
-                            <div class="w3-display-topleft w3-black w3-padding">Summer House 8 </div>
+                            <div class="tooltip">
+                                <div class="w3-display-topleft w3-black w3-padding"> Python: idle clicker</div>
 
-                            <a href="https://www.youtube.com" target="_blank">
-                                <!--everythingis inside the a so same pic-->
-                                <img src="placeholder.png" alt="House" style="width:100%" title="will this wokr">   <!--title has been added to some text can be used whe hovering-->
-                            </a>
-
-                        </div>
-                    </div>
-                    <!--this is one image setting-->
-
-                    <div class="w3-row-padding">
-                        <div class="w3-col l3 m6 w3-margin-bottom">
-                            <div class="w3-display-container">
-                                <div class="w3-display-topleft w3-black w3-padding">Summer House 12</div>
-                                <img src="placeholder.png" alt="House" style="width:99%">
+                                <a href="https://github.com/AlessandroBufalino3115/breakout" target="_blank">
+                                    <img src="placeholder.png" alt="House" style="width:100%">
+                                </a>
+                                <span class="tooltiptext">Tooltip text does this work</span>
                             </div>
                         </div>
+                    </div>       <!-- Python: idle clicker-->
 
+                    <div class="w3-col l3 m6 w3-margin-bottom">
+                        <div class="w3-display-container">
+                            <div class="tooltip">
+                                <div class="w3-display-topleft w3-black w3-padding">Python: Asteroid simulator</div>
 
-                        <!-- ending of set pictures -->
-                    </div>
+                                <a href="https://github.com/AlessandroBufalino3115/breakout" target="_blank">
+                                    <img src="placeholder.png" alt="House" style="width:100%">
+                                </a>
+                                <span class="tooltiptext">Tooltip text does this work</span>
+                            </div>
+                        </div>
+                    </div>   <!-- Python: asteroid sim-->
                     <!-- ending of project section -->
                     <!-- Project Section -->
                     <div class="w3-container w3-padding-32" id="projects">
@@ -251,38 +305,32 @@ gif download<!DOCTYPE html>
 
                     <div class="w3-row-padding">
 
-                        <!--this is one image setting-->
+
                         <div class="w3-col l3 m6 w3-margin-bottom">
                             <div class="w3-display-container">
-                                <div class="w3-display-topleft w3-black w3-padding">This website!!! </div>
+                                <div class="tooltip">
+                                    <div class="w3-display-topleft w3-black w3-padding"> Python: idle clicker</div>
 
-                                <a href="https://github.com/AlessandroBufalino3115/AlessandroBufalino3115.github.io" target="_blank">
-                                    <!--everythingis inside the a so same pic-->
-                                    <img src="placeholder.png" alt="House" style="width:100%" title="Code for the website you are looking at right now!!">   <!--title has been added to some text can be used whe hovering-->
-                                </a>
-
-                            </div>
-                        </div>
-                        <!--this is one image setting-->
-
-                        <div class="w3-row-padding">
-                            <div class="w3-col l3 m6 w3-margin-bottom">
-                                <div class="w3-display-container">
-                                    <div class="w3-display-topleft w3-black w3-padding">Summer House 12</div>
-                                    <img src="placeholder.png" alt="House" style="width:99%">
+                                    <a href="https://github.com/AlessandroBufalino3115/breakout" target="_blank">
+                                        <img src="placeholder.png" alt="House" style="width:100%">
+                                    </a>
+                                    <span class="tooltiptext">Tooltip text does this work</span>
                                 </div>
                             </div>
+                        </div>       <!-- Python: idle clicker-->
 
+                        <div class="w3-col l3 m6 w3-margin-bottom">
+                            <div class="w3-display-container">
+                                <div class="tooltip">
+                                    <div class="w3-display-topleft w3-black w3-padding">Python: Asteroid simulator</div>
 
-                            <!-- ending of set pictures -->
-                        </div>
-
-
-
-
-
-
-
+                                    <a href="https://github.com/AlessandroBufalino3115/breakout" target="_blank">
+                                        <img src="placeholder.png" alt="House" style="width:100%">
+                                    </a>
+                                    <span class="tooltiptext">Tooltip text does this work</span>
+                                </div>
+                            </div>
+                        </div>   <!-- Python: asteroid sim-->
                         <!-- ending of project section -->
                         <!-- About Section -->
                         <div class="w3-container w3-padding-32" id="about">
@@ -291,12 +339,6 @@ gif download<!DOCTYPE html>
                                 About me, not that interesting
                             </p>
                         </div>
-
-
-
-
-
-
 
 
                         <!-- Contact Section -->
