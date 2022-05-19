@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="contact-form.css" rel="stylesheets">
 
 <!-- issue on the multiplayer game online there is a double vid -->
 <!-- HTML !-->
@@ -38,10 +39,6 @@
         visibility: visible;
         opacity: 1;
     }
-
-
-
-
 
 
 
@@ -490,16 +487,13 @@
                                     <div class="w3-display-topleft w3-black w3-padding">THIS WEBSITE!!!</div>
 
                                     <a href="https://github.com/AlessandroBufalino3115/AlessandroBufalino3115.github.io"
-                                        target="_blank">
+                                       target="_blank">
                                         <img src="placeholder.png" alt="House" style="width:100%">
                                     </a>
                                     <span class="tooltiptext">TOOLTIP WIP</span>
                                 </div>
                             </div>
                         </div> <!-- Python: idle clicker-->
-
-
-
                         <!-- ending of project section -->
                         <!-- About Section -->
                         <div class="w3-container w3-padding-32" id="about">
@@ -519,22 +513,28 @@
                             <!-- youtbe githbu linked CV-->
                             <span style="float:left;">
 
-                                <button class="button-86" role="button"><a href="https://www.w3schools.com/"
-                                        target="_blank">Linkedin (coming soon)</a></button>
+                                <button class="button-86" role="button">
+                                    <a href="https://www.w3schools.com/"
+                                       target="_blank">Linkedin (coming soon)</a>
+                                </button>
                                 <br>
-                                <button class="button-86" role="button"><a
-                                        href="https://github.com/AlessandroBufalino3115" target="_blank">Github
-                                    </a></button>
+                                <button class="button-86" role="button">
+                                    <a href="https://github.com/AlessandroBufalino3115" target="_blank">
+                                        Github
+                                    </a>
+                                </button>
                                 <br>
-                                <button class="button-86" role="button"> <a
-                                        href="https://www.youtube.com/channel/UCds0x3CXEOv2-9V1O8AOGNw"
-                                        target="_blank">Youtube</a> </button>
+                                <button class="button-86" role="button">
+                                    <a href="https://www.youtube.com/channel/UCds0x3CXEOv2-9V1O8AOGNw"
+                                       target="_blank">Youtube</a>
+                                </button>
                             </span>
 
                             <span style="float:right;">
-                                <button class="button-86" role="button"> <a
-                                        href="/home/alexhalo/My repos/AlessandroBufalino3115.github.io/This is a trial download.docx"
-                                        download> CV download </a> </button>
+                                <button class="button-86" role="button">
+                                    <a href="/home/alexhalo/My repos/AlessandroBufalino3115.github.io/This is a trial download.docx"
+                                       download> CV download </a>
+                                </button>
                                 <br> <br>
                                 Phone number: --------------
                                 <br> <br> <br>
@@ -545,10 +545,72 @@
 
                         </div>
 
+
+
+
+
+
+
+
+
+
+
+
                         <!-- Image of location/map -->
                         <div class="w3-container">
                             <img src="placeholder.png" class="w3-image" style="width:100%">
                         </div>
+
+
+
+
+                        <div class="fcf-body">
+
+                            <div id="fcf-form">
+                                <h3 class="fcf-h3">Contact us</h3>
+
+                                <form id="fcf-form-id" class="fcf-form-class" method="post" action="contact-form-process.php">
+
+                                    <div class="fcf-form-group">
+                                        <label for="Name" class="fcf-label">Your name</label>
+                                        <div class="fcf-input-group">
+                                            <input type="text" id="Name" name="Name" class="fcf-form-control" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="fcf-form-group">
+                                        <label for="Email" class="fcf-label">Your email address</label>
+                                        <div class="fcf-input-group">
+                                            <input type="email" id="Email" name="Email" class="fcf-form-control" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="fcf-form-group">
+                                        <label for="Message" class="fcf-label">Your message</label>
+                                        <div class="fcf-input-group">
+                                            <textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000" required></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="fcf-form-group">
+                                        <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send Message</button>
+                                    </div>
+
+                                    <div class="fcf-credit" id="fcf-credit">
+                                        Simple HTML email form provided by <a href="https://www.majesticform.com" target="_blank">MajesticForm</a>
+                                    </div>
+
+                                </form>
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
 
                         <!-- End page content -->
                     </div>
@@ -559,6 +621,8 @@
                         <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS"
                                 target="_blank" class="w3-hover-text-green">w3.css</a></p>
                     </footer>
+
+
 
 
 </body>
