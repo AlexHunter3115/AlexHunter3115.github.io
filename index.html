@@ -9,6 +9,7 @@
 <!-- HTML !-->
 
 
+
 <style>
     .tooltip {
         position: relative;
@@ -16,28 +17,28 @@
         border-bottom: 1px dotted black;
     }
 
-    .tooltip .tooltiptext {
-        visibility: hidden;
-        width: 300px;
-        background-color: black;
-        color: #fff;
-        text-align: center;
-        border-radius: 6px;
-        padding: 5px 0;
-        position: absolute;
-        z-index: 1;
-        bottom: 100%;
-        left: 33%;
-        margin-left: -90px;
-        /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
-        opacity: 0;
-        transition: opacity 1s;
-    }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 300px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 100%;
+            left: 33%;
+            margin-left: -90px;
+            /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+            opacity: 0;
+            transition: opacity 1s;
+        }
 
-    .tooltip:hover .tooltiptext {
-        visibility: visible;
-        opacity: 1;
-    }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
 
 
 
@@ -62,52 +63,88 @@
         touch-action: manipulation;
     }
 
-    .button-86::after,
-    .button-86::before {
-        content: '';
+        .button-86::after,
+        .button-86::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: -99999;
+            transition: all .4s;
+        }
+
+        .button-86::before {
+            transform: translate(0%, 0%);
+            width: 100%;
+            height: 100%;
+            background: #28282d;
+            border-radius: 10px;
+        }
+
+        .button-86::after {
+            transform: translate(10px, 10px);
+            width: 35px;
+            height: 35px;
+            background: #ffffff15;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 50px;
+        }
+
+        .button-86:hover::before {
+            transform: translate(5%, 20%);
+            width: 110%;
+            height: 110%;
+        }
+
+        .button-86:hover::after {
+            border-radius: 10px;
+            transform: translate(0, 0);
+            width: 100%;
+            height: 100%;
+        }
+
+        .button-86:active::after {
+            transition: 0s;
+            transform: translate(0, 5%);
+        }
+
+
+
+    .static {
         position: absolute;
-        bottom: 0;
-        right: 0;
-        z-index: -99999;
-        transition: all .4s;
+        background: white;
     }
 
-    .button-86::before {
-        transform: translate(0%, 0%);
-        width: 100%;
-        height: 100%;
-        background: #28282d;
-        border-radius: 10px;
-    }
+        .static:hover {
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
 
-    .button-86::after {
-        transform: translate(10px, 10px);
-        width: 35px;
-        height: 35px;
-        background: #ffffff15;
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-        border-radius: 50px;
-    }
 
-    .button-86:hover::before {
-        transform: translate(5%, 20%);
-        width: 110%;
-        height: 110%;
-    }
 
-    .button-86:hover::after {
-        border-radius: 10px;
-        transform: translate(0, 0);
-        width: 100%;
-        height: 100%;
-    }
 
-    .button-86:active::after {
-        transition: 0s;
-        transform: translate(0, 5%);
-    }
+
+
+
 </style>
+
+
+
+
+<script>
+    function bigImg(x) {
+        x.style.height = "64px";
+        x.style.width = "64px";
+    }
+
+    function normalImg(x) {
+        x.style.height = "32px";
+        x.style.width = "32px";
+
+    }
+</script>
+
 
 
 
@@ -116,6 +153,12 @@
 
 
 <body style="background-color:rgb(85, 84, 84)">
+
+
+
+
+
+
 
     <!-- Navbar (sit on top) -->
     <div class="w3-top">
@@ -182,8 +225,6 @@
 
 
 
-
-
             <div class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
 
@@ -191,12 +232,16 @@
                         <div class="w3-display-topleft w3-black w3-padding">C++: Pong</div>
 
                         <a href="https://github.com/AlessandroBufalino3115/pong" target="_blank">
-                            <img src="gifs/pong.gif.gif" alt="House" style="width:100%">
+                            
+                            <img class="static" src="pictures\56.png" alt="House" style="width:100%">
+
+                            <img class="active" src="gifs/pong.gif.gif" alt="House" style="width:100%">
                         </a>
                         <span class="tooltiptext">TOOLTIP WIP</span>
                     </div>
                 </div>
             </div> <!-- C++: Pong -->
+
 
             <div class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
@@ -297,11 +342,16 @@
             <div class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
                     <div class="tooltip">
-                        <div class="w3-display-topleft w3-black w3-padding">Unity: 3D environment</div>
+                        <div class="w3-display-topleft w3-black w3-padding"  >Unity: 3D environment</div>
 
                         <a href="https://mega.nz/file/By4AkQyR#Y6RBaKwiJ55mMiY8NdXqWKfigU_sGrmUHpKa39MBW0w"
                            target="_blank">
-                            <img src="gifs/3d envi .gif.gif" alt="House" style="width:100%">
+
+
+                            <img onmouseover="this.src = 'gifs/3d envi .gif.gif';" onmouseout="this.src = 'pictures\3d envi static.png';" src="pictures\3d envi static.png">
+
+                            <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="smiley.gif" alt="Smiley" width="32" height="32">
+
                         </a>
                         <span class="tooltiptext">
 
@@ -312,6 +362,8 @@
                     </div>
                 </div>
             </div> <!-- assesment stuff -->
+
+
             <!-- ending of project section -->
             <!-- Project Section -->
             <div class="w3-container w3-padding-32" id="projects">
@@ -408,10 +460,10 @@
                             </div>
 
                             <a href="https://mega.nz/file/RmRGyI4Q#cPHQfqQI46Mdpw-dMZQiv4qByFFi_MGpbq-co3jR5lI" target="_blank">
-                                <img src="pictures/Capture.png" alt="House" style="width:100%">
+                                <img src="pictures\Capture.png" alt="House" style="width:100%">
                             </a>
                             <span class="tooltiptext">
-                                <a href="gameplay_mechanics/gameplay_mechanics_build_page.html"
+                                <a href="gameplay_mechanics\gameplay_mechanics_build_page.html"
                                    target="_blank">Play the Unity build online!</a> <br>
 
                                 TOOLTIP WIP <br>
