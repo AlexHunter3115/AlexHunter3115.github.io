@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\build_3D_environment",
+    "\\build_gameplay_mechanics",
+    "\\build_telekinesis",
+    "\\files"
   ],
-  "SelectedNode": "\\files",
+  "SelectedNode": "\\files\\CV-Alessandro-Bufalino.docx",
   "PreviewInSolutionExplorer": false
 }
