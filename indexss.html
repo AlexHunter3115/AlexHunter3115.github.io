@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+<title>AB Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="contact-form.css" rel="stylesheets">
+
+<!-- HTML !-->
+
+
+
+<style>
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 300px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 100%;
+        left: 33%;
+        margin-left: -90px;
+        /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+        opacity: 0;
+        transition: opacity 1s;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .button-86 {
+        all: unset;
+        width: 150px;
+        height: 30px;
+        font-size: 16px;
+        background: transparent;
+        border: none;
+        position: relative;
+        color: #f0f0f0;
+        cursor: pointer;
+        z-index: 1;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+    .button-86::after,
+    .button-86::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -99999;
+        transition: all .4s;
+    }
+
+    .button-86::before {
+        transform: translate(0%, 0%);
+        width: 100%;
+        height: 100%;
+        background: #28282d;
+        border-radius: 10px;
+    }
+
+    .button-86::after {
+        transform: translate(10px, 10px);
+        width: 35px;
+        height: 35px;
+        background: #ffffff15;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border-radius: 50px;
+    }
+
+    .button-86:hover::before {
+        transform: translate(5%, 20%);
+        width: 110%;
+        height: 110%;
+    }
+
+    .button-86:hover::after {
+        border-radius: 10px;
+        transform: translate(0, 0);
+        width: 100%;
+        height: 100%;
+    }
+
+    .button-86:active::after {
+        transition: 0s;
+        transform: translate(0, 5%);
+    }
+
+    .static {
+        position: absolute;
+        background: white;
+    }
+
+    .static:hover {
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+</style>
+
+
+<script type="text/javascript">
+
+    function setGif(id, sourced) {
+        document.getElementById(id).src = sourced;
+    }
+
+    function setPic(id, sourcer) {
+        document.getElementById(id).src = sourcer;
+    }
+
+</script>
+
+<body style="background-color:rgb(85, 84, 84)">
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+            <a href="#home" class="w3-bar-item w3-button"><b>AB </b> Alessandro Bufalino </a>
+            <!-- Float links to the right. Hide them on small screens -->
+                <a href="#projects" class="w3-bar-item w3-button">Projects</a>
+                <a href="#about" class="w3-bar-item w3-button">About</a>
+                <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header // this is for the main thing in the middle-->
+    <header class="w3-display-container w3-content w3-wide" style="max-width:1900px;" id="home">
+        <br>
+        <br>
+
+        <video width="1900" height="900" autoplay muted loop>
+            <source src="video/final montage v1.mp4" type="video/mp4">
+        </video>
+
+        <div class="w3-display-middle w3-margin-top w3-center">
+            <h1 class="w3-xxlarge w3-text-white">
+                <span class="w3-padding w3-black w3-opacity-min"><b>AB</b></span> <span
+                    class="w3-hide-small w3-text-light-grey">CODING PORTFOLIO</span>
+            </h1>
+        </div>
+    </header>
+
+
+    <!-- missing content
+        actual CV
+
+        pics need to be 1200 800
+
+        -->
+    <!-- Page content -->
+    <div class="w3-content w3-padding" style="max-width:1564px">
+
+        <!-- Project Section -->
+        <div class="w3-container w3-padding-32" id="projects">
+            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Uni projects first year 2020/2021</h3>
+        </div>
+
+        <div class="w3-row-padding">
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="tooltip">
+                        <div class="w3-display-topleft w3-black w3-padding">C++: Pong</div>
+                        <a href="https://github.com/AlessandroBufalino3115/pong" target="_blank">
+                            <img id="pong" onmouseover="setGif(id,'gifs/pong.gif')"
+                                 onmouseout="setPic(id,'pictures/pong_static.png')" src="pictures/pong_static.png"
+                                 style="width: 100%">
+                        </a>
+                        <span class="tooltiptext">TOOLTIP WIP</span>
+                    </div>
+                </div>
+            </div> <!-- C++: Pong -->
+
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="tooltip">
+                        <div class="w3-display-topleft w3-black w3-padding"> Python: idle clicker</div>
+
+                        <a href="https://github.com/AlessandroBufalino3115/Queue-idle-clicker-game" target="_blank">
+
+                            <img src="pictures\Capture.png" alt="House" style="width:100%">
+                        </a>
+                        <span class="tooltiptext">TOOLTIP WIP</span>
+                    </div>
+                </div>
+            </div> <!-- Python: idle clicker no gif only image-->
+
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="tooltip">
+                        <div class="w3-display-topleft w3-black w3-padding">C++: space invader</div>
+
+                        <a href="https://github.com/AlessandroBufalino3115/space-invaders" target="_blank">
+
+                            <img id="invader" onmouseover="setGif(id,'gifs/invader.gif')"
+                                 onmouseout="setPic(id,'pictures/invader_static.png')" src="pictures/invader_static.png"
+                                 style="width: 100%">
+                        </a>
+                        <span class="tooltiptext">TOOLTIP WIP</span>
+                    </div>
+                </div>
+            </div> <!-- C++: space invader -->
+
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="tooltip">
+                        <div class="w3-display-topleft w3-black w3-padding">C++: Angry birds</div>
+
+                        <a href="https://github.com/AlessandroBufalino3115/angry-birds" target="_blank">
+                            <img id="angry_birds" onmouseover="setGif(id,'gifs/angry birds.gif')"
+                                 onmouseout="setPic(id,'pictures/angry_birds_static.png')" src="pictures/angry_birds_static.png"
+                                 style="width: 100%">
+                        </a>
+                        <span class="tooltiptext">TOOLTIP WIP</span>
+                    </div>
+                </div>
+            </div> <!-- C++: Angry birds -->
+
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="tooltip">
+                        <div class="w3-display-topleft w3-black w3-padding">Python: Dangeon crawler</div>
+
+                        <a href="https://github.com/AlessandroBufalino3115/Dungeon-crawler-game" target="_blank">
+                            <img id="dangeon_crawler" onmouseover="setGif(id,'gifs/dangeoun_crawler.gif')"
+                                 onmouseout="setPic(id,'pictures/dangoun_crawler_static.png')" src="pictures/dangoun_crawler_static.png"
+                                 style="width: 100%">
+                        </a>
+                        <span class="tooltiptext">TOOLTIP WIP</span>
+                    </div>
+                </div>
+            </div> <!-- Python: Dangeon crawler -->
+
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="tooltip">
+                        <div class="w3-display-topleft w3-black w3-padding">C++: breakout</div>
+
+                        <a href="https://github.com/AlessandroBufalino3115/breakout" target="_blank">
+                            <img id="breakout" onmouseover="setGif(id,'gifs/breakout.gif')"
+                                 onmouseout="setPic(id,'pictures/breakout_static.png')" src="pictures/breakout_static.png"
+                                 style="width: 100%">
+                        </a>
+                        <span class="tooltiptext">TOOLTIP WIP</span>
+                    </div>
+                </div>
+            </div> <!-- c++: breakout -->
+
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="tooltip">
+                        <div class="w3-display-topleft w3-black w3-padding">Unity: 3D environment</div>
+
+                        <a href="https://mega.nz/file/By4AkQyR#Y6RBaKwiJ55mMiY8NdXqWKfigU_sGrmUHpKa39MBW0w"
+                           target="_blank">
+
+
+                            <img id="3d_env" onmouseover="setGif(id,'gifs/3d envi.gif')"
+                                 onmouseout="setPic(id,'pictures/3d_envi_static.png')" src="pictures/3d_envi_static.png"
+                                 style="width: 100%">
+
+                        </a>
+                        <span class="tooltiptext">
+
+                            <a href="build_3D_environment\3d_envi_build_page.html" target="_blank">
+                                Play the Unity build
+                                online!
+                            </a> <br>
+
+                        </span>
+                    </div>
+                </div>
+            </div> <!-- Unity: 3D envi-->
+
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="tooltip">
+                        <div class="w3-display-topleft w3-black w3-padding">Python: Asteroid simulator</div>
+
+                        <a href="https://github.com/AlessandroBufalino3115/Sorting-_algos-Asteroid-sim" target="_blank">
+
+
+                            <img id="asteroid" onmouseover="setGif(id,'gifs/asteroid.gif')"
+                                 onmouseout="setPic(id,'pictures/asteroid_static.png')" src="pictures/asteroid_static.png"
+                                 style="width: 100%">
+                        </a>
+                        <span class="tooltiptext">TOOLTIP WIP</span>
+                    </div>
+                </div>
+            </div> <!-- Python: asteroid sim-->
+
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="tooltip">
+                        <div class="w3-display-topleft w3-black w3-padding">Python: AI pathfinding</div>
+
+                        <a href="https://github.com/AlessandroBufalino3115/AI-pathfinding-pirate-game" target="_blank">
+
+                            <img id="pathfinding" onmouseover="setGif(id,'gifs/AI.gif')"
+                                 onmouseout="setPic(id,'pictures/a-star-static.png')" src="pictures/a-star-static.png"
+                                 style="width: 100%">
+
+                        </a>
+                        <span class="tooltiptext">TOOLTIP WIP</span>
+                    </div>
+                </div>
+            </div> <!-- Python: AI pathfinding -->
+        </div>
+        
+            <!-- ending of project section -->
+
+            <!-- Project Section -->
+            <div class="w3-container w3-padding-32" id="projects">
+                <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Uni projects second year 2021/2022</h3>
+            </div>
+
+            <div class="w3-row-padding">
+
+                <div class="w3-col l3 m6 w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <div class="tooltip">
+                            <div class="w3-display-topleft w3-black w3-padding"> C++: mario clone</div>
+
+                            <a href="https://github.com/UWEGames-GiC2/notmario-AlessandroBufalino3115" target="_blank">
+                                <img id="mario_c++" onmouseover="setGif(id,'gifs/mario game.gif')"
+                                     onmouseout="setPic(id,'pictures/mario_static.png')" src="pictures/mario_static.png"
+                                     style="width: 100%">
+                            </a>
+                            <span class="tooltiptext">TOOLTIP WIP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w3-col l3 m6 w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <div class="tooltip">
+                            <div class="w3-display-topleft w3-black w3-padding"> C++: network game</div>
+
+                            <a href="https://github.com/UWEGames-GiC2/asgenetgame-alex-and-callum" target="_blank">
+                                <img id="network_multi" onmouseover="setGif(id,'gifs/multiplayer game.gif')"
+                                     onmouseout="setPic(id,'pictures/network_mulit_static.png')" src="pictures/network_mulit_static.png"
+                                     style="width: 100%">
+                            </a>
+                            <span class="tooltiptext">TOOLTIP WIP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w3-col l3 m6 w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <div class="tooltip">
+                            <div class="w3-display-topleft w3-black w3-padding"> C++: 12 Vaccines</div>
+
+                            <a href="https://github.com/UWEGames-GiC2/asgemovie-group-2" target="_blank">
+                                <img id="local_multi" onmouseover="setGif(id,'gifs/multi local game.gif')"
+                                     onmouseout="setPic(id,'pictures/local_multi_static.png')" src="pictures/local_multi_static.png"
+                                     style="width: 100%">
+                            </a>
+                            <span class="tooltiptext">TOOLTIP WIP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w3-col l3 m6 w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <div class="tooltip">
+                            <div class="w3-display-topleft w3-black w3-padding"> Unreal: Level design</div>
+
+                            <a href="https://mega.nz/file/RmRGyI4Q#cPHQfqQI46Mdpw-dMZQiv4qByFFi_MGpbq-co3jR5lI"
+                               target="_blank">
+
+                                <img id="Unreal_LD" onmouseover="setGif(id,'gifs/unreal_level_design.gif')"
+                                     onmouseout="setPic(id,'pictures/Unreal_LD_static.png')" src="pictures/Unreal_LD_static.png"
+                                     style="width: 100%">
+
+
+                            </a>
+                            <span class="tooltiptext">TOOLTIP WIP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w3-col l3 m6 w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <div class="tooltip">
+                            <div class="w3-display-topleft w3-black w3-padding"> Unity/Unreal: Telekinesis</div>
+
+                            <a href="build_telekinesis\telekinesis_build_page.html"
+                               target="_blank">
+
+                                <img id="telekinesis_impl" onmouseover="setGif(id,'gifs/unity_telekinesis.gif')"
+                                     onmouseout="setPic(id,'pictures/telekinetic_static.png')" src="pictures/telekinetic_static.png"
+                                     style="width: 100%">
+
+
+                            </a>
+                            <span class="tooltiptext">
+                                <a href="https://mega.nz/file/oyxUCDpK#cfWOfMaLVz9x-r6jWLByDxW9mTC3fWt0h1e3Fwv3mwk"
+                                   target="_blank">Link to Unreal source code</a> <br>
+                                <a href="https://mega.nz/file/Iywi1JrY#D8Ufz2e80aimh9rZvRu6WZXGu7XUqhOe84tgPeKd9D0"
+                                   target="_blank">Link to Unity source code</a> <br>
+
+                                <a href="build_telekinesis\telekinesis_build_page.html" target="_blank">
+                                    Play the Unity build
+                                    online!
+                                </a> <br>
+
+                                TOOLTIP WIP <br>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w3-col l3 m6 w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <div class="tooltip">
+                            <div class="w3-display-topleft w3-black w3-padding">
+                                Unity: Gameplay programing mechanics
+                                module
+                            </div>
+
+                            <a href="https://mega.nz/file/RmRGyI4Q#cPHQfqQI46Mdpw-dMZQiv4qByFFi_MGpbq-co3jR5lI"
+                               target="_blank">
+                                <img src="pictures\Capture.png" style="width:100%">
+                            </a>
+                            <span class="tooltiptext">
+                                <a href="build_gameplay_mechanics\gameplay_mechanics_build_page.html" target="_blank">
+                                    Play the
+                                    Unity build online!
+                                </a> <br>
+
+                                TOOLTIP WIP <br>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ending of project section -->
+                <!-- Project Section -->
+                <div class="w3-container w3-padding-32" id="projects">
+                    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
+                        Uni projects third year Upcoming
+                    </h3>
+                </div>
+
+                <div class="w3-row-padding">
+
+                    <div class="w3-col l3 m6 w3-margin-bottom">
+                        <div class="w3-display-container">
+                            <div class="tooltip">
+                                <div class="w3-display-topleft w3-black w3-padding"> BLANK</div>
+
+                                <a href="http://www.blankwebsite.com/" target="_blank">
+                                    <img src="pictures/placeholder.png" alt="House" style="width:100%">
+                                </a>
+                                <span class="tooltiptext">TOOLTIP WIP</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- ending of project section -->
+                    <!-- Project Section -->
+                    <div class="w3-container w3-padding-32" id="projects">
+                        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
+                            Personal projects / next project
+                            ideas
+                        </h3>
+                    </div>
+
+                    <div class="w3-row-padding">
+
+
+                        <div class="w3-col l3 m6 w3-margin-bottom">
+                            <div class="w3-display-container">
+                                <div class="tooltip">
+                                    <div class="w3-display-topleft w3-black w3-padding"> NFT picture randomiser</div>
+
+                                    <a href="https://github.com/AlessandroBufalino3115/NFT-random-pic-generator"
+                                       target="_blank">
+                                        <img src="pictures/placeholder.png" alt="House" style="width:100%">
+                                    </a>
+                                    <span class="tooltiptext">TOOLTIP WIP</span>
+                                </div>
+                            </div>
+                        </div> <!-- Python: idle clicker-->
+
+                        <div class="w3-col l3 m6 w3-margin-bottom">
+                            <div class="w3-display-container">
+                                <div class="tooltip">
+                                    <div class="w3-display-topleft w3-black w3-padding">THIS WEBSITE!!!</div>
+
+                                    <a href="https://github.com/AlessandroBufalino3115/AlessandroBufalino3115.github.io"
+                                       target="_blank">
+                                        <img src="pictures/placeholder.png" alt="House" style="width:100%">
+                                    </a>
+                                    <span class="tooltiptext">TOOLTIP WIP</span>
+                                </div>
+                            </div>
+                        </div> <!-- Python: idle clicker-->
+                        <!-- ending of project section -->
+                        <!-- About Section -->
+                        <div class="w3-container w3-padding-32" id="about">
+                            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About me</h3>
+                            <p>
+                                About me, not that interesting
+                            </p>
+                        </div>
+
+                        <!--Contact Section -->
+
+                        <div class="w3-container w3-padding-32" id="contact">
+                            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Link and Contact</h3>
+
+                            <!-- youtbe githbu linked CV-->
+                            <span style="float:right;">
+                                <br>
+                                <br>
+                                <br>
+
+                                <button class="button-86" role="button"
+                                        onclick="window.location.href='http://www.blankwebsite.com/';">
+                                    Linkedin (coming
+                                    soon)
+                                </button>
+
+                                <br>
+                                <button class="button-86" role="button"
+                                        onclick="window.location.href='https://github.com/AlessandroBufalino3115';">
+                                    Github
+                                </button>
+                                <br>
+
+                                <button class="button-86" role="button"
+                                        onclick="window.location.href='https://www.youtube.com/channel/UCds0x3CXEOv2-9V1O8AOGNw';">
+                                    Youtube
+                                </button>
+                                <br>
+
+
+                                <button class="button-86" role="button">
+                                    <a href="files\CV-Alessandro-Bufalino.docx"
+                                       download> CV download </a>
+                                </button>
+                            </span>
+
+                            <span style="float:left;">
+                                <div class="container">
+                                    <h1>Contact me</h1>
+                                    <form target="_blank"
+                                          action="https://formsubmit.co/alessandro.bufalino3115@gmail.com" method="POST">
+                                        <div class="form-group">
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    <input type="text" name="name" class="form-control"
+                                                           placeholder="Full Name" required>
+                                                </div>
+                                                <div class="col">
+                                                    <input type="email" name="email" class="form-control"
+                                                           placeholder="Email Address" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea placeholder="Your Message" class="form-control" name="message"
+                                                      rows="10" required></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-lg btn-dark btn-block">Submit</button>
+                                    </form>
+                                </div>
+
+                            </span>
+
+
+
+                        </div>
+
+
+
+                        <!-- Image of location/map  -->
+                        <div class="w3-container">
+                            <img src="pictures/placeholder.png" class="w3-image" style="width:100%">
+                        </div>
+
+
+
+                        <!-- End page content -->
+                    </div>
+
+
+                    <!-- Footer -->
+                    <footer class="w3-center w3-black w3-padding-16">
+                        <p>
+                            Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS"
+                                          target="_blank" class="w3-hover-text-green">w3.css</a>
+                        </p>
+                    </footer>
+</body>
+</html>
+
+
+
+
+<!-- giofs play only if the person is hovering it, could be easy wstihc image an dgif -->
+<!-- yuotube vid plays in the backgournd without need of input of the person -->

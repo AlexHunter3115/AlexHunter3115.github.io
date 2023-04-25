@@ -1,670 +1,548 @@
 <!DOCTYPE html>
-<html>
-<title>AB Portfolio</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link href="contact-form.css" rel="stylesheets">
+<html lang="en">
 
-<!-- HTML !-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
 
-
-
-<style>
-    .tooltip {
-        position: relative;
-        display: inline-block;
-        border-bottom: 1px dotted black;
-    }
-
-    .tooltip .tooltiptext {
-        visibility: hidden;
-        width: 300px;
-        background-color: black;
-        color: #fff;
-        text-align: center;
-        border-radius: 6px;
-        padding: 5px 0;
-        position: absolute;
-        z-index: 1;
-        bottom: 100%;
-        left: 33%;
-        margin-left: -90px;
-        /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
-        opacity: 0;
-        transition: opacity 1s;
-    }
-
-    .tooltip:hover .tooltiptext {
-        visibility: visible;
-        opacity: 1;
-    }
+    <link rel="stylesheet" href="CSS Scripts/Navbar.css">
+    <link rel="stylesheet" href="CSS Scripts/Canvas.css">
+    <link rel="stylesheet" href="CSS Scripts/Divider.css">
+    <link rel="stylesheet" href="CSS Scripts/Carousel.css">
+    <link rel="stylesheet" href="CSS Scripts/Grid.css">
+    <link rel="stylesheet" href="CSS Scripts/Button.css">
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
 
-    .button-86 {
-        all: unset;
-        width: 150px;
-        height: 30px;
-        font-size: 16px;
-        background: transparent;
-        border: none;
-        position: relative;
-        color: #f0f0f0;
-        cursor: pointer;
-        z-index: 1;
-        padding: 10px 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        white-space: nowrap;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
-    }
+    <link rel="icon" href="pictures\favicon.jpg" type="image/x-icon">
 
-    .button-86::after,
-    .button-86::before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        z-index: -99999;
-        transition: all .4s;
-    }
+    <style>
+        section {
+            background-color: rgb(16, 17, 31);
+        }
 
-    .button-86::before {
-        transform: translate(0%, 0%);
-        width: 100%;
-        height: 100%;
-        background: #28282d;
-        border-radius: 10px;
-    }
+        .highlight {
+            box-shadow: 0 0 10px 5px rgba(255, 255, 0, 0.7);
+            transition: box-shadow 0.3s ease;
+        }
 
-    .button-86::after {
-        transform: translate(10px, 10px);
-        width: 35px;
-        height: 35px;
-        background: #ffffff15;
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-        border-radius: 50px;
-    }
+        .popup {
+            opacity: 0;
+            visibility: hidden;
+            position: fixed;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%) translateY(30px);
+            padding: 20px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            z-index: 100;
+            color: #000;
+            font-size: 16px;
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+        }
 
-    .button-86:hover::before {
-        transform: translate(5%, 20%);
-        width: 110%;
-        height: 110%;
-    }
+        .popup.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
 
-    .button-86:hover::after {
-        border-radius: 10px;
-        transform: translate(0, 0);
-        width: 100%;
-        height: 100%;
-    }
+        .video-container {
+            width: 50vw;
+            height: 55vh;
+            left: 25vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            background-color: #ccc;
+            scale: 1.2;
+            border-radius: 5px;
+          }
+          
+          video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+          
+          .video-text {
+            color: white;
+            font-size: 36px;
+            text-align: center;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.2);
+            padding-right: 5px;
+            border-radius: 10px;
 
-    .button-86:active::after {
-        transition: 0s;
-        transform: translate(0, 5%);
-    }
+          }
+          
+          .b-main-text {
+            background-color: #000;
+            opacity: 0.7;
+            padding: 0 10px;
+            border-radius: 10px;
+          }
+    </style>
 
+</head>
 
+<body>
 
-    .static {
-        position: absolute;
-        background: white;
-    }
-
-    .static:hover {
-        opacity: 0;
-        transition: opacity 0.5s;
-    }
-</style>
-
-
-<script type="text/javascript">
-
-    function setGif(id, sourced) {
-        document.getElementById(id).src = sourced;
-    }
-
-    function setPic(id, sourcer) {
-        document.getElementById(id).src = sourcer;
-
-    }
-
-</script>
-
-
-
-
-<body style="background-color:rgb(85, 84, 84)">
-
-
-
-
-
-
-
-    <!-- Navbar (sit on top) -->
-    <div class="w3-top">
-        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-            <a href="#home" class="w3-bar-item w3-button"><b>AB </b> Alessandro Bufalino </a>
-            <!-- Float links to the right. Hide them on small screens -->
-                <a href="#projects" class="w3-bar-item w3-button">Projects</a>
-                <a href="#about" class="w3-bar-item w3-button">About</a>
-                <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Header // this is for the main thing in the middle-->
-    <header class="w3-display-container w3-content w3-wide" style="max-width:1900px;" id="home">
-        <br>
-        <br>
-
-        <video width="1900" height="900" autoplay muted loop>
-            <source src="video/final montage v1.mp4" type="video/mp4">
-        </video>
-
-        <div class="w3-display-middle w3-margin-top w3-center">
-            <h1 class="w3-xxlarge w3-text-white">
-                <span class="w3-padding w3-black w3-opacity-min"><b>AB</b></span> <span
-                    class="w3-hide-small w3-text-light-grey">CODING PORTFOLIO</span>
-            </h1>
-        </div>
+    <header id="header">
+        <nav class="links" style="--items: 5;">
+            <a href="#Start">Start</a>
+            <a href="#Featured">Featured Projects</a>
+            <a href="#Work">All Projects</a>
+            <a href="#Contact">Contact</a>
+            <a href="#Algorithms">Algorithms</a>
+            <span class="line"></span>
+        </nav>
     </header>
 
+    <!-- Sections -->
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div id="customPopup" class="popup">Copied email: <span id="copiedEmail"></span></div>
+    <section id="Start">
+        <!-- <h2>Home</h2>
+        <h1>Welcome to My Portfolio</h1>
+        <p>Hi, I'm Alex, a Games Technology graduate from UWE. I am passionate about game development and have extensive
+            experience working with Unity. My main focus is on programming systems to implement in games, with a strong
+            emphasis on Procedural Content Generation (PCG) and Artificial Intelligence (AI).</p>
+        <p>During my time at UWE, I have worked on various game projects, honing my skills in Unity, C#, and game design
+            principles. I'm excited to bring my expertise to the industry and contribute to the development of
+            innovative and engaging gaming experiences. Check out my featured work, and don't hesitate to get in touch
+            if you'd like to collaborate or learn more about me.</p>
+        <button onclick="scrollToGridItem('grid-item-1')">Scroll to Grid Item 1</button> -->
 
-    <!-- missing content
-        actual CV
+        <div class="video-container">
+            <video 
+             autoplay muted loop>
+                <source src="video/final montage v1.mp4" type="video/mp4">
+            </video>
+            <p class="video-text"> <b class="b-main-text">AB</b> CODING PORTFOLIO</p>
+        </div>
+        <!-- I wnat the vid in the back ground with name like the nromal -->
 
+    </section>
 
+    <br><br><br><br><br>
 
-        pics need to be 1200 800
+    <section id="Featured">
+        <h1 class="divider-header">Featured Projects</h1>
+        <b class="rainbow-hr anim"></b>
+        <br><br>
+        <div id="carousel-wrapper">
+            <div id="menu">
+                <div id="current-option">
+                    <span id="current-option-text1" data-previous-text="" data-next-text=""></span>
 
-        
-
-        -->
-    <!-- Page content -->
-    <div class="w3-content w3-padding" style="max-width:1564px">
-
-
-
-        <!-- Project Section -->
-        <div class="w3-container w3-padding-32" id="projects">
-            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Uni projects first year 2020/2021</h3>
+                    <span id="current-option-text2" data-previous-text="" data-next-text=""></span>
+                </div>
+                <button id="previous-option"></button>
+                <button id="next-option"></button>
+                <div id="button-container">
+                    <button id="todo-button">Do something</button>
+                </div>
+            </div>
+            <div id="image"></div>
         </div>
 
+    </section>
 
 
-
-        <div class="w3-row-padding">
-
-
-
-            <div class="w3-col l3 m6 w3-margin-bottom">
-                <div class="w3-display-container">
-
-                    <div class="tooltip">
-                        <div class="w3-display-topleft w3-black w3-padding">C++: Pong</div>
-
+    <section id="Work">
+        <h1 class="divider-header">All Projects</h1>
+        <b class="rainbow-hr anim"></b>
+        <h1 style="text-align: center;">1st year</h1>
+        <div class="grid-container">
+            <!-- Pong  -->
+            <div class="grid-item">
+                <div class="content-wrapper">
+                    <div class="image-container">
+                        <img id="pong" onmouseover="toggleGif('pong', 'gifs/pong.gif')"
+                            onmouseout="toggleGif('pong', 'pictures/pong_static.png')" src="pictures/pong_static.png"
+                            alt="Pong" class="image">
+                    </div>
+                    <div class="text-content">
+                        <h3 class="image-title">C++: Pong</h3>
+                        <p class="image-info">TOOLTIP WIP</p>
                         <a href="https://github.com/AlessandroBufalino3115/pong" target="_blank">
-
-                            <img id="pong" onmouseover="setGif(id,'gifs/pong.gif')"
-                                 onmouseout="setPic(id,'pictures/pong_static.png')" src="pictures/pong_static.png"
-                                 style="width: 100%">
+                            <button class="action-button">Click me</button>
                         </a>
-                        <span class="tooltiptext">TOOLTIP WIP</span>
                     </div>
                 </div>
-            </div> <!-- C++: Pong -->
+                <div class="tooltip">TOOLTIP WIP</div>
+            </div>
 
-            <div class="w3-col l3 m6 w3-margin-bottom">
-                <div class="w3-display-container">
-                    <div class="tooltip">
-                        <div class="w3-display-topleft w3-black w3-padding"> Python: idle clicker</div>
-
+            <div class="grid-item">
+                <div class="content-wrapper">
+                    <div class="image-container">
+                        <img id="idle_clicker" onmouseover="toggleGif('idle_clicker', 'gifs/idle_clicker.gif')"
+                            onmouseout="toggleGif('idle_clicker', 'pictures/Capture.png')" src="pictures/Capture.png"
+                            alt="Idle Clicker" class="image">
+                    </div>
+                    <div class="text-content">
+                        <h3 class="image-title">Python: Idle Clicker</h3>
+                        <p class="image-info">TOOLTIP WIP</p>
                         <a href="https://github.com/AlessandroBufalino3115/Queue-idle-clicker-game" target="_blank">
-
-                            <img src="pictures\Capture.png" alt="House" style="width:100%">
+                            <button class="action-button">Click me</button>
                         </a>
-                        <span class="tooltiptext">TOOLTIP WIP</span>
                     </div>
                 </div>
-            </div> <!-- Python: idle clicker no gif only image-->
+                <div class="tooltip">TOOLTIP WIP</div>
+            </div>
 
-
-            <div class="w3-col l3 m6 w3-margin-bottom">
-                <div class="w3-display-container">
-                    <div class="tooltip">
-                        <div class="w3-display-topleft w3-black w3-padding">C++: space invader</div>
-
+            <!-- C++: space invader -->
+            <div class="grid-item">
+                <div class="content-wrapper">
+                    <div class="image-container">
+                        <img id="invader" onmouseover="toggleGif('invader', 'gifs/invader.gif')"
+                            onmouseout="toggleGif('invader', 'pictures/invader_static.png')"
+                            src="pictures/invader_static.png" alt="Space Invader" class="image">
+                    </div>
+                    <div class="text-content">
+                        <h3 class="image-title">C++: Space Invader</h3>
+                        <p class="image-info">TOOLTIP WIP</p>
                         <a href="https://github.com/AlessandroBufalino3115/space-invaders" target="_blank">
-
-                            <img id="invader" onmouseover="setGif(id,'gifs/invader.gif')"
-                                 onmouseout="setPic(id,'pictures/invader_static.png')" src="pictures/invader_static.png"
-                                 style="width: 100%">
+                            <button class="action-button">Click me</button>
                         </a>
-                        <span class="tooltiptext">TOOLTIP WIP</span>
                     </div>
                 </div>
-            </div> <!-- C++: space invader -->
+                <div class="tooltip">TOOLTIP WIP</div>
+            </div>
 
-            <div class="w3-col l3 m6 w3-margin-bottom">
-                <div class="w3-display-container">
-                    <div class="tooltip">
-                        <div class="w3-display-topleft w3-black w3-padding">C++: Angry birds</div>
-
+            <!-- C++: Angry birds -->
+            <div class="grid-item">
+                <div class="content-wrapper">
+                    <div class="image-container">
+                        <img id="angry_birds" onmouseover="toggleGif('angry_birds', 'gifs/angry birds.gif')"
+                            onmouseout="toggleGif('angry_birds', 'pictures/angry_birds_static.png')"
+                            src="pictures/angry_birds_static.png" alt="Angry Birds" class="image">
+                    </div>
+                    <div class="text-content">
+                        <h3 class="image-title">C++: Angry Birds</h3>
+                        <p class="image-info">TOOLTIP WIP</p>
                         <a href="https://github.com/AlessandroBufalino3115/angry-birds" target="_blank">
-                            <img id="angry_birds" onmouseover="setGif(id,'gifs/angry birds.gif')"
-                                 onmouseout="setPic(id,'pictures/angry_birds_static.png')" src="pictures/angry_birds_static.png"
-                                 style="width: 100%">
+                            <button class="action-button">Click me</button>
                         </a>
-                        <span class="tooltiptext">TOOLTIP WIP</span>
                     </div>
                 </div>
-            </div> <!-- C++: Angry birds -->
+                <div class="tooltip">TOOLTIP WIP</div>
+            </div>
 
-            <div class="w3-col l3 m6 w3-margin-bottom">
-                <div class="w3-display-container">
-                    <div class="tooltip">
-                        <div class="w3-display-topleft w3-black w3-padding">Python: Dangeon crawler</div>
-
+            <!-- Python: Dungeon crawler -->
+            <div class="grid-item">
+                <div class="content-wrapper">
+                    <div class="image-container">
+                        <img id="dungeon_crawler" onmouseover="toggleGif('dungeon_crawler', 'gifs/dungeon_crawler.gif')"
+                            onmouseout="toggleGif('dungeon_crawler', 'pictures/dungeon_crawler_static.png')"
+                            src="pictures/dungeon_crawler_static.png" alt="Dungeon Crawler" class="image">
+                    </div>
+                    <div class="text-content">
+                        <h3 class="image-title">Python: Dungeon Crawler</h3>
+                        <p class="image-info">TOOLTIP WIP</p>
                         <a href="https://github.com/AlessandroBufalino3115/Dungeon-crawler-game" target="_blank">
-                            <img id="dangeon_crawler" onmouseover="setGif(id,'gifs/dangeoun_crawler.gif')"
-                                 onmouseout="setPic(id,'pictures/dangoun_crawler_static.png')" src="pictures/dangoun_crawler_static.png"
-                                 style="width: 100%">
+                            <button class="action-button">Click me</button>
                         </a>
-                        <span class="tooltiptext">TOOLTIP WIP</span>
                     </div>
                 </div>
-            </div> <!-- Python: Dangeon crawler -->
+                <div class="tooltip">TOOLTIP WIP</div>
+            </div>
 
-            <div class="w3-col l3 m6 w3-margin-bottom">
-                <div class="w3-display-container">
-                    <div class="tooltip">
-                        <div class="w3-display-topleft w3-black w3-padding">C++: breakout</div>
-
+            <!-- C++: Breakout -->
+            <div class="grid-item">
+                <div class="content-wrapper">
+                    <div class="image-container">
+                        <img id="breakout" onmouseover="toggleGif('breakout', 'gifs/breakout.gif')"
+                            onmouseout="toggleGif('breakout', 'pictures/breakout_static.png')"
+                            src="pictures/breakout_static.png" alt="Breakout" class="image">
+                    </div>
+                    <div class="text-content">
+                        <h3 class="image-title">C++: Breakout</h3>
+                        <p class="image-info">TOOLTIP WIP</p>
                         <a href="https://github.com/AlessandroBufalino3115/breakout" target="_blank">
-                            <img id="breakout" onmouseover="setGif(id,'gifs/breakout.gif')"
-                                 onmouseout="setPic(id,'pictures/breakout_static.png')" src="pictures/breakout_static.png"
-                                 style="width: 100%">
+                            <button class="action-button">Click me</button>
                         </a>
-                        <span class="tooltiptext">TOOLTIP WIP</span>
                     </div>
                 </div>
-            </div> <!-- c++: breakout -->
+                <div class="tooltip">TOOLTIP WIP</div>
+            </div>
 
-            <div class="w3-col l3 m6 w3-margin-bottom">
-                <div class="w3-display-container">
-                    <div class="tooltip">
-                        <div class="w3-display-topleft w3-black w3-padding">Unity: 3D environment</div>
-
+            <!-- Unity: 3D environment -->
+            <div class="grid-item">
+                <div class="content-wrapper">
+                    <div class="image-container">
+                        <img id="3d_env" onmouseover="toggleGif('3d_env', 'gifs/3d_envi.gif')"
+                            onmouseout="toggleGif('3d_env', 'pictures/3d_envi_static.png')"
+                            src="pictures/3d_envi_static.png" alt="3D Environment" class="image">
+                    </div>
+                    <div class="text-content">
+                        <h3 class="image-title">Unity: 3D Environment</h3>
+                        <p class="image-info">TOOLTIP WIP</p>
                         <a href="https://mega.nz/file/By4AkQyR#Y6RBaKwiJ55mMiY8NdXqWKfigU_sGrmUHpKa39MBW0w"
-                           target="_blank">
-
-
-                            <img id="3d_env" onmouseover="setGif(id,'gifs/3d envi.gif')"
-                                 onmouseout="setPic(id,'pictures/3d_envi_static.png')" src="pictures/3d_envi_static.png"
-                                 style="width: 100%">
-
+                            target="_blank">
+                            <button class="action-button">Click me</button>
                         </a>
-                        <span class="tooltiptext">
-
-                            <a href="build_3D_environment\3d_envi_build_page.html" target="_blank">
-                                Play the Unity build
-                                online!
-                            </a> <br>
-
-                        </span>
+                        <a href="build_3D_environment\3d_envi_build_page.html" target="_blank">Play the Unity build
+                            online!</a>
                     </div>
                 </div>
+                <div class="tooltip">TOOLTIP WIP</div>
             </div>
-            <!-- Unity: 3D envi-->
 
-            <div class="w3-col l3 m6 w3-margin-bottom">
-                <div class="w3-display-container">
-                    <div class="tooltip">
-                        <div class="w3-display-topleft w3-black w3-padding">Python: Asteroid simulator</div>
-
+            <!-- Python: Asteroid simulator -->
+            <div class="grid-item">
+                <div class="content-wrapper">
+                    <div class="image-container">
+                        <img id="asteroid" onmouseover="toggleGif('asteroid', 'gifs/asteroid.gif')"
+                            onmouseout="toggleGif('asteroid', 'pictures/asteroid_static.png')"
+                            src="pictures/asteroid_static.png" alt="Asteroid Simulator" class="image">
+                    </div>
+                    <div class="text-content">
+                        <h3 class="image-title">Python: Asteroid Simulator</h3>
+                        <p class="image-info">TOOLTIP WIP</p>
                         <a href="https://github.com/AlessandroBufalino3115/Sorting-_algos-Asteroid-sim" target="_blank">
-
-
-                            <img id="asteroid" onmouseover="setGif(id,'gifs/asteroid.gif')"
-                                 onmouseout="setPic(id,'pictures/asteroid_static.png')" src="pictures/asteroid_static.png"
-                                 style="width: 100%">
+                            <button class="action-button">Click me</button>
                         </a>
-                        <span class="tooltiptext">TOOLTIP WIP</span>
                     </div>
                 </div>
-            </div> <!-- Python: asteroid sim-->
-
-            <div class="w3-col l3 m6 w3-margin-bottom">
-                <div class="w3-display-container">
-                    <div class="tooltip">
-                        <div class="w3-display-topleft w3-black w3-padding">Python: AI pathfinding</div>
-
-                        <a href="https://github.com/AlessandroBufalino3115/AI-pathfinding-pirate-game" target="_blank">
-
-                            <img id="pathfinding" onmouseover="setGif(id,'gifs/AI.gif')"
-                                 onmouseout="setPic(id,'pictures/a-star-static.png')" src="pictures/a-star-static.png"
-                                 style="width: 100%">
-
-                        </a>
-                        <span class="tooltiptext">TOOLTIP WIP</span>
-                    </div>
-                </div>
-            </div> <!-- Python: AI pathfinding -->
-            <!-- ending of project section -->
-            <!-- Project Section -->
-            <div class="w3-container w3-padding-32" id="projects">
-                <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Uni projects second year 2021/2022</h3>
+                <div class="tooltip">TOOLTIP WIP</div>
             </div>
 
-
-
-            <div class="w3-row-padding">
-
-                <div class="w3-col l3 m6 w3-margin-bottom">
-                    <div class="w3-display-container">
-                        <div class="tooltip">
-                            <div class="w3-display-topleft w3-black w3-padding"> C++: mario clone</div>
-
-                            <a href="https://github.com/UWEGames-GiC2/notmario-AlessandroBufalino3115" target="_blank">
-                                <img id="mario_c++" onmouseover="setGif(id,'gifs/mario game.gif')"
-                                     onmouseout="setPic(id,'pictures/mario_static.png')" src="pictures/mario_static.png"
-                                     style="width: 100%">
-                            </a>
-                            <span class="tooltiptext">TOOLTIP WIP</span>
-                        </div>
+            <!-- Python: AI pathfinding -->
+            <div class="grid-item">
+                <div class="content-wrapper">
+                    <div class="image-container">
+                        <img id="pathfinding" onmouseover="toggleGif('pathfinding', 'gifs/AI.gif')"
+                            onmouseout="toggleGif('pathfinding', 'pictures/a-star-static.png')"
+                            src="pictures/a-star-static.png" alt="AI Pathfinding" class="image">
+                    </div>
+                    <div class="text-content">
+                        <h3 class="image-title">Python: AI Pathfinding</h3>
+                        <p class="image-info">TOOLTIP WIP</p>
+                        <a href="https://github.com/AlessandroBufalino3115/AI-pathfinding-pirate-game" target="_blank">
+                            <button class="action-button">Click me</button>
+                        </a>
                     </div>
                 </div>
+                <div class="tooltip">TOOLTIP WIP</div>
+            </div>
 
-                <div class="w3-col l3 m6 w3-margin-bottom">
-                    <div class="w3-display-container">
-                        <div class="tooltip">
-                            <div class="w3-display-topleft w3-black w3-padding"> C++: network game</div>
+        </div>
 
-                            <a href="https://github.com/UWEGames-GiC2/asgenetgame-alex-and-callum" target="_blank">
-                                <img id="network_multi" onmouseover="setGif(id,'gifs/multiplayer game.gif')"
-                                     onmouseout="setPic(id,'pictures/network_mulit_static.png')" src="pictures/network_mulit_static.png"
-                                     style="width: 100%">
-                            </a>
-                            <span class="tooltiptext">TOOLTIP WIP</span>
-                        </div>
+        <br><br>
+
+        <hr class="rainbow-hr center-fade-hr">
+        <h1 style="text-align: center;">2nd year</h1>
+        <div class="grid-container">
+            <!-- mario_c++ -->
+            <div class="grid-item" id="grid-item-1">
+                <div class="content-wrapper">
+                    <div class="image-container">
+                        <img id="pathfinding" onmouseover="toggleGif('pathfinding', 'gifs/mario game.gif')"
+                            onmouseout="toggleGif('pathfinding', 'pictures/mario_static.png')"
+                            src="pictures/mario_static.png" alt="mario_c++" class="image">
+                    </div>
+                    <div class="text-content">
+                        <h3 class="image-title">C++: mario clone</h3>
+                        <p class="image-info">TOOLTIP WIP</p>
+                        <a href="https://github.com/UWEGames-GiC2/notmario-AlessandroBufalino3115" target="_blank">
+                            <button class="action-button">Click me</button>
+                        </a>
                     </div>
                 </div>
+                <div class="tooltip">TOOLTIP WIP</div>
+            </div>
 
-                <div class="w3-col l3 m6 w3-margin-bottom">
-                    <div class="w3-display-container">
-                        <div class="tooltip">
-                            <div class="w3-display-topleft w3-black w3-padding"> C++: 12 Vaccines</div>
-
-                            <a href="https://github.com/UWEGames-GiC2/asgemovie-group-2" target="_blank">
-                                <img id="local_multi" onmouseover="setGif(id,'gifs/multi local game.gif')"
-                                     onmouseout="setPic(id,'pictures/local_multi_static.png')" src="pictures/local_multi_static.png"
-                                     style="width: 100%">
-                            </a>
-                            <span class="tooltiptext">TOOLTIP WIP</span>
-                        </div>
+            <!--  C++: network game -->
+            <div class="grid-item" id="highlight">
+                <div class="content-wrapper">
+                    <div class="image-container">
+                        <img id="pathfinding" onmouseover="toggleGif('pathfinding', 'gifs/multiplayer game.gif')"
+                            onmouseout="toggleGif('pathfinding', 'pictures/network_mulit_static.png')"
+                            src="pictures/network_mulit_static.png" alt="AI Pathfinding" class="image">
+                    </div>
+                    <div class="text-content">
+                        <h3 class="image-title">C++: network game</h3>
+                        <p class="image-info">TOOLTIP WIP</p>
+                        <a href="https://github.com/UWEGames-GiC2/asgenetgame-alex-and-callum" target="_blank">
+                            <button class="action-button">Click me</button>
+                        </a>
                     </div>
                 </div>
+                <div class="tooltip">TOOLTIP WIP</div>
+            </div>
 
-                <div class="w3-col l3 m6 w3-margin-bottom">
-                    <div class="w3-display-container">
-                        <div class="tooltip">
-                            <div class="w3-display-topleft w3-black w3-padding"> Unreal: Level design</div>
-
-                            <a href="https://mega.nz/file/RmRGyI4Q#cPHQfqQI46Mdpw-dMZQiv4qByFFi_MGpbq-co3jR5lI"
-                               target="_blank">
-
-                                <img id="Unreal_LD" onmouseover="setGif(id,'gifs/unreal_level_design.gif')"
-                                     onmouseout="setPic(id,'pictures/Unreal_LD_static.png')" src="pictures/Unreal_LD_static.png"
-                                     style="width: 100%">
-
-
-                            </a>
-                            <span class="tooltiptext">TOOLTIP WIP</span>
-                        </div>
+            <!-- C++: 12 Vaccines -->
+            <div class="grid-item">
+                <div class="content-wrapper">
+                    <div class="image-container">
+                        <img id="pathfinding" onmouseover="toggleGif('pathfinding', 'gifs/multi local game.gif')"
+                            onmouseout="toggleGif('pathfinding', 'pictures/local_multi_static.png')"
+                            src="pictures/local_multi_static.png" alt="AI Pathfinding" class="image">
+                    </div>
+                    <div class="text-content">
+                        <h3 class="image-title">C++: 12 Vaccines</h3>
+                        <p class="image-info">TOOLTIP WIP</p>
+                        <a href="https://github.com/UWEGames-GiC2/asgemovie-group-2" target="_blank">
+                            <button class="action-button">Click me</button>
+                        </a>
                     </div>
                 </div>
+                <div class="tooltip">TOOLTIP WIP</div>
+            </div>
 
-
-                <div class="w3-col l3 m6 w3-margin-bottom">
-                    <div class="w3-display-container">
-                        <div class="tooltip">
-                            <div class="w3-display-topleft w3-black w3-padding"> Unity/Unreal: Telekinesis</div>
-
-                            <a href="build_telekinesis\telekinesis_build_page.html"
-                               target="_blank">
-
-                                <img id="telekinesis_impl" onmouseover="setGif(id,'gifs/unity_telekinesis.gif')"
-                                     onmouseout="setPic(id,'pictures/telekinetic_static.png')" src="pictures/telekinetic_static.png"
-                                     style="width: 100%">
-
-
-                            </a>
-                            <span class="tooltiptext">
-                                <a href="https://mega.nz/file/oyxUCDpK#cfWOfMaLVz9x-r6jWLByDxW9mTC3fWt0h1e3Fwv3mwk"
-                                   target="_blank">Link to Unreal source code</a> <br>
-                                <a href="https://mega.nz/file/Iywi1JrY#D8Ufz2e80aimh9rZvRu6WZXGu7XUqhOe84tgPeKd9D0"
-                                   target="_blank">Link to Unity source code</a> <br>
-
-                                <a href="build_telekinesis\telekinesis_build_page.html" target="_blank">
-                                    Play the Unity build
-                                    online!
-                                </a> <br>
-
-                                TOOLTIP WIP <br>
-                            </span>
-                        </div>
+            <!-- Unreal: Level design -->
+            <div class="grid-item">
+                <div class="content-wrapper">
+                    <div class="image-container">
+                        <img id="pathfinding" onmouseover="toggleGif('pathfinding', 'gifs/unreal_level_design.gif')"
+                            onmouseout="toggleGif('pathfinding', 'pictures/Unreal_LD_static.png')"
+                            src="pictures/Unreal_LD_static.png" alt="AI Pathfinding" class="image">
+                    </div>
+                    <div class="text-content">
+                        <h3 class="image-title">Python: AI Pathfinding</h3>
+                        <p class="image-info">TOOLTIP WIP</p>
+                        <a href="https://mega.nz/file/RmRGyI4Q#cPHQfqQI46Mdpw-dMZQiv4qByFFi_MGpbq-co3jR5lI"
+                            target="_blank">
+                            <button class="action-button">Click me</button>
+                        </a>
                     </div>
                 </div>
+                <div class="tooltip">TOOLTIP WIP</div>
+            </div>
 
-
-                <div class="w3-col l3 m6 w3-margin-bottom">
-                    <div class="w3-display-container">
-                        <div class="tooltip">
-                            <div class="w3-display-topleft w3-black w3-padding">
-                                Unity: Gameplay programing mechanics
-                                module
-                            </div>
-
-                            <a href="https://mega.nz/file/RmRGyI4Q#cPHQfqQI46Mdpw-dMZQiv4qByFFi_MGpbq-co3jR5lI"
-                               target="_blank">
-                                <img src="pictures\Capture.png" style="width:100%">
-                            </a>
-                            <span class="tooltiptext">
-                                <a href="build_gameplay_mechanics\gameplay_mechanics_build_page.html" target="_blank">
-                                    Play the
-                                    Unity build online!
-                                </a> <br>
-
-                                TOOLTIP WIP <br>
-                            </span>
-                        </div>
+            <!-- Unity/Unreal: Telekinesis -->
+            <div class="grid-item">
+                <div class="content-wrapper">
+                    <div class="image-container">
+                        <img id="pathfinding" onmouseover="toggleGif('pathfinding', 'gifs/unity_telekinesis.gif')"
+                            onmouseout="toggleGif('pathfinding', 'pictures/telekinetic_static.png')"
+                            src="pictures/telekinetic_static.png" alt="AI Pathfinding" class="image">
+                    </div>
+                    <div class="text-content">
+                        <h3 class="image-title">Unity/Unreal: Telekinesis</h3>
+                        <p class="image-info">TOOLTIP WIP</p>
+                        <a href="https://mega.nz/file/oyxUCDpK#cfWOfMaLVz9x-r6jWLByDxW9mTC3fWt0h1e3Fwv3mwk"
+                            target="_blank">
+                            <button class="action-button">Click me</button>
+                        </a>
+                        <a href="https://mega.nz/file/Iywi1JrY#D8Ufz2e80aimh9rZvRu6WZXGu7XUqhOe84tgPeKd9D0"
+                            target="_blank">
+                            <button class="action-button">Click me</button>
+                        </a>
+                        <a href="build_telekinesis\telekinesis_build_page.html" target="_blank">
+                            <button class="action-button">Click me</button>
+                        </a>
                     </div>
                 </div>
+                <div class="tooltip">TOOLTIP WIP</div>
+            </div>
 
-
-
-
-                <!-- ending of project section -->
-                <!-- Project Section -->
-                <div class="w3-container w3-padding-32" id="projects">
-                    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
-                        Uni projects third year Upcoming
-                    </h3>
+            <div class="grid-item">
+                <div class="content-wrapper">
+                    <div class="image-container">
+                        <img src="pictures\Capture.png" style="width:100%">
+                    </div>
+                    <div class="text-content">
+                        <h3 class="image-title">Python: AI Pathfinding</h3>
+                        <p class="image-info">TOOLTIP WIP</p>
+                        <a href="https://mega.nz/file/RmRGyI4Q#cPHQfqQI46Mdpw-dMZQiv4qByFFi_MGpbq-co3jR5lI"
+                            target="_blank">
+                            <button class="action-button">Click me</button>
+                        </a>
+                        <a href="build_gameplay_mechanics\gameplay_mechanics_build_page.html" target="_blank">
+                            <button class="action-button">Click me</button>
+                        </a>
+                    </div>
                 </div>
+                <div class="tooltip">TOOLTIP WIP</div>
+            </div>
+        </div>
 
-                <div class="w3-row-padding">
+        <br><br>
 
-                    <div class="w3-col l3 m6 w3-margin-bottom">
-                        <div class="w3-display-container">
-                            <div class="tooltip">
-                                <div class="w3-display-topleft w3-black w3-padding"> BLANK</div>
+        <hr class="rainbow-hr center-fade-hr">
+        <h1 style="text-align: center;">3rd year</h1>
 
-                                <a href="http://www.blankwebsite.com/" target="_blank">
-                                    <img src="pictures/placeholder.png" alt="House" style="width:100%">
-                                </a>
-                                <span class="tooltiptext">TOOLTIP WIP</span>
-                            </div>
-                        </div>
-                    </div>
+        <br><br>
 
+        <hr class="rainbow-hr center-fade-hr">
+        <h1 style="text-align: center;">Personal Projects</h1>
 
-                    <!-- ending of project section -->
-                    <!-- Project Section -->
-                    <div class="w3-container w3-padding-32" id="projects">
-                        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
-                            Personal projects / next project
-                            ideas
-                        </h3>
-                    </div>
+    </section>
 
-                    <div class="w3-row-padding">
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
+    <section id="Contact">
+        <h1 class="divider-header">Get in touch</h1>
+        <b class="rainbow-hr anim"></b>
+        <div class="button-container-contact">
+            <div class="button-group-contact">
+                <button class="button-49">CV Download</button>
+                <button class="button-49" onclick="copyEmailToClipboard()">Email</button>
+                <button class="button-49">LinkedIn</button>
+            </div>
+            <div class="button-group-contact">
+                <button class="button-49">GitHub</button>
+                <button class="button-49">Discord</button>
 
-                        <div class="w3-col l3 m6 w3-margin-bottom">
-                            <div class="w3-display-container">
-                                <div class="tooltip">
-                                    <div class="w3-display-topleft w3-black w3-padding"> NFT picture randomiser</div>
+                <a href="youtube.com" target="_blank">
+                    <button class="button-49">Other</button>
+                </a>
 
-                                    <a href="https://github.com/AlessandroBufalino3115/NFT-random-pic-generator"
-                                       target="_blank">
-                                        <img src="pictures/placeholder.png" alt="House" style="width:100%">
-                                    </a>
-                                    <span class="tooltiptext">TOOLTIP WIP</span>
-                                </div>
-                            </div>
-                        </div> <!-- Python: idle clicker-->
+            </div>
+        </div>
+        <input type="text" value="example@example.com" id="emailToCopy" style="display:none">
+        <div id="customPopup" class="popup">Copied email: <span id="copiedEmail"></span></div>
+    </section>
 
-                        <div class="w3-col l3 m6 w3-margin-bottom">
-                            <div class="w3-display-container">
-                                <div class="tooltip">
-                                    <div class="w3-display-topleft w3-black w3-padding">THIS WEBSITE!!!</div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-                                    <a href="https://github.com/AlessandroBufalino3115/AlessandroBufalino3115.github.io"
-                                       target="_blank">
-                                        <img src="pictures/placeholder.png" alt="House" style="width:100%">
-                                    </a>
-                                    <span class="tooltiptext">TOOLTIP WIP</span>
-                                </div>
-                            </div>
-                        </div> <!-- Python: idle clicker-->
-                        <!-- ending of project section -->
-                        <!-- About Section -->
-                        <div class="w3-container w3-padding-32" id="about">
-                            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About me</h3>
-                            <p>
-                                About me, not that interesting
-                            </p>
-                        </div>
+    <section id="Algorithms">
+        <h1 class="divider-header">Fun</h1>
+        <b class="rainbow-hr anim"></b>
+        <div class="algorithm-container">
+            <div class="left-section">
+                <h2 id="main-title">Title</h2>
+                <p id="main-description">Description of the algorithm or visualization.</p>
+            </div>
+            <div class="middle-section">
+                <div id="p5js-canvas"></div>
+                <div id="control-container"></div>
+            </div>
+            <div class="right-section">
+                <ul class="algorithm-list">
+                    <button class="button-algo" style="--clr:#39FF14" data-title="Main Title 1" data-description="Description 1" onclick="switchToCA()"><span>CA</span><i></i></button>
+                    <button class="button-algo" style="--clr:#FF44CC" data-title="Main Title 2" data-description="Description 2" onclick="switchToPerlinNoise()"><span>Perlin</span><i></i></button>
+                    <button class="button-algo" style="--clr:#0FF0FC" data-title="Main Title 3" data-description="Description 3" onclick="switchToDefault()"><span>Normal</span><i></i></button>
+                    <button class="button-algo" style="--clr:#39FF14" data-title="Main Title 4" data-description="Description 4"><span>Button</span><i></i></button>
+                    <button class="button-algo" style="--clr:#FF44CC" data-title="Main Title 5" data-description="Description 5"><span>Button</span><i></i></button>
+                    <button class="button-algo" style="--clr:#0FF0FC" data-title="Main Title 6" data-description="Description 6"><span>Button</span><i></i></button>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-
-                        <!-- Contact Section -->
-
-                        <div class="w3-container w3-padding-32" id="contact">
-                            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Link and Contact</h3>
-
-
-
-                            <!-- youtbe githbu linked CV-->
-                            <span style="float:right;">
-                                <br>
-                                <br>
-                                <br>
-
-                                <button class="button-86" role="button"
-                                        onclick="window.location.href='http://www.blankwebsite.com/';">
-                                    Linkedin (coming
-                                    soon)
-                                </button>
-
-                                <br>
-                                <button class="button-86" role="button"
-                                        onclick="window.location.href='https://github.com/AlessandroBufalino3115';">
-                                    Github
-                                </button>
-                                <br>
-
-                                <button class="button-86" role="button"
-                                        onclick="window.location.href='https://www.youtube.com/channel/UCds0x3CXEOv2-9V1O8AOGNw';">
-                                    Youtube
-                                </button>
-                                <br>
-
-
-                                <button class="button-86" role="button">
-                                    <a href="files\CV-Alessandro-Bufalino.docx"
-                                       download> CV download </a>
-                                </button>
-                            </span>
-
-                            <span style="float:left;">
-                                <div class="container">
-                                    <h1>Contact me</h1>
-                                    <form target="_blank"
-                                          action="https://formsubmit.co/alessandro.bufalino3115@gmail.com" method="POST">
-                                        <div class="form-group">
-                                            <div class="form-row">
-                                                <div class="col">
-                                                    <input type="text" name="name" class="form-control"
-                                                           placeholder="Full Name" required>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="email" name="email" class="form-control"
-                                                           placeholder="Email Address" required>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <textarea placeholder="Your Message" class="form-control" name="message"
-                                                      rows="10" required></textarea>
-                                        </div>
-                                        <button type="submit" class="btn btn-lg btn-dark btn-block">Submit</button>
-                                    </form>
-                                </div>
-
-                            </span>
-
-
-
-                        </div>
-
-
-
-                        <!-- Image of location/map  -->
-                        <div class="w3-container">
-                            <img src="pictures/placeholder.png" class="w3-image" style="width:100%">
-                        </div>
-
-
-
-                        <!-- End page content -->
-                    </div>
-
-
-                    <!-- Footer -->
-                    <footer class="w3-center w3-black w3-padding-16">
-                        <p>
-                            Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS"
-                                          target="_blank" class="w3-hover-text-green">w3.css</a>
-                        </p>
-                    </footer>
-
-
-
-
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <script src="Javascript Scripts/Main.js"></script>
+    <script src="Javascript Scripts/Algorithms/sketch.js"></script>
+    <script src="Javascript Scripts/Carousel.js"></script>
 </body>
 
 </html>
-
-
-
-
-<!-- giofs play only if the person is hovering it, could be easy wstihc image an dgif -->
-<!-- yuotube vid plays in the backgournd without need of input of the person -->

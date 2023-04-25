@@ -1,0 +1,38 @@
+section {
+    transition: background-color 1s ease;
+}
+
+body {
+    transition: background-color 1s ease;
+}
+
+section#Start {
+    background-color: #0F2C2C; /* A lighter shade of blue */
+}
+
+section#Featured {
+    background-color: #1D0F2C; /* A light coral pink */
+}
+
+section#Work {
+    background-color: #24272C; /* A light shade of green */
+}
+
+section#Contact {
+    background-color: #0F2C1D; /* A light shade of yellow */
+}
+
+section#Algorithms {
+    background-color: #2C0F1D; /* A light shade of turquoise */
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    transition: background-color 0.25s ease;
+}
