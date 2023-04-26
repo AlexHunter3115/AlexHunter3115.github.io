@@ -25,7 +25,7 @@
 }
 
 .grid-item:hover  {
-    transform: scale(0.98);
+    transform: scale(0.99);
 }
 
 .image-container {
@@ -33,11 +33,13 @@
     height: 200px;
     overflow: hidden;
     position: relative;
+    background-color: #333;
+    
+    border-radius: 3px;
 }
 
 .image {
     position: absolute;
-    border-radius: 5px;
     top: 50%;
     left: 50%;
     width: 100%;

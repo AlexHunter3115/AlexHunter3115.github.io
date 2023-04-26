@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>AB Portfolio</title>
 
     <link rel="stylesheet" href="CSS Scripts/Navbar.css">
     <link rel="stylesheet" href="CSS Scripts/Canvas.css">
@@ -19,7 +19,7 @@
     <link rel="icon" href="pictures\favicon.jpg" type="image/x-icon">
 
     <style>
-        section {
+        html {
             background-color: rgb(16, 17, 31);
         }
 
@@ -64,6 +64,7 @@
             background-color: #ccc;
             scale: 1.2;
             border-radius: 5px;
+            
           }
           
           video {
@@ -117,6 +118,17 @@
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <div id="customPopup" class="popup">Copied email: <span id="copiedEmail"></span></div>
     <section id="Start">
+        
+
+        <div class="video-container">
+            <video 
+             autoplay muted loop>
+                <source src="video/final montage v1.mp4" type="video/mp4">
+            </video>
+            <p class="video-text"> <b class="b-main-text">AB</b> CODING PORTFOLIO</p>
+        </div>
+
+
         <!-- <h2>Home</h2>
         <h1>Welcome to My Portfolio</h1>
         <p>Hi, I'm Alex, a Games Technology graduate from UWE. I am passionate about game development and have extensive
@@ -127,14 +139,6 @@
             innovative and engaging gaming experiences. Check out my featured work, and don't hesitate to get in touch
             if you'd like to collaborate or learn more about me.</p>
         <button onclick="scrollToGridItem('grid-item-1')">Scroll to Grid Item 1</button> -->
-
-        <div class="video-container">
-            <video 
-             autoplay muted loop>
-                <source src="video/final montage v1.mp4" type="video/mp4">
-            </video>
-            <p class="video-text"> <b class="b-main-text">AB</b> CODING PORTFOLIO</p>
-        </div>
         <!-- I wnat the vid in the back ground with name like the nromal -->
 
     </section>
@@ -169,7 +173,7 @@
         <b class="rainbow-hr anim"></b>
         <h1 style="text-align: center;">1st year</h1>
         <div class="grid-container">
-            <!-- Pong  -->
+            <!-- Pong  checked-->
             <div class="grid-item">
                 <div class="content-wrapper">
                     <div class="image-container">
@@ -188,12 +192,11 @@
                 <div class="tooltip">TOOLTIP WIP</div>
             </div>
 
+            <!-- idle Clicker  broken-->
             <div class="grid-item">
                 <div class="content-wrapper">
                     <div class="image-container">
-                        <img id="idle_clicker" onmouseover="toggleGif('idle_clicker', 'gifs/idle_clicker.gif')"
-                            onmouseout="toggleGif('idle_clicker', 'pictures/Capture.png')" src="pictures/Capture.png"
-                            alt="Idle Clicker" class="image">
+                        
                     </div>
                     <div class="text-content">
                         <h3 class="image-title">Python: Idle Clicker</h3>
@@ -206,7 +209,7 @@
                 <div class="tooltip">TOOLTIP WIP</div>
             </div>
 
-            <!-- C++: space invader -->
+            <!-- C++: space invader checked-->
             <div class="grid-item">
                 <div class="content-wrapper">
                     <div class="image-container">
@@ -225,7 +228,7 @@
                 <div class="tooltip">TOOLTIP WIP</div>
             </div>
 
-            <!-- C++: Angry birds -->
+            <!-- C++: Angry birds checked-->
             <div class="grid-item">
                 <div class="content-wrapper">
                     <div class="image-container">
@@ -244,7 +247,7 @@
                 <div class="tooltip">TOOLTIP WIP</div>
             </div>
 
-            <!-- Python: Dungeon crawler -->
+            <!-- Python: Dungeon crawler chekd-->
             <div class="grid-item">
                 <div class="content-wrapper">
                     <div class="image-container">
@@ -263,7 +266,7 @@
                 <div class="tooltip">TOOLTIP WIP</div>
             </div>
 
-            <!-- C++: Breakout -->
+            <!-- C++: Breakout checked-->
             <div class="grid-item">
                 <div class="content-wrapper">
                     <div class="image-container">
@@ -282,29 +285,26 @@
                 <div class="tooltip">TOOLTIP WIP</div>
             </div>
 
-            <!-- Unity: 3D environment -->
+            <!-- Unity: 3D environment broken-->
             <div class="grid-item">
                 <div class="content-wrapper">
                     <div class="image-container">
-                        <img id="3d_env" onmouseover="toggleGif('3d_env', 'gifs/3d_envi.gif')"
+                        <img id="3d_env" onmouseover="toggleGif('3d_env', 'gifs/3d envi.gif')"
                             onmouseout="toggleGif('3d_env', 'pictures/3d_envi_static.png')"
                             src="pictures/3d_envi_static.png" alt="3D Environment" class="image">
                     </div>
                     <div class="text-content">
                         <h3 class="image-title">Unity: 3D Environment</h3>
                         <p class="image-info">TOOLTIP WIP</p>
-                        <a href="https://mega.nz/file/By4AkQyR#Y6RBaKwiJ55mMiY8NdXqWKfigU_sGrmUHpKa39MBW0w"
-                            target="_blank">
-                            <button class="action-button">Click me</button>
-                        </a>
-                        <a href="build_3D_environment\3d_envi_build_page.html" target="_blank">Play the Unity build
-                            online!</a>
+                        <button class="action-button" onclick="openLink('https://mega.nz/file/By4AkQyR#Y6RBaKwiJ55mMiY8NdXqWKfigU_sGrmUHpKa39MBW0w')">Click me</button>
+                        <button class="action-button" onclick="openLink('build_3D_environment\3d_envi_build_page.html')">Click me</button>
+                        
                     </div>
                 </div>
                 <div class="tooltip">TOOLTIP WIP</div>
             </div>
 
-            <!-- Python: Asteroid simulator -->
+            <!-- Python: Asteroid simulator checked-->
             <div class="grid-item">
                 <div class="content-wrapper">
                     <div class="image-container">
@@ -315,15 +315,13 @@
                     <div class="text-content">
                         <h3 class="image-title">Python: Asteroid Simulator</h3>
                         <p class="image-info">TOOLTIP WIP</p>
-                        <a href="https://github.com/AlessandroBufalino3115/Sorting-_algos-Asteroid-sim" target="_blank">
-                            <button class="action-button">Click me</button>
-                        </a>
+                        <button class="action-button" onclick="openLink('https://github.com/AlessandroBufalino3115/Sorting-_algos-Asteroid-sim')">Click me</button>
                     </div>
                 </div>
                 <div class="tooltip">TOOLTIP WIP</div>
             </div>
 
-            <!-- Python: AI pathfinding -->
+            <!-- Python: AI pathfinding checked-->
             <div class="grid-item">
                 <div class="content-wrapper">
                     <div class="image-container">
@@ -334,6 +332,7 @@
                     <div class="text-content">
                         <h3 class="image-title">Python: AI Pathfinding</h3>
                         <p class="image-info">TOOLTIP WIP</p>
+                        <button class="action-button" onclick="openLink('https://mega.nz/file/RmRGyI4Q#cPHQfqQI46Mdpw-dMZQiv4qByFFi_MGpbq-co3jR5lI')">Click me</button>
                         <a href="https://github.com/AlessandroBufalino3115/AI-pathfinding-pirate-game" target="_blank">
                             <button class="action-button">Click me</button>
                         </a>
@@ -353,13 +352,14 @@
             <div class="grid-item" id="grid-item-1">
                 <div class="content-wrapper">
                     <div class="image-container">
-                        <img id="pathfinding" onmouseover="toggleGif('pathfinding', 'gifs/mario game.gif')"
-                            onmouseout="toggleGif('pathfinding', 'pictures/mario_static.png')"
+                        <img id="mario" onmouseover="toggleGif('mario', 'gifs/mario game.gif')"
+                            onmouseout="toggleGif('mario', 'pictures/mario_static.png')"
                             src="pictures/mario_static.png" alt="mario_c++" class="image">
                     </div>
                     <div class="text-content">
                         <h3 class="image-title">C++: mario clone</h3>
                         <p class="image-info">TOOLTIP WIP</p>
+                        <button class="action-button" onclick="openLink('https://mega.nz/file/RmRGyI4Q#cPHQfqQI46Mdpw-dMZQiv4qByFFi_MGpbq-co3jR5lI')">Click me</button>
                         <a href="https://github.com/UWEGames-GiC2/notmario-AlessandroBufalino3115" target="_blank">
                             <button class="action-button">Click me</button>
                         </a>
@@ -372,13 +372,14 @@
             <div class="grid-item" id="highlight">
                 <div class="content-wrapper">
                     <div class="image-container">
-                        <img id="pathfinding" onmouseover="toggleGif('pathfinding', 'gifs/multiplayer game.gif')"
-                            onmouseout="toggleGif('pathfinding', 'pictures/network_mulit_static.png')"
-                            src="pictures/network_mulit_static.png" alt="AI Pathfinding" class="image">
+                        <img id="network" onmouseover="toggleGif('network', 'gifs/multiplayer game.gif')"
+                            onmouseout="toggleGif('network', 'pictures/network_mulit_static.png')"
+                            src="pictures/network_mulit_static.png" alt="network game" class="image">
                     </div>
                     <div class="text-content">
                         <h3 class="image-title">C++: network game</h3>
                         <p class="image-info">TOOLTIP WIP</p>
+                        <button class="action-button" onclick="openLink('https://mega.nz/file/RmRGyI4Q#cPHQfqQI46Mdpw-dMZQiv4qByFFi_MGpbq-co3jR5lI')">Click me</button>
                         <a href="https://github.com/UWEGames-GiC2/asgenetgame-alex-and-callum" target="_blank">
                             <button class="action-button">Click me</button>
                         </a>
@@ -391,13 +392,14 @@
             <div class="grid-item">
                 <div class="content-wrapper">
                     <div class="image-container">
-                        <img id="pathfinding" onmouseover="toggleGif('pathfinding', 'gifs/multi local game.gif')"
-                            onmouseout="toggleGif('pathfinding', 'pictures/local_multi_static.png')"
-                            src="pictures/local_multi_static.png" alt="AI Pathfinding" class="image">
+                        <img id="12 Vaccines" onmouseover="toggleGif('12 Vaccines', 'gifs/multi local game.gif')"
+                            onmouseout="toggleGif('12 Vaccines', 'pictures/local_multi_static.png')"
+                            src="pictures/local_multi_static.png" alt="12 Vaccines" class="image">
                     </div>
                     <div class="text-content">
                         <h3 class="image-title">C++: 12 Vaccines</h3>
                         <p class="image-info">TOOLTIP WIP</p>
+                        <button class="action-button" onclick="openLink('https://mega.nz/file/RmRGyI4Q#cPHQfqQI46Mdpw-dMZQiv4qByFFi_MGpbq-co3jR5lI')">Click me</button>
                         <a href="https://github.com/UWEGames-GiC2/asgemovie-group-2" target="_blank">
                             <button class="action-button">Click me</button>
                         </a>
@@ -410,17 +412,14 @@
             <div class="grid-item">
                 <div class="content-wrapper">
                     <div class="image-container">
-                        <img id="pathfinding" onmouseover="toggleGif('pathfinding', 'gifs/unreal_level_design.gif')"
-                            onmouseout="toggleGif('pathfinding', 'pictures/Unreal_LD_static.png')"
-                            src="pictures/Unreal_LD_static.png" alt="AI Pathfinding" class="image">
+                        <img id="Unreal Level Design" onmouseover="toggleGif('Unreal Level Design', 'gifs/unreal_level_design.gif')"
+                            onmouseout="toggleGif('Unreal Level Design', 'pictures/Unreal_LD_static.png')"
+                            src="pictures/Unreal_LD_static.png" alt="Unreal Level Design" class="image">
                     </div>
                     <div class="text-content">
                         <h3 class="image-title">Python: AI Pathfinding</h3>
                         <p class="image-info">TOOLTIP WIP</p>
-                        <a href="https://mega.nz/file/RmRGyI4Q#cPHQfqQI46Mdpw-dMZQiv4qByFFi_MGpbq-co3jR5lI"
-                            target="_blank">
-                            <button class="action-button">Click me</button>
-                        </a>
+                        <button class="action-button" onclick="openLink('https://mega.nz/file/RmRGyI4Q#cPHQfqQI46Mdpw-dMZQiv4qByFFi_MGpbq-co3jR5lI')">Click me</button>
                     </div>
                 </div>
                 <div class="tooltip">TOOLTIP WIP</div>
@@ -430,24 +429,16 @@
             <div class="grid-item">
                 <div class="content-wrapper">
                     <div class="image-container">
-                        <img id="pathfinding" onmouseover="toggleGif('pathfinding', 'gifs/unity_telekinesis.gif')"
-                            onmouseout="toggleGif('pathfinding', 'pictures/telekinetic_static.png')"
-                            src="pictures/telekinetic_static.png" alt="AI Pathfinding" class="image">
+                        <img id="Unity/Unreal: Telekinesis" onmouseover="toggleGif('Unity/Unreal: Telekinesis', 'gifs/unity_telekinesis.gif')"
+                            onmouseout="toggleGif('Unity/Unreal: Telekinesis', 'pictures/telekinetic_static.png')"
+                            src="pictures/telekinetic_static.png" alt="Unity/Unreal: Telekinesis" class="image">
                     </div>
                     <div class="text-content">
                         <h3 class="image-title">Unity/Unreal: Telekinesis</h3>
                         <p class="image-info">TOOLTIP WIP</p>
-                        <a href="https://mega.nz/file/oyxUCDpK#cfWOfMaLVz9x-r6jWLByDxW9mTC3fWt0h1e3Fwv3mwk"
-                            target="_blank">
-                            <button class="action-button">Click me</button>
-                        </a>
-                        <a href="https://mega.nz/file/Iywi1JrY#D8Ufz2e80aimh9rZvRu6WZXGu7XUqhOe84tgPeKd9D0"
-                            target="_blank">
-                            <button class="action-button">Click me</button>
-                        </a>
-                        <a href="build_telekinesis\telekinesis_build_page.html" target="_blank">
-                            <button class="action-button">Click me</button>
-                        </a>
+                        <button class="action-button" onclick="openLink('https://mega.nz/file/oyxUCDpK#cfWOfMaLVz9x-r6jWLByDxW9mTC3fWt0h1e3Fwv3mwk')">Click me</button>
+                        <button class="action-button" onclick="openLink('https://mega.nz/file/Iywi1JrY#D8Ufz2e80aimh9rZvRu6WZXGu7XUqhOe84tgPeKd9D0')">Click me</button>
+                        <button class="action-button" onclick="openLink('build_telekinesis\telekinesis_build_page.html')">Click me</button>
                     </div>
                 </div>
                 <div class="tooltip">TOOLTIP WIP</div>
@@ -461,13 +452,8 @@
                     <div class="text-content">
                         <h3 class="image-title">Python: AI Pathfinding</h3>
                         <p class="image-info">TOOLTIP WIP</p>
-                        <a href="https://mega.nz/file/RmRGyI4Q#cPHQfqQI46Mdpw-dMZQiv4qByFFi_MGpbq-co3jR5lI"
-                            target="_blank">
-                            <button class="action-button">Click me</button>
-                        </a>
-                        <a href="build_gameplay_mechanics\gameplay_mechanics_build_page.html" target="_blank">
-                            <button class="action-button">Click me</button>
-                        </a>
+                        <button class="action-button" onclick="openLink('https://mega.nz/file/RmRGyI4Q#cPHQfqQI46Mdpw-dMZQiv4qByFFi_MGpbq-co3jR5lI')">Click me</button>
+                        <button class="action-button" onclick="openLink('build_gameplay_mechanics\gameplay_mechanics_build_page.html')">Click me</button>
                     </div>
                 </div>
                 <div class="tooltip">TOOLTIP WIP</div>
@@ -478,7 +464,162 @@
 
         <hr class="rainbow-hr center-fade-hr">
         <h1 style="text-align: center;">3rd year</h1>
+        <div class="grid-container">
 
+            <!-- At AI-->
+            <div class="grid-item">
+                <div class="content-wrapper">
+                    <div class="image-container">
+                        <img id="At AI" onmouseover="toggleGif('At AI', 'gifs/pong.gif')"
+                            onmouseout="toggleGif('At AI', 'pictures/pong_static.png')" src="pictures/pong_static.png"
+                            alt="At AI" class="image">
+                    </div>
+                    <div class="text-content">
+                        <h3 class="image-title">C++: Pong</h3>
+                        <p class="image-info">TOOLTIP WIP</p>
+                        <a href="https://github.com/AlessandroBufalino3115/pong" target="_blank">
+                            <button class="action-button">Click me</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="tooltip">TOOLTIP WIP</div>
+            </div>
+
+            <!-- AT Mesh Dest-->
+            <div class="grid-item">
+                <div class="content-wrapper">
+                    <div class="image-container">
+                        <img id="AT Mesh Dest" onmouseover="toggleGif('AT Mesh Dest', 'gifs/pong.gif')"
+                            onmouseout="toggleGif('AT Mesh Dest', 'pictures/pong_static.png')" src="pictures/pong_static.png"
+                            alt="AT Mesh Dest" class="image">
+                    </div>
+                    <div class="text-content">
+                        <h3 class="image-title">C++: Pong</h3>
+                        <p class="image-info">TOOLTIP WIP</p>
+                        <a href="https://github.com/AlessandroBufalino3115/pong" target="_blank">
+                            <button class="action-button">Click me</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="tooltip">TOOLTIP WIP</div>
+            </div>
+
+            <!-- AT civ game -->
+            <div class="grid-item">
+                <div class="content-wrapper">
+                    <div class="image-container">
+                        <img id="AT civ game" onmouseover="toggleGif('AT civ game', 'gifs/pong.gif')"
+                            onmouseout="toggleGif('AT civ game', 'pictures/pong_static.png')" src="pictures/pong_static.png"
+                            alt="AT civ game" class="image">
+                    </div>
+                    <div class="text-content">
+                        <h3 class="image-title">C++: Pong</h3>
+                        <p class="image-info">TOOLTIP WIP</p>
+                        <a href="https://github.com/AlessandroBufalino3115/pong" target="_blank">
+                            <button class="action-button">Click me</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="tooltip">TOOLTIP WIP</div>
+            </div>
+
+            <!-- jam 1 -->
+            <div class="grid-item">
+                <div class="content-wrapper">
+                    <div class="image-container">
+                        <img id="jam 1" onmouseover="toggleGif('jam 1', 'gifs/pong.gif')"
+                            onmouseout="toggleGif('jam 1', 'pictures/pong_static.png')" src="pictures/pong_static.png"
+                            alt="jam 1" class="image">
+                    </div>
+                    <div class="text-content">
+                        <h3 class="image-title">C++: Pong</h3>
+                        <p class="image-info">TOOLTIP WIP</p>
+                        <a href="https://github.com/AlessandroBufalino3115/pong" target="_blank">
+                            <button class="action-button">Click me</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="tooltip">TOOLTIP WIP</div>
+            </div>
+
+            <!-- jam 2 -->
+            <div class="grid-item">
+                <div class="content-wrapper">
+                    <div class="image-container">
+                        <img id="jam 2" onmouseover="toggleGif('jam 2', 'gifs/pong.gif')"
+                            onmouseout="toggleGif('jam 2', 'pictures/pong_static.png')" src="pictures/pong_static.png"
+                            alt="jam 2" class="image">
+                    </div>
+                    <div class="text-content">
+                        <h3 class="image-title">C++: Pong</h3>
+                        <p class="image-info">TOOLTIP WIP</p>
+                        <a href="https://github.com/AlessandroBufalino3115/pong" target="_blank">
+                            <button class="action-button">Click me</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="tooltip">TOOLTIP WIP</div>
+            </div>
+
+            <!-- jam 3 -->
+            <div class="grid-item">
+                <div class="content-wrapper">
+                    <div class="image-container">
+                        <img id="jam 3" onmouseover="toggleGif('jam 3', 'gifs/pong.gif')"
+                            onmouseout="toggleGif('jam 3', 'pictures/pong_static.png')" src="pictures/pong_static.png"
+                            alt="jam 3" class="image">
+                    </div>
+                    <div class="text-content">
+                        <h3 class="image-title">C++: Pong</h3>
+                        <p class="image-info">TOOLTIP WIP</p>
+                        <a href="https://github.com/AlessandroBufalino3115/pong" target="_blank">
+                            <button class="action-button">Click me</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="tooltip">TOOLTIP WIP</div>
+            </div>
+
+            <!-- Main jam Game -->
+            <div class="grid-item">
+                <div class="content-wrapper">
+                    <div class="image-container">
+                        <img id="Main jam Game" onmouseover="toggleGif('Main jam Game', 'gifs/pong.gif')"
+                            onmouseout="toggleGif('Main jam Game', 'pictures/pong_static.png')" src="pictures/pong_static.png"
+                            alt="Main jam Game" class="image">
+                    </div>
+                    <div class="text-content">
+                        <h3 class="image-title">C++: Pong</h3>
+                        <p class="image-info">TOOLTIP WIP</p>
+                        <a href="https://github.com/AlessandroBufalino3115/pong" target="_blank">
+                            <button class="action-button">Click me</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="tooltip">TOOLTIP WIP</div>
+            </div>
+            
+
+            <!-- Diss -->
+            <div class="grid-item">
+                <div class="content-wrapper">
+                    <div class="image-container">
+                        <img id="Diss" onmouseover="toggleGif('Diss', 'gifs/pong.gif')"
+                            onmouseout="toggleGif('Diss', 'pictures/pong_static.png')" src="pictures/pong_static.png"
+                            alt="Diss" class="image">
+                    </div>
+                    <div class="text-content">
+                        <h3 class="image-title">C++: Pong</h3>
+                        <p class="image-info">TOOLTIP WIP</p>
+                        <a href="https://github.com/AlessandroBufalino3115/pong" target="_blank">
+                            <button class="action-button">Click me</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="tooltip">TOOLTIP WIP</div>
+            </div>
+
+        </div>
         <br><br>
 
         <hr class="rainbow-hr center-fade-hr">
@@ -543,6 +684,7 @@
     <script src="Javascript Scripts/Main.js"></script>
     <script src="Javascript Scripts/Algorithms/sketch.js"></script>
     <script src="Javascript Scripts/Carousel.js"></script>
+
 </body>
 
 </html>

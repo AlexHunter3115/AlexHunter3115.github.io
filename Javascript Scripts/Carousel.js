@@ -18,10 +18,10 @@ const image_options = [
   "https://images.unsplash.com/photo-1523800503107-5bc3ba2a6f81?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
 ];
 const buttonText_options = [
-  "Do something with art",
-  "Check out the iPhone",
-  "Read about reality",
-  "Start learning JS"
+  "Mesh Destruction",
+  "Dungeon Forge",
+  "Civ Game",
+  "GGJ 2023"
 ];
 var i = 0;
 const currentOptionText1 = document.getElementById("current-option-text1");

@@ -31,20 +31,6 @@ function isElementInViewport(el) {
     return rect.top <= halfWindowHeight && rect.bottom >= halfWindowHeight;
 }
 
-function changeBodyBackgroundColor() {
-    const sections = document.querySelectorAll('section');
-    const html = document.documentElement;
-
-    for (const section of sections) {
-        if (isElementInViewport(section)) {
-            const bgColor = getComputedStyle(section).backgroundColor;
-            html.style.backgroundColor = bgColor;
-            break;
-        }
-    }
-}
-
-
 function toggleGif(id, src) {
     const imageElement = document.getElementById(id);
     if (imageElement.src.includes(src)) {
@@ -85,6 +71,9 @@ function copyEmailToClipboard() {
     }, 3000);
 }
 
+function openLink(url) {
+    window.open(url, '_blank');
+  }
 
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.button-algo');
@@ -100,9 +89,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Call the function initially to set the background color
-document.addEventListener('DOMContentLoaded', changeBodyBackgroundColor);
 
-// Add the event listeners for scroll and resize events
-window.addEventListener('scroll', changeBodyBackgroundColor);
-window.addEventListener('resize', changeBodyBackgroundColor);
