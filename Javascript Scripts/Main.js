@@ -88,17 +88,21 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   
-    let featuredSection = document.querySelector("#Featured");
-    let algorithmsSection = document.querySelector("#Algorithms");
-    let sections = [featuredSection, algorithmsSection];
+  let featuredSection = document.querySelector("#Featured");
+  let workSection = document.querySelector("#Work");
+  let contactSection = document.querySelector("#Contact");
+  let algorithmsSection = document.querySelector("#Algorithms");
+  let sections = [ featuredSection, workSection, contactSection, algorithmsSection];
+
   
-    function isElementInViewport(el) {
-      let rect = el.getBoundingClientRect();
-      return (
-        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.bottom >= 0
-      );
-    }
+  function isElementInViewport(el) {
+    let rect = el.getBoundingClientRect();
+    let windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    return (
+      rect.top <= windowHeight &&
+      rect.bottom >= 0
+    );
+  }
   
     function revealSections() {
         for (let section of sections) {
