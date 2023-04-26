@@ -89,4 +89,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+window.addEventListener('scroll', function() {
+    var elements = document.querySelectorAll('.fade-in');
+    for (var i = 0; i < elements.length; i++) {
+      var position = elements[i].getBoundingClientRect().top;
+      if (position < window.innerHeight - 100) {
+        elements[i].classList.add('visible');
+      }
+    }
+  });
+
 

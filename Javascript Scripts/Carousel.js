@@ -1,8 +1,8 @@
 const text1_options = [
-  "Why art is so important",
-  "Why you shouldn't buy the new iPhone",
-  "Is life actually real?",
-  "How to learn JS in 2 months"
+  "Mesh Destruction",
+  "Dungeon Forge",
+  "Civ Game",
+  "GGJ 2023"
 ];
 const text2_options = [
   "69 min. read",
@@ -18,10 +18,10 @@ const image_options = [
   "https://images.unsplash.com/photo-1523800503107-5bc3ba2a6f81?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
 ];
 const buttonText_options = [
-  "Mesh Destruction",
-  "Dungeon Forge",
-  "Civ Game",
-  "GGJ 2023"
+  "Go to the mesh destruction card!!",
+  "Go to the dungeon forge card!!",
+  "Go to the Civilization card!!",
+  "Go to Root Wars' card!!"
 ];
 var i = 0;
 const currentOptionText1 = document.getElementById("current-option-text1");
@@ -94,25 +94,44 @@ function updateButtonAction(index) {
   switch (index) {
     case 0:
       todoButton.onclick = function () {
-        window.open('https://www.example.com', '_blank');
+        scrollToGridItem('Mesh-Dest-Highlight');
       };
       break;
     case 1:
       todoButton.onclick = function () {
-        window.location.href = 'path/to/your/download/file.ext';
+        scrollToGridItem('Dissertation-Highlight');
       };
       break;
     case 2:
       todoButton.onclick = function () {
-        alert('Performing another action');
+        scrollToGridItem('Civ-Highlight');
       };
       break;
     case 3:
       todoButton.onclick = function () {
-        alert('Reading more...');
+        scrollToGridItem('GGJ-Highlight');
       };
       break;
   }
 }
+
+
+
+function scrollToGridItem(itemId) {
+  const gridItem = document.getElementById(itemId);
+
+  if (gridItem) {
+      gridItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      // Add a class to highlight the grid item
+      gridItem.classList.add('highlight');
+
+      // Remove the class after a certain duration (e.g. 3 seconds)
+      setTimeout(() => {
+          gridItem.classList.remove('highlight');
+      }, 3000);
+  }
+}
+
 
 updateButtonAction(i);

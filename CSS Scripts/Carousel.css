@@ -18,7 +18,7 @@
 }
 #carousel-wrapper #menu {
   height: 380px;
-  width: 720px;
+  width: 50vw;
   overflow: hidden;
   font-weight: 700;
   line-height: 1;
@@ -153,7 +153,6 @@
 }
 
 
-/* Update the following animations */
 #carousel-wrapper.anim-next #image {
   animation: next-image 0.65s 0.085s;
 }
