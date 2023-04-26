@@ -117,3 +117,57 @@
 
 
 
+
+
+
+
+.hidden {
+  opacity: 0;
+  transform: translateX(-400px);
+  visibility: hidden;
+}
+
+/* Animation effect */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-400px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Applied when the section is revealed */
+.reveal {
+  animation: slideIn 4s;
+  visibility: visible;
+}
+
+
+
+
+.hidden-right {
+  opacity: 0;
+  transform: translateX(400px);
+  visibility: hidden;
+}
+
+/* Animation effect for sliding from the right */
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(400px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Applied when the section is revealed (sliding from the right) */
+.reveal-right {
+  animation: slideInRight 4s;
+  visibility: visible;
+}

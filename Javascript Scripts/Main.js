@@ -73,30 +73,62 @@ function copyEmailToClipboard() {
 
 function openLink(url) {
     window.open(url, '_blank');
-  }
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.button-algo');
-
+  
     buttons.forEach(button => {
-        button.addEventListener('click', function() {
-            const title = button.getAttribute('data-title');
-            const description = button.getAttribute('data-description');
-
-            document.getElementById('main-title').textContent = title;
-            document.getElementById('main-description').textContent = description;
-        });
+      button.addEventListener('click', function() {
+        const title = button.getAttribute('data-title');
+        const description = button.getAttribute('data-description');
+  
+        document.getElementById('main-title').textContent = title;
+        document.getElementById('main-description').textContent = description;
+      });
     });
-});
-
-window.addEventListener('scroll', function() {
-    var elements = document.querySelectorAll('.fade-in');
-    for (var i = 0; i < elements.length; i++) {
-      var position = elements[i].getBoundingClientRect().top;
-      if (position < window.innerHeight - 100) {
-        elements[i].classList.add('visible');
-      }
+  
+    let featuredSection = document.querySelector("#Featured");
+    let algorithmsSection = document.querySelector("#Algorithms");
+    let sections = [featuredSection, algorithmsSection];
+  
+    function isElementInViewport(el) {
+      let rect = el.getBoundingClientRect();
+      return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.bottom >= 0
+      );
     }
+  
+    function revealSections() {
+        for (let section of sections) {
+          if (isElementInViewport(section)) {
+            if (section.classList.contains("hidden")) {
+              section.classList.remove("hidden");
+              section.classList.add("reveal");
+            } else if (section.classList.contains("hidden-right")) {
+              section.classList.remove("hidden-right");
+              section.classList.add("reveal-right");
+            }
+          }
+        }
+      }
+  
+    // Reveal sections on initial load
+    revealSections();
+  
+    window.addEventListener('scroll', function() {
+      var elements = document.querySelectorAll('.fade-in');
+      for (var i = 0; i < elements.length; i++) {
+        var position = elements[i].getBoundingClientRect().top;
+        if (position < window.innerHeight - 100) {
+          elements[i].classList.add('visible');
+        }
+      }
+  
+      // Reveal sections when scrolling
+      revealSections();
+    });
   });
 
 
