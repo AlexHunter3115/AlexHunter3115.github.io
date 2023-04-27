@@ -1,122 +1,140 @@
-document.querySelectorAll('.scroll-link').forEach(link => {
-    link.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        const headerOffset = 0;
-        const elementPosition = target.offsetTop;
-        const offsetPosition = elementPosition - headerOffset;
+let ytPlayer;
 
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth"
-        });
-    });
-});
-
-function isElementInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    const halfWindowHeight = (window.innerHeight || document.documentElement.clientHeight) / 2;
-
-    // Check if the element is at the top of the viewport (first section)
-    if (rect.top >= 0 && rect.top <= halfWindowHeight) {
-        return true;
+function onYouTubeIframeAPIReady() {
+  ytPlayer = new YT.Player('video-iframe', {
+    events: {
+      'onReady': onPlayerReady,
     }
-
-    // Check if the element is at the bottom of the viewport (last section)
-    if (rect.bottom >= halfWindowHeight && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)) {
-        return true;
-    }
-
-    // Check if the element is in the middle of the viewport (other sections)
-    return rect.top <= halfWindowHeight && rect.bottom >= halfWindowHeight;
+  });
 }
 
+function onPlayerReady(event) {
+  checkVideoVisibility();
+}
+
+document.querySelectorAll('.scroll-link').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    const headerOffset = 0;
+    const elementPosition = target.offsetTop;
+    const offsetPosition = elementPosition - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  });
+});
+
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  const halfWindowHeight = (window.innerHeight || document.documentElement.clientHeight) / 2;
+  const topInView = rect.top >= 0 && rect.top <= halfWindowHeight;
+  const bottomInView = rect.bottom >= halfWindowHeight && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight);
+
+  return { topInView, bottomInView };
+}
+
+
+function isInViewportWhole(element) {
+  const rect = element.getBoundingClientRect();
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  
+  const topInView = rect.top >= 0 && rect.top < windowHeight;
+  const bottomInView = rect.bottom > 0 && rect.bottom <= windowHeight;
+
+  return { topInView, bottomInView };
+}
+
+
+
 function toggleGif(id, src) {
-    const imageElement = document.getElementById(id);
-    if (imageElement.src.includes(src)) {
-        const originalSrc = src.includes("gifs") ? src.replace("gifs", "pictures").replace(".gif", "_static.png") : src.replace("pictures", "gifs").replace("_static.png", ".gif");
-        imageElement.src = originalSrc;
-    } else {
-        imageElement.src = src;
-    }
+  const imageElement = document.getElementById(id);
+  if (imageElement.src.includes(src)) {
+    const originalSrc = src.includes("gifs") ? src.replace("gifs", "pictures").replace(".gif", "_static.png") : src.replace("pictures", "gifs").replace("_static.png", ".gif");
+    imageElement.src = originalSrc;
+  } else {
+    imageElement.src = src;
+  }
 }
 
 function scrollToGridItem(itemId) {
-    const gridItem = document.getElementById(itemId);
+  const gridItem = document.getElementById(itemId);
 
-    if (gridItem) {
-        gridItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  if (gridItem) {
+    gridItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-        // Add a class to highlight the grid item
-        gridItem.classList.add('highlight');
+    gridItem.classList.add('highlight');
 
-        // Remove the class after a certain duration (e.g. 3 seconds)
-        setTimeout(() => {
-            gridItem.classList.remove('highlight');
-        }, 3000);
-    }
+    setTimeout(() => {
+      gridItem.classList.remove('highlight');
+    }, 3000);
+  }
 }
 
 function copyEmailToClipboard() {
-    const emailToCopy = document.getElementById('emailToCopy');
-    const copiedEmail = document.getElementById('copiedEmail');
-    const customPopup = document.getElementById('customPopup');
-    emailToCopy.select();
-    document.execCommand('copy');
-    copiedEmail.textContent = emailToCopy.value;
-    customPopup.classList.add('show');
+  const emailToCopy = document.getElementById('emailToCopy');
+  const copiedEmail = document.getElementById('copiedEmail');
+  const customPopup = document.getElementById('customPopup');
+  emailToCopy.select();
+  document.execCommand('copy');
+  copiedEmail.textContent = emailToCopy.value;
+  customPopup.classList.add('show');
 
-    setTimeout(() => {
-        customPopup.classList.remove('show');
-    }, 3000);
+  setTimeout(() => {
+    customPopup.classList.remove('show');
+  }, 3000);
 }
 
 function openLink(url) {
-    window.open(url, '_blank');
+  window.open(url, '_blank');
+}
+
+function checkVideoVisibility() {
+  const video = document.querySelector("#video-iframe");
+  let visibility = isInViewportWhole(video);
+
+  if (visibility.topInView || visibility.bottomInView) {
+    ytPlayer.playVideo();
+  } else {
+    ytPlayer.pauseVideo();
+  }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    const buttons = document.querySelectorAll('.button-algo');
-  
-    buttons.forEach(button => {
-      button.addEventListener('click', function() {
-        const title = button.getAttribute('data-title');
-        const description = button.getAttribute('data-description');
-  
-        document.getElementById('main-title').textContent = title;
-        document.getElementById('main-description').textContent = description;
-      });
+  const buttons = document.querySelectorAll('.button-algo');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', function() {
+      const title = button.getAttribute('data-title');
+      const description = button.getAttribute('data-description');
+
+      document.getElementById('main-title').textContent = title;
+      document.getElementById('main-description').textContent = description;
     });
-  
+  });
+
   let featuredSection = document.querySelector("#Featured");
   let workSection = document.querySelector("#Work");
   let contactSection = document.querySelector("#Contact");
   let algorithmsSection = document.querySelector("#Algorithms");
-  let sections = [ featuredSection, workSection, contactSection, algorithmsSection];
+  let sections = [featuredSection, workSection, contactSection, algorithmsSection];
 
-  
-  function isElementInViewport(el) {
-    let rect = el.getBoundingClientRect();
-    let windowHeight = window.innerHeight || document.documentElement.clientHeight;
-    return (
-      rect.top <= windowHeight &&
-      rect.bottom >= 0
-    );
-  }
-  
-    function revealSections() {
-        for (let section of sections) {
-          if (isElementInViewport(section)) {
-            if (section.classList.contains("hidden")) {
-              section.classList.remove("hidden");
-              section.classList.add("reveal");
-            } else if (section.classList.contains("hidden-right")) {
-              section.classList.remove("hidden-right");
-              section.classList.add("reveal-right");
-            }
+  function revealSections() {
+    for (let section of sections) {
+      if (isInViewport(section).topInView || isInViewport(section).bottomInView) {
+        if (section.classList.contains("hidden")) {
+          section.classList.remove("hidden");
+          section.classList.add("reveal");
+        }
+          else if (section.classList.contains("hidden-right")) {
+            section.classList.remove("hidden-right");
+            section.classList.add("reveal-right");
           }
         }
       }
+    }
   
     // Reveal sections on initial load
     revealSections();
@@ -132,7 +150,17 @@ document.addEventListener('DOMContentLoaded', function() {
   
       // Reveal sections when scrolling
       revealSections();
+  
+      // Check video visibility
+      checkVideoVisibility();
     });
+  
+    // Check video visibility on initial load
+    checkVideoVisibility();
+  
+    // Load YouTube API
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   });
-
-

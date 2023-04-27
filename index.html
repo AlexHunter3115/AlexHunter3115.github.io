@@ -68,10 +68,9 @@
             background-color: #ccc;
             scale: 1.2;
             border-radius: 5px;
-
         }
-
-        video {
+        
+        .video-iframe {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -80,7 +79,16 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
-
+        
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+        
         .video-text {
             color: white;
             font-size: 36px;
@@ -92,7 +100,7 @@
             background-color: rgba(0, 0, 0, 0.2);
             padding-right: 5px;
             border-radius: 10px;
-
+            z-index: 20;
         }
 
         .b-main-text {
@@ -118,14 +126,13 @@
         </nav>
     </header>
 
-    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br>
     <div id="customPopup" class="popup">Copied email: <span id="copiedEmail"></span></div>
 
     <section id="Start">
         <div class="video-container">
-            <video autoplay muted loop>
-                <source src="video\final montage v1.mp4" type="video/mp4">
-            </video>
+            <iframe id="video-iframe" class="video-iframe" src="https://www.youtube.com/embed/Uai4vKiphKI?autoplay=1&mute=1&controls=0&loop=1&playlist=Uai4vKiphKI&enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <div class="overlay"></div>
             <p class="video-text"> <b class="b-main-text">AB</b> CODING PORTFOLIO</p>
         </div>
         <br><br><br><br><br>
@@ -142,18 +149,6 @@
             if you'd like to collaborate or learn more about me.</p>
 
 
-        <!-- <h2>Home</h2>
-        <h1>Welcome to My Portfolio</h1>
-        <p>Hi, I'm Alex, a Games Technology graduate from UWE. I am passionate about game development and have extensive
-            experience working with Unity. My main focus is on programming systems to implement in games, with a strong
-            emphasis on Procedural Content Generation (PCG) and Artificial Intelligence (AI).</p>
-        <p>During my time at UWE, I have worked on various game projects, honing my skills in Unity, C#, and game design
-            principles. I'm excited to bring my expertise to the industry and contribute to the development of
-            innovative and engaging gaming experiences. Check out my featured work, and don't hesitate to get in touch
-            if you'd like to collaborate or learn more about me.</p>
-        <button onclick="scrollToGridItem('grid-item-1')">Scroll to Grid Item 1</button> -->
-        <!-- I wnat the vid in the back ground with name like the nromal -->
-
     </section>
 
     <section id="Featured" class="hidden-right">
@@ -169,7 +164,7 @@
                 <button id="previous-option"></button>
                 <button id="next-option"></button>
                 <div id="button-container">
-                    <button id="todo-button">Do something</button>
+                    <button id="todo-button"></button>
                 </div>
             </div>
             <div id="image"></div>
@@ -479,14 +474,18 @@
         <hr class="rainbow-hr center-fade-hr">
         <h1 class="divider-h1">3rd year</h1>
         <div class="grid-container">
+            
 
+            <!-- 
+                <img id="At AI" onmouseover="toggleGif('At AI', 'gifs/pong.gif')"
+                onmouseout="toggleGif('At AI', 'pictures/pong_static.png')" src="pictures/pong_static.png"
+                alt="At AI" class="image">
+            -->
             <!-- At AI-->
             <div class="grid-item">
                 <div class="content-wrapper">
                     <div class="image-container">
-                        <img id="At AI" onmouseover="toggleGif('At AI', 'gifs/pong.gif')"
-                            onmouseout="toggleGif('At AI', 'pictures/pong_static.png')" src="pictures/pong_static.png"
-                            alt="At AI" class="image">
+                        
                     </div>
                     <div class="text-content">
                         <h3 class="image-title">Unity: AI Squad</h3>
@@ -508,9 +507,7 @@
             <div class="grid-item" id="Mesh-Dest-Highlight">
                 <div class="content-wrapper">
                     <div class="image-container">
-                        <img id="AT Mesh Dest" onmouseover="toggleGif('AT Mesh Dest', 'gifs/pong.gif')"
-                            onmouseout="toggleGif('AT Mesh Dest', 'pictures/pong_static.png')"
-                            src="pictures/pong_static.png" alt="AT Mesh Dest" class="image">
+                        
                     </div>
                     <div class="text-content">
                         <h3 class="image-title">Unity: Mesh Destruction</h3>
@@ -533,9 +530,7 @@
             <div class="grid-item" id="Civ-Highlight">
                 <div class="content-wrapper">
                     <div class="image-container">
-                        <img id="AT civ game" onmouseover="toggleGif('AT civ game', 'gifs/pong.gif')"
-                            onmouseout="toggleGif('AT civ game', 'pictures/pong_static.png')"
-                            src="pictures/pong_static.png" alt="AT civ game" class="image">
+                 
                     </div>
                     <div class="text-content">
                         <h3 class="image-title">Unity: Civilization Simulation</h3>
@@ -558,9 +553,7 @@
             <div class="grid-item">
                 <div class="content-wrapper">
                     <div class="image-container">
-                        <img id="jam 1" onmouseover="toggleGif('jam 1', 'gifs/pong.gif')"
-                            onmouseout="toggleGif('jam 1', 'pictures/pong_static.png')" src="pictures/pong_static.png"
-                            alt="jam 1" class="image">
+                        
                     </div>
                     <div class="text-content">
                         <h3 class="image-title">Unity: Pork Must Die 2600</h3>
@@ -579,9 +572,7 @@
             <div class="grid-item">
                 <div class="content-wrapper">
                     <div class="image-container">
-                        <img id="jam 2" onmouseover="toggleGif('jam 2', 'gifs/pong.gif')"
-                            onmouseout="toggleGif('jam 2', 'pictures/pong_static.png')" src="pictures/pong_static.png"
-                            alt="jam 2" class="image">
+                      
                     </div>
                     <div class="text-content">
                         <h3 class="image-title">Unity: The Island</h3>
@@ -600,9 +591,7 @@
             <div class="grid-item" id="GGJ-Highlight">
                 <div class="content-wrapper">
                     <div class="image-container">
-                        <img id="jam 3" onmouseover="toggleGif('jam 3', 'gifs/pong.gif')"
-                            onmouseout="toggleGif('jam 3', 'pictures/pong_static.png')" src="pictures/pong_static.png"
-                            alt="jam 3" class="image">
+                        
                     </div>
                     <div class="text-content">
                         <h3 class="image-title">Unity: Root Wars GGJ 2023</h3>
@@ -622,9 +611,7 @@
             <div class="grid-item">
                 <div class="content-wrapper">
                     <div class="image-container">
-                        <img id="Main jam Game" onmouseover="toggleGif('Main jam Game', 'gifs/pong.gif')"
-                            onmouseout="toggleGif('Main jam Game', 'pictures/pong_static.png')"
-                            src="pictures/pong_static.png" alt="Main jam Game" class="image">
+                       
                     </div>
                     <div class="text-content">
                         <h3 class="image-title">Unity: Burglar Battle</h3>
@@ -641,9 +628,7 @@
             <div class="grid-item" id="Dissertation-Highlight">
                 <div class="content-wrapper">
                     <div class="image-container">
-                        <img id="Diss" onmouseover="toggleGif('Diss', 'gifs/pong.gif')"
-                            onmouseout="toggleGif('Diss', 'pictures/pong_static.png')" src="pictures/pong_static.png"
-                            alt="Diss" class="image">
+                     
                     </div>
                     <div class="text-content">
                         <h3 class="image-title">Unity: Dungeon Forge</h3>
@@ -661,7 +646,6 @@
                 </div>
                 <div class="tooltip">TOOLTIP WIP</div>
             </div>
-
         </div>
         <br><br>
 
@@ -733,6 +717,7 @@
     <script src="Javascript Scripts/Main.js"></script>
     <script src="Javascript Scripts/Algorithms/sketch.js"></script>
     <script src="Javascript Scripts/Carousel.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
 
 </body>
 

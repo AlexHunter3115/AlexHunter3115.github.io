@@ -5,10 +5,10 @@ const text1_options = [
   "GGJ 2023"
 ];
 const text2_options = [
-  "69 min. read",
-  "7 min. read",
-  "8 min. read",
-  "87,658.1277 min. read"
+  "Work in progress",
+  "Work in progress",
+  "Work in progress",
+  "Work in progress"
 ];
 const color_options = ["#EBB9D2", "#FE9968", "#7FE0EB", "#6CE5B1"];
 const image_options = [

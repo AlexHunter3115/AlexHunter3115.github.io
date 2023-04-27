@@ -24,6 +24,19 @@ function setup() {
 function draw() {
   background(220);
 
+
+  if ( window.isFrozen )
+  {
+    background(200); // Grey background
+        textAlign(CENTER, CENTER);
+        textSize(48);
+        fill(255, 0, 0); // Red text
+        text('Frozen', width / 2, height / 2);
+        console.log('Frozen');
+  }
+  else
+  {
+
   switch (currentState) {
     case State.CA:
     {
@@ -54,7 +67,7 @@ function draw() {
       {
         
         console.log('No control elements for current state');
-      }
+      }}
   }
 
   frameCounter++;
