@@ -18,7 +18,7 @@
 }
 #carousel-wrapper #menu {
   height: 380px;
-  width: 50vw;
+  width: 40vw;    /* this is for the background */
   overflow: hidden;
   font-weight: 700;
   line-height: 1;
@@ -30,6 +30,7 @@
   transition: all 0.6s ease-in-out;
   border-radius: 5px;
 }
+
 #carousel-wrapper #menu #current-option {
   position: relative;
   width: 100%;
@@ -42,10 +43,11 @@
   overflow: hidden;
 }
 #carousel-wrapper #menu #current-option #current-option-text1 {
+  
   font-size: 1.6rem;
   line-height: 3rem;
-  width: 220px;
-  height: 200px;
+  width: 220px;    /* this is for the main text */
+  height: 240px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,12 +77,13 @@
 }
 #carousel-wrapper #menu #current-option #current-option-text2 {
   font-size: 0.8rem;
-  width: 220px;
+  width: 270px;
   height: 40px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
+  text-align: center;
 }
 #carousel-wrapper #menu #current-option #current-option-text2::before {
   content: attr(data-next-text);
@@ -104,6 +107,7 @@
   align-items: flex-start;
   justify-content: flex-end;
 }
+
 #carousel-wrapper #menu #previous-option {
   width: 1.5rem;
   height: 1.5rem;
@@ -115,6 +119,7 @@
   position: absolute;
   transform: translate(310px, 50px);
 }
+
 #carousel-wrapper #menu #next-option {
   width: 1.5rem;
   height: 1.5rem;
@@ -126,6 +131,7 @@
   position: absolute;
   transform: translate(310px, -50px) rotate(180deg);
 }
+
 #carousel-wrapper #image {
   height: 240px;
   width: 240px;
@@ -250,6 +256,7 @@
     transform: translate(310px, -47px) rotate(180deg);
   }
 }
+
 @keyframes previous-image {
   0% {
     transform: translate(140px, 0) scale(1);
@@ -264,6 +271,7 @@
     opacity: 1;
   }
 }
+
 @keyframes next-text {
   50%, 55% {
     transform: translate(0%, -390px);
@@ -272,16 +280,19 @@
     transform: translate(0%, -380px);
   }
 }
+
 @keyframes next-top-arrow {
   50% {
     transform: translate(310px, 47px);
   }
 }
+
 @keyframes next-bottom-arrow {
   50% {
     transform: translate(310px, -53px) rotate(180deg);
   }
 }
+
 @keyframes next-image {
   0% {
     transform: translate(140px, 0) scale(1);

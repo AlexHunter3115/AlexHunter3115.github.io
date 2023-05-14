@@ -32,7 +32,7 @@ function draw() {
         textSize(48);
         fill(255, 0, 0); // Red text
         text('Frozen', width / 2, height / 2);
-        console.log('Frozen');
+        //console.log('Frozen');
   }
   else
   {
@@ -66,7 +66,7 @@ function draw() {
     default:
       {
         
-        console.log('No control elements for current state');
+        //console.log('No control elements for current state');
       }}
   }
 
@@ -114,7 +114,7 @@ function updateControlElements() {
 
     default:
       {
-        console.log('No control elements for current state');
+        //console.log('No control elements for current state');
       }
   }
 }

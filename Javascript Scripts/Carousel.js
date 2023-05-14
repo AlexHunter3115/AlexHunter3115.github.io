@@ -2,27 +2,31 @@ const text1_options = [
   "Mesh Destruction",
   "Dungeon Forge",
   "Civ Game",
-  "GGJ 2023"
+  "Global Game Jam 2023"
 ];
+
 const text2_options = [
-  "Work in progress",
-  "Work in progress",
-  "Work in progress",
-  "Work in progress"
+  "This project showcases a potential way to create a destructible wall system in the Unity game engine, directed towards FPS games. The wall is dynamic with many public variables that change the way the walls react depending on the designer's needs for the level in which the wall is implemented.\n\n\nThe algorithms used are:\n\n• Marching Square: To draw the wall mesh\n• Flood Fill: To find floating sections to spawn as debris\n• Voronoi: in case the designer wants the debris to split into more pieces\n• Convex Hull Algorithm: To create objects from the points signaled by the Flood Fill algorithm.",
+  "Dungeon Forge is an asset pack for the Unity game engine that anyone can download. It aids in the creation of procedurally generated dungeons for games in 2D or 3D using a built-in editor and many options to choose from.\n\nThe list of algorithms used in this project are the following:\n\nMarching Square -- A* pathfinding -- Bezier Curves -- Dijkstra -- Poisson -- Voronoi -- Delaunay Triangulation -- Prim's Algorithm -- Perlin Noise and Worms -- Cellular Automata -- BSP -- Flood Fill -- Diamond Square -- Wave Function Collapse -- L-System -- Differential limitation aggregation -- Random Walk",
+  "This project showcases a simulation of a civilization running in the Unity game engine.\nThe player places the 'council' (the starting building) and from there, every night the game will make a decision whether to build new buildings or not, and which type of building to build, different buidlings gather different resources. This is all dictated by a formula which prioritizes specific resourcesneeded to grow the civilization.\n\nThis project also consists of a graphing system that the user can use to check correlation between different data points, such as food consumption and entities currently in the world.",
+  "A team of 3 people created this game with the theme 'Roots'."
 ];
-const color_options = ["#EBB9D2", "#FE9968", "#7FE0EB", "#6CE5B1"];
+
+const color_options = ["#1F1E10", "#212341", "#1F1E10", "#212341"];
 const image_options = [
-  "https://images.unsplash.com/photo-1524721696987-b9527df9e512?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1190&q=80",
-  "https://images.unsplash.com/photo-1556656793-08538906a9f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
-  "https://images.unsplash.com/photo-1506073828772-2f85239b6d2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80",
-  "https://images.unsplash.com/photo-1523800503107-5bc3ba2a6f81?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+  "pictures/mesh_dest.PNG",
+  "pictures/dungeonforge.PNG",
+  "pictures/civ_game.PNG",
+  "pictures/rootwars.PNG"
 ];
+
 const buttonText_options = [
-  "Go to the mesh destruction card!!",
-  "Go to the dungeon forge card!!",
+  "Go to the Mesh Destruction card!!",
+  "Go to the Dungeon Forge card!!",
   "Go to the Civilization card!!",
   "Go to Root Wars' card!!"
 ];
+
 var i = 0;
 const currentOptionText1 = document.getElementById("current-option-text1");
 const currentOptionText2 = document.getElementById("current-option-text2");
@@ -90,26 +94,27 @@ optionPrevious.onclick = function () {
 };
 
 
-function updateButtonAction(index) {
-  switch (index) {
+function updateButtonAction() {
+
+  switch (i) {
     case 0:
       todoButton.onclick = function () {
-        scrollToGridItem('Mesh-Dest-Highlight');
+        scrollToGridItem();
       };
       break;
     case 1:
       todoButton.onclick = function () {
-        scrollToGridItem('Dissertation-Highlight');
+        scrollToGridItem();
       };
       break;
     case 2:
       todoButton.onclick = function () {
-        scrollToGridItem('Civ-Highlight');
+        scrollToGridItem();
       };
       break;
     case 3:
       todoButton.onclick = function () {
-        scrollToGridItem('GGJ-Highlight');
+        scrollToGridItem();
       };
       break;
   }
@@ -117,7 +122,32 @@ function updateButtonAction(index) {
 
 
 
-function scrollToGridItem(itemId) {
+function scrollToGridItem() {
+  
+  itemId = "Mesh-Dest-Highlight";
+  switch (i) {
+    case 0:
+      
+        itemId ='Mesh-Dest-Highlight';
+      
+      break;
+    case 1:
+      
+        itemId ='Dissertation-Highlight';
+      
+      break;
+    case 2:
+      
+        itemId ='Civ-Highlight';
+      
+      break;
+    case 3:
+     
+        itemId ='GGJ-Highlight';
+      
+      break;
+  }
+
   const gridItem = document.getElementById(itemId);
 
   if (gridItem) {
@@ -134,4 +164,4 @@ function scrollToGridItem(itemId) {
 }
 
 
-updateButtonAction(i);
+updateButtonAction();

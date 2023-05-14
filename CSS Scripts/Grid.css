@@ -11,12 +11,31 @@
     border: 1px solid #6c6a75;
     font-family: Arial, sans-serif;
     width: 400px;
-    height: 350px;
+    height: 360px;
     display: flex;
     flex-direction: column;
     position: relative;
     border-radius: 5px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.bigger-grid-item {
+    background-color: #54525c;
+    padding: 5px;
+    border: 1px solid #6c6a75;
+    font-family: Arial, sans-serif;
+    width: 400px;
+    height: 405px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bigger-grid-item:hover  {
+    transform: scale(0.99);
 }
 
 .content-wrapper {
