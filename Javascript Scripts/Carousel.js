@@ -14,10 +14,10 @@ const text2_options = [
 
 const color_options = ["#1F1E10", "#212341", "#1F1E10", "#212341"];
 const image_options = [
-  "pictures/mesh_dest.PNG",
-  "pictures/dungeonforge.PNG",
-  "pictures/civ_game.PNG",
-  "pictures/rootwars.PNG"
+  "pictures/mesh_dest.png",
+  "pictures/dungeonforge.png",
+  "pictures/civ_game.png",
+  "pictures/rootwars.png"
 ];
 
 const buttonText_options = [
