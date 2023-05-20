@@ -128,7 +128,7 @@
     </header>
 
     <br><br><br><br><br><br><br><br><br><br><br>
-    <div id="customPopup" class="popup">Copied email: <span id="copiedEmail"></span></div>
+    <div id="customPopup" class="popup">Copied Element Successfully <span id="copiedEmail"></span></div>
 
     <section id="Start">
         <div class="video-container">
@@ -568,7 +568,7 @@
             <div class="grid-item">
                 <div class="content-wrapper">
                     <div class="image-container">
-                        <img src="pictures\houseHassecrets.png" style="width:100%">
+                        <img src="pictures\houseHasSecrets.png" style="width:100%">
                     </div>
                     <div class="text-content">
                         <h3 class="image-title">Unity: The Island</h3>
@@ -646,7 +646,57 @@
         <br><br>
 
         <hr class="rainbow-hr center-fade-hr">
-        <h1 class="divider-h1">Personal Projects</h1>
+        <h1 class="divider-h1">Personal Projects (WIP)</h1>
+        <div class="grid-container">
+            <!-- At AI-->
+            <div class="grid-item">
+                <div class="content-wrapper">
+                    
+                    <div class="text-content">
+                        <h3 class="image-title">This Website!!</h3>
+                        <p class="image-info"></p>
+                        
+                    </div>
+                </div>
+                <div class="tooltip">TOOLTIP WIP</div>
+            </div>
+
+            <div class="grid-item">
+                <div class="content-wrapper">
+                   
+                    <div class="text-content">
+                        <h3 class="image-title">C++ Playground</h3>
+                        <p class="image-info"></p>
+                       
+                    </div>
+                </div>
+                <div class="tooltip">TOOLTIP WIP</div>
+            </div>
+
+            <div class="grid-item">
+                <div class="content-wrapper">
+                   
+                    <div class="text-content">
+                        <h3 class="image-title">Rust Playground</h3>
+                        <p class="image-info"></p>
+                        
+                    </div>
+                </div>
+                <div class="tooltip">TOOLTIP WIP</div>
+            </div>
+
+            <div class="grid-item">
+                <div class="content-wrapper">
+                   
+                    <div class="text-content">
+                        <h3 class="image-title">Unity Playground</h3>
+                        <p class="image-info"></p>
+                        
+                    </div>
+                </div>
+                <div class="tooltip">TOOLTIP WIP</div>
+            </div>
+        </div>
 
     </section>
     <br>
@@ -656,13 +706,17 @@
         <b class="rainbow-hr anim"></b>
         <div class="button-container-contact">
             <div class="button-group-contact">
-                <button class="button-49">CV Download</button>
-                <button class="button-49" onclick="copyEmailToClipboard()">Email</button>
+                <a href="files/cv.pdf" download>
+                    <button class="button-49">CV Download</button>
+                </a>
+                <button class="button-49" onclick="copyToClipboard('alessandro.bufalino3115@gmail.com')">Email</button>
                 <button class="button-49">LinkedIn</button>
             </div>
             <div class="button-group-contact">
-                <button class="button-49">GitHub</button>
-                <button class="button-49">Discord</button>
+                <a href="https://github.com/AlessandroBufalino3115" target="_blank">
+                    <button class="button-49">Main GitHub</button>
+                </a>
+                <button class="button-49" onclick="copyToClipboard('Alexhalo3115#4505')">Discord</button>
 
                 <a href="youtube.com" target="_blank">
                     <button class="button-49">Other</button>
@@ -671,7 +725,7 @@
             </div>
         </div>
         <input type="text" value="example@example.com" id="emailToCopy" style="display:none">
-        <div id="customPopup" class="popup">Copied email: <span id="copiedEmail"></span></div>
+        <div id="customPopup" class="popup">Copied: <span id="copiedText"></span></div>
     </section>
 
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

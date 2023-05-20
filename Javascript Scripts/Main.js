@@ -73,19 +73,26 @@ function scrollToGridItem(itemId) {
   }
 }
 
-function copyEmailToClipboard() {
-  const emailToCopy = document.getElementById('emailToCopy');
-  const copiedEmail = document.getElementById('copiedEmail');
+function copyToClipboard(text) {
+  const copiedText = document.getElementById('copiedText');
   const customPopup = document.getElementById('customPopup');
-  emailToCopy.select();
-  document.execCommand('copy');
-  copiedEmail.textContent = emailToCopy.value;
-  customPopup.classList.add('show');
 
-  setTimeout(() => {
-    customPopup.classList.remove('show');
-  }, 3000);
+  // Use the Clipboard API
+  navigator.clipboard.writeText(text).then(function() {
+    console.log('Copying to clipboard was successful!');
+    copiedText.textContent = text;
+    customPopup.classList.add('show');
+
+    setTimeout(() => {
+      customPopup.classList.remove('show');
+    }, 3000);
+  }, function(err) {
+    console.error('Could not copy text: ', err);
+  });
 }
+
+
+
 
 function openLink(url) {
   window.open(url, '_blank');
