@@ -103,7 +103,6 @@ function setup() {
   let canvas = createCanvas(canvasWidth, canvasHeight);
   canvas.parent("p5js-canvas");
 
-  updateControlElements();
 }
 
 function windowResized() {
