@@ -900,7 +900,9 @@
           >
             Email
           </button>
-          <button class="button-49">LinkedIn</button>
+          <a href="https://www.linkedin.com/in/alessandro-bufalino-3732b5273/" target="_blank">
+            <button class="button-49">LinkedIn</button>
+          </a>
         </div>
         <div class="button-group-contact">
           <a href="https://github.com/AlessandroBufalino3115" target="_blank">
@@ -950,6 +952,18 @@
         </div>
         <div class="right-section">
           <ul class="algorithm-list">
+
+            <button
+              class="button-algo"
+              style="--clr: #39ff14"
+              data-title="Main Title 4"
+              data-description="Description 4"
+              onclick="switchAlgoState(0)"
+            >
+              <span>Turn Off p5.Js</span><i></i>
+            </button>
+
+
             <button
               class="button-algo"
               style="--clr: #39ff14"
@@ -965,28 +979,20 @@
               style="--clr: #ff44cc"
               data-title="Main Title 2"
               data-description="Description 2"
-              onclick="switchAlgoState(2)"
+              onclick="switchAlgoState(3)"
             >
-              <span>Test1</span><i></i>
+              <span>Test Input</span><i></i>
             </button>
             <button
               class="button-algo"
               style="--clr: #0ff0fc"
               data-title="Main Title 3"
               data-description="Description 3"
-              onclick="switchAlgoState(3)"
+              onclick="switchAlgoState(2)"
             >
-              <span>Test2</span><i></i>
+              <span>Perlin (WIP)</span><i></i>
             </button>
-            <button
-              class="button-algo"
-              style="--clr: #39ff14"
-              data-title="Main Title 4"
-              data-description="Description 4"
-              onclick="switchAlgoState(0)"
-            >
-              <span>Test3</span><i></i>
-            </button>
+            
           </ul>
         </div>
       </div>
@@ -994,9 +1000,10 @@
 
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <script src="Javascript Scripts/Main.js"></script>
-    <script src="Javascript Scripts/Algorithms/sketch.js"></script>
-    <script src="Javascript Scripts/Carousel.js"></script>
+  
     <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="Javascript Scripts/Algorithms/sketch.js"></script>
+    <script src="Javascript Scripts/Main.js"></script>
+    <script src="Javascript Scripts/Carousel.js"></script>
   </body>
 </html>
