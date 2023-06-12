@@ -62,7 +62,7 @@
   font-weight: 400;
   color: rgb(124, 124, 124);
   font-size: 3.5em;
-  margin: 10px;
+  margin: 8px;
 }
 
 
@@ -107,7 +107,7 @@
 
 .divider-header {
   font-size: 4em;
-  margin-top: 5em;
+  margin-top: 3em;
   text-indent: 1em;
   margin-bottom: -0.25em;
   font-family: Roboto;

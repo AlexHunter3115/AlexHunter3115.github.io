@@ -218,10 +218,12 @@ class TestInputs extends BaseAlgorithmStateClass {
   keyPressedEvent() {
     if (key === 'w' || key === 'W') {
       // If the 'W' key is pressed, the background color is set to green
+      console.log("W was pressed");
       this.p5Ref.background(0, 255, 0);
     } else if (key === 's' || key === 'S') {
       // If the 'S' key is pressed, the background color is set to red
       this.p5Ref.background(255, 0, 0);
+      console.log("S was pressed");
     }
   }
 
@@ -379,6 +381,9 @@ function createLabeledButton(labelText, callback) {
 }
 
 function switchAlgoState(index) {
+
+  frameRate(60);
+
   allStatesArr[currentAlgoIndex].Deselect();
   
   currentAlgoIndex = index;
