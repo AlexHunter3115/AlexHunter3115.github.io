@@ -27,10 +27,10 @@ function setup() {
   observer.observe(algorithmsSection);
 }
 
-function windowResized() {
-  let canvasWidth = windowWidth / 2;
-  resizeCanvas(canvasWidth, 800);
-}
+// function windowResized() {
+//   let canvasWidth = windowWidth / 2;
+//   resizeCanvas(canvasWidth, 800);
+// }
 
 function UpdateCall() {
   if (isAlgorithmsSectionVisible) {
@@ -124,7 +124,7 @@ function switchAlgoState(index) {
   allStatesArr[currentAlgoIndex].Deselect();
 
   currentAlgoIndex = index;
-
+  
   document.getElementById("control-container").innerHTML = "";
   allStatesArr[currentAlgoIndex].UpdateElements();
 

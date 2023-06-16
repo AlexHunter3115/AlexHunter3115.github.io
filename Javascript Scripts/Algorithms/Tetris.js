@@ -1,3 +1,8 @@
+//rotation
+
+//score databse name
+//deletion on full thing
+
 class Tile {
   oneLineCoord = 0;
 
@@ -14,6 +19,8 @@ class Tetris extends BaseAlgorithmStateClass {
 
   tiles = [];
 
+  points = 0;
+
   numberOfQuadrantsWidth = 15;
   numberOfRectsHeight = 30;
 
@@ -22,6 +29,7 @@ class Tetris extends BaseAlgorithmStateClass {
 
   totNumOfQuadrants = 0;
 
+  centerOfShape = [];
   arrayForCurrentShape = [];
   randomColor = [255, 255, 255];
 
@@ -69,6 +77,8 @@ class Tetris extends BaseAlgorithmStateClass {
       for (let index = 0; index < this.arrayForCurrentShape.length; index++) {
         this.arrayForCurrentShape[index].y =
           this.arrayForCurrentShape[index].y + 1;
+
+        this.centerOfShape[1]++;
       }
     } else {
       let lose = false;
@@ -77,12 +87,15 @@ class Tetris extends BaseAlgorithmStateClass {
         let arrayIndex =
           this.arrayForCurrentShape[index].x +
           this.arrayForCurrentShape[index].y * this.numberOfQuadrantsWidth;
+
         this.tiles[arrayIndex].taken = true;
         this.tiles[arrayIndex].color = this.randomColor;
 
+        this.CheckLine();
+
         if (
           this.arrayForCurrentShape[index].y * this.numberOfQuadrantsWidth <
-          height / 6
+          height / 8
         ) {
           console.log("should lose");
           this.gameStopped = true;
@@ -98,6 +111,7 @@ class Tetris extends BaseAlgorithmStateClass {
   DrawCall() {
     background(200);
     fill(100);
+    stroke(0);
     rect(0, 0, width / 4, height);
     rect(width - width / 4, 0, width / 4, height);
 
@@ -116,6 +130,8 @@ class Tetris extends BaseAlgorithmStateClass {
 
       if (tile.taken) {
         stroke(0);
+      } else {
+        noStroke();
       }
 
       rect(
@@ -143,6 +159,41 @@ class Tetris extends BaseAlgorithmStateClass {
 
     fill(255, 0, 0);
     line(0, height / 6, width, height / 6);
+  }
+
+  CheckLine() {
+    let deleteLine = true;
+
+    let widthCount = 0;
+    let heightCount = 0;
+
+    for (let index = 0; index < this.totNumOfQuadrants; index++) {
+
+      let tile = this.tiles[index];
+
+      if (widthCount >= this.numberOfQuadrantsWidth)
+      {
+
+        if (deleteLine)
+        {
+          for (let x = heightCount * this.numberOfQuadrantsWidth; x < heightCount * this.numberOfQuadrantsWidth + this.numberOfQuadrantsWidth; x++) {
+            this.tiles[x].taken = false;
+            this.tiles[x].color = [255,255,255];
+          }
+        }
+
+        deleteLine = true;
+        widthCount = 0;
+        heightCount++;
+      }
+
+      widthCount++;
+
+      if (tile.taken === false )
+      {
+        deleteLine = false;
+      }
+    }
   }
 
   keyPressedEvent() {
@@ -180,7 +231,8 @@ class Tetris extends BaseAlgorithmStateClass {
       }
     }
 
-    if (key === "a" || key === "A") {
+    if (key === "s" || key === "S") {
+      //this.RotateShape();
     } else if (key === "d" || key === "D") {
     }
   }
@@ -210,6 +262,8 @@ class Tetris extends BaseAlgorithmStateClass {
 
           let vector5 = createVector(7, -2);
 
+          this.centerOfShape = [7, -1];
+
           this.arrayForCurrentShape.push(vector1);
           this.arrayForCurrentShape.push(vector2);
           this.arrayForCurrentShape.push(vector3);
@@ -226,6 +280,8 @@ class Tetris extends BaseAlgorithmStateClass {
           let vector3 = createVector(8, 0);
           let vector4 = createVector(7, 0);
 
+          this.centerOfShape = [7, 0];
+
           this.arrayForCurrentShape.push(vector4);
           this.arrayForCurrentShape.push(vector2);
           this.arrayForCurrentShape.push(vector3);
@@ -241,6 +297,8 @@ class Tetris extends BaseAlgorithmStateClass {
           let vector4 = createVector(7, -1);
 
           let vector1 = createVector(7, 0);
+
+          this.centerOfShape = [7, -1];
 
           this.arrayForCurrentShape.push(vector4);
           this.arrayForCurrentShape.push(vector2);
@@ -333,6 +391,29 @@ class Tetris extends BaseAlgorithmStateClass {
       tile.coordY = heightCount;
 
       this.tiles.push(tile); // Push the tile to the array
+    }
+  }
+
+  RotateShape() {
+    // Assuming the center of the shape is (cx, cy)
+    let cx = this.centerOfShape[0];
+    let cy = this.centerOfShape[1];
+
+    // Loop through each vector in the shape
+    for (let i = 0; i < this.arrayForCurrentShape.length; i++) {
+      let vector = this.arrayForCurrentShape[i];
+
+      // Relative coordinates
+      let x = vector.x - cx;
+      let y = vector.y - cy;
+
+      // Rotate 90 degrees clockwise
+      let newX = -y + cx;
+      let newY = x + cy;
+
+      // Update the vector
+      vector.x = newX;
+      vector.y = newY;
     }
   }
 }

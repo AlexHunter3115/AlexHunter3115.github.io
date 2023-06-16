@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AB Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
     <link rel="stylesheet" href="CSS Scripts/Navbar.css" />
     <link rel="stylesheet" href="CSS Scripts/Canvas.css" />
     <link rel="stylesheet" href="CSS Scripts/Divider.css" />
@@ -92,7 +95,6 @@
     <section id="Featured" class="hidden-right">
       <h1 class="divider-header">Featured Projects</h1>
       <b class="rainbow-hr anim"></b>
-      
 
       <!-- <div id="carousel-wrapper">
         <div id="menu">
@@ -118,46 +120,68 @@
       </div> -->
 
       <div class="slider-container">
-
         <div class="slider-content">
-    
-            <div class="slider-single">
-                <img class="slider-single-image" src="pictures\dungeonforge.png" alt="1" />
-                <h1 class="slider-single-title">Dungeon Forge</h1>
-                <a class="slider-single-likes" onclick="scrollToGridItem('Dissertation-Highlight')">
-                  <p>Click here to check it out</p>
-                </a>
-            </div>
-    
-            <div class="slider-single">
-                <img class="slider-single-image" src="pictures\civ_game.png" alt="2" />
-                <h1 class="slider-single-title">Civilization Simulation</h1>
-                <a class="slider-single-likes" onclick="scrollToGridItem('Civ-Highlight')">
-                  <p>Click here to check it out</p>
-                </a>
-            </div>
-    
-            <div class="slider-single">
-                <img class="slider-single-image" src="pictures\mesh_dest.png" alt="3" />
-                <h1 class="slider-single-title">Mesh Destruction</h1>
-                <a class="slider-single-likes" onclick="scrollToGridItem('Mesh-Dest-Highlight')">
-                    <p>Click here to check it out</p>
-                </a>
-            </div>
-    
-    
-            <div class="slider-single">
-                <img class="slider-single-image" src="pictures\rootwars.png" alt="4" />
-                <h1 class="slider-single-title">Root Wars  GGJ 2023</h1>
-                <a class="slider-single-likes" onclick="scrollToGridItem('GGJ-Highlight')">
-                  <p>Click here to check it out</p>
-                </a>
-            </div>
-    
+          <div class="slider-single">
+            <img
+              class="slider-single-image"
+              src="pictures\dungeonforge.png"
+              alt="1"
+            />
+            <h1 class="slider-single-title">Dungeon Forge</h1>
+            <a
+              class="slider-single-likes"
+              onclick="scrollToGridItem('Dissertation-Highlight')"
+            >
+              <p>Click here to check it out</p>
+            </a>
+          </div>
+
+          <div class="slider-single">
+            <img
+              class="slider-single-image"
+              src="pictures\civ_game.png"
+              alt="2"
+            />
+            <h1 class="slider-single-title">Civilization Simulation</h1>
+            <a
+              class="slider-single-likes"
+              onclick="scrollToGridItem('Civ-Highlight')"
+            >
+              <p>Click here to check it out</p>
+            </a>
+          </div>
+
+          <div class="slider-single">
+            <img
+              class="slider-single-image"
+              src="pictures\mesh_dest.png"
+              alt="3"
+            />
+            <h1 class="slider-single-title">Mesh Destruction</h1>
+            <a
+              class="slider-single-likes"
+              onclick="scrollToGridItem('Mesh-Dest-Highlight')"
+            >
+              <p>Click here to check it out</p>
+            </a>
+          </div>
+
+          <div class="slider-single">
+            <img
+              class="slider-single-image"
+              src="pictures\rootwars.png"
+              alt="4"
+            />
+            <h1 class="slider-single-title">Root Wars GGJ 2023</h1>
+            <a
+              class="slider-single-likes"
+              onclick="scrollToGridItem('GGJ-Highlight')"
+            >
+              <p>Click here to check it out</p>
+            </a>
+          </div>
         </div>
-    </div>
-
-
+      </div>
     </section>
 
     <section id="Work" class="hidden">
@@ -727,13 +751,13 @@
         <!-- Classification -->
         <div class="grid-item">
           <div class="content-wrapper">
-            <div class="image-container">
-              
-            </div>
+            <div class="image-container"></div>
             <div class="text-content">
               <h3 class="image-title">Butterfly Classification</h3>
               <p class="image-info">
-                A neural network, implemented in Python using PyTorch, is utilized to classify butterflies by training an AI to recognize them.
+                A neural network, implemented in Python using PyTorch, is
+                utilized to classify butterflies by training an AI to recognize
+                them.
               </p>
               <button
                 class="action-button"
@@ -944,7 +968,10 @@
           >
             Email
           </button>
-          <a href="https://www.linkedin.com/in/alessandro-bufalino-3732b5273/" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/alessandro-bufalino-3732b5273/"
+            target="_blank"
+          >
             <button class="button-49">LinkedIn</button>
           </a>
         </div>
@@ -996,7 +1023,6 @@
         </div>
         <div class="right-section">
           <ul class="algorithm-list">
-
             <button
               class="button-algo"
               style="--clr: #39ff14"
@@ -1006,7 +1032,6 @@
             >
               <span>Turn Off p5.Js</span><i></i>
             </button>
-
 
             <button
               class="button-algo"
@@ -1027,18 +1052,16 @@
             >
               <span>Test Input</span><i></i>
             </button>
-            
 
             <button
-            class="button-algo"
-            style="--clr: #0ff0fc"
-            data-title="Main Title 3"
-            data-description="Description 3"
-            onclick="switchAlgoState(3)"
-          >
-            <span>Tetris</span><i></i>
-          </button>
-            
+              class="button-algo"
+              style="--clr: #0ff0fc"
+              data-title="Main Title 3"
+              data-description="Description 3"
+              onclick="switchAlgoState(3)"
+            >
+              <span>Tetris</span><i></i>
+            </button>
           </ul>
         </div>
       </div>
@@ -1047,13 +1070,13 @@
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br /><br />
 
-    <script  src="Javascript Scripts\Algorithms\BaseAlgoClass.js"></script>
-    <script  src="Javascript Scripts\Algorithms\CellularAutomata.js"></script>
-    <script  src="Javascript Scripts\Algorithms\Tetris.js"></script>
-    <script  src="Javascript Scripts\Algorithms\TestInput.js"></script>
+    <script src="Javascript Scripts\Algorithms\BaseAlgoClass.js"></script>
+    <script src="Javascript Scripts\Algorithms\CellularAutomata.js"></script>
+    <script src="Javascript Scripts\Algorithms\Tetris.js"></script>
+    <script src="Javascript Scripts\Algorithms\TestInput.js"></script>
 
     <script src="https://www.youtube.com/iframe_api"></script>
-    <script  src="Javascript Scripts/Algorithms/sketch.js"></script>
+    <script src="Javascript Scripts/Algorithms/sketch.js"></script>
     <script src="Javascript Scripts/Main.js"></script>
     <script src="Javascript Scripts/Carousel.js"></script>
   </body>
