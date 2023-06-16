@@ -32,11 +32,22 @@ class TestInputs extends BaseAlgorithmStateClass {
         score: ranNum,
       };
 
-      this.updateScores(newScores);
+      this.getScores().then(success => {
+        if (success) {
+          console.log('Successfully fetched scores.');
+        } else {
+          console.log('Failed to fetch scores.');
+        }
+      });
 
+      this.updateScores(newScores).then(success => {
+        if (success) {
+          console.log('Successfully updated scores.');
+        } else {
+          console.log('Failed to update scores.');
+        }
+      });
 
-      // Use the getScores function
-      this.getScores();
 
       // Use the updateScores function with some example data
 
@@ -68,20 +79,31 @@ class TestInputs extends BaseAlgorithmStateClass {
 
   getScores() {
     // Use the fetch function to send a GET request to the /scores endpoint
-    fetch('http://localhost:3000/scores')
+    return fetch('http://localhost:3000/scores')
       // Parse the response as JSON
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
       // Log the data to the console (or do something else with it)
-      .then(data => console.log(data))
+      .then(data => {
+        console.log(data);
+        return true; // return true if successfully fetched data
+      })
       // Catch any errors and log them to the console
-      .catch(error => console.error('Error:', error));
+      .catch(error => {
+        console.error('Error:', error);
+        return false; // return false in case of an error
+      });
   }
 
   // Define a function to update scores on the server
   updateScores(newScores) {
     // Use the fetch function to send a POST request to the /scores endpoint
     // We're including the new scores in the body of the request, and setting the Content-Type header to application/json
-    fetch('http://localhost:3000/scores', {
+    return fetch('http://localhost:3000/scores', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -89,11 +111,23 @@ class TestInputs extends BaseAlgorithmStateClass {
       body: JSON.stringify(newScores),
     })
       // Parse the response as JSON
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
       // Log the data to the console (or do something else with it)
-      .then(data => console.log(data))
+      .then(data => {
+        console.log(data);
+        return true; // return true if successfully updated data
+      })
       // Catch any errors and log them to the console
-      .catch(error => console.error('Error:', error));
+      .catch(error => {
+        console.error('Error:', error);
+        return false; // return false in case of an error
+      });
   }
+
 
 }

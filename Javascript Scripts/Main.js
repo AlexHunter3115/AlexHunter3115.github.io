@@ -100,11 +100,16 @@ function checkVideoVisibility() {
   let visibility = isInViewportWhole(video);
 
   if (visibility.topInView || visibility.bottomInView) {
-    ytPlayer.playVideo();
+    if (ytPlayer && typeof ytPlayer.playVideo === 'function') {
+      ytPlayer.playVideo();
+    }
   } else {
-    ytPlayer.pauseVideo();
+    if (ytPlayer && typeof ytPlayer.pauseVideo === 'function') {
+      ytPlayer.pauseVideo();
+    }
   }
 }
+
 
 document.addEventListener('DOMContentLoaded', function() {
   const buttons = document.querySelectorAll('.button-algo');
