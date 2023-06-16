@@ -21,9 +21,11 @@ class TestInputs extends BaseAlgorithmStateClass {
     } else if (key === "s" || key === "S") {
       // If the 'S' key is pressed, the background color is set to red
       this.p5Ref.background(255, 0, 0);
-      console.log("S was pressed");
+      console.log("S was pressed and this is for the new version");
 
       let ranNum = this.getRandomInt(1, 200);
+
+
 
       let newScores = {
         player: 'Alice',
