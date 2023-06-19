@@ -49,6 +49,7 @@ function isInViewportWhole(element) {
 
 
 
+
 function toggleGif(id, src) {
   const imageElement = document.getElementById(id);
   if (imageElement.src.includes(src)) {

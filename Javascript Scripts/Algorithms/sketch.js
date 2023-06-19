@@ -13,7 +13,7 @@ let allStatesArr = [
 let currentAlgoIndex = 0;
 
 function setup() {
-  let canvasWidth = windowWidth / 2;
+  let canvasWidth = 1000;
   let canvasHeight = 800;
   let canvas = createCanvas(canvasWidth, canvasHeight);
   canvas.parent("p5js-canvas");
@@ -45,7 +45,6 @@ function DrawCall() {
     textSize(48);
     fill(255, 0, 0); // Red text
     text("Frozen", width / 2, height / 2);
-    console.log("Frozen");
   } else {
     allStatesArr[currentAlgoIndex].DrawCall();
   }
