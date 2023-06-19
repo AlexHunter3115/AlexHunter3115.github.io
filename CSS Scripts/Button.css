@@ -115,31 +115,50 @@
 }
 
 
-
-.tooltip-container {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip {
+/* Common styles for tooltips */
+.tooltip-button {
   opacity: 0;
-  transition: opacity 0.3s ease;
   position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translate(-100%, -50%);
-  background-color: rgba(51, 51, 51, 0.90);
+  top: 10px;
+  background-color: rgba(65, 64, 64, 0.75);
   color: #fff;
   padding: 5px 10px;
   border-radius: 5px;
-  font-size: 14px;
-  z-index: 20;
-  transition: opacity 1s ease;
+  font-size: 14px; /* Set a specific font-size */
+  line-height: 1.4; /* Set a specific line-height */
+  z-index: 10;
+  /* Additional resets */
+  letter-spacing: normal; /* Reset letter-spacing */
+  user-select: auto; /* Reset user-select */
+  -webkit-user-select: auto; /* Reset user-select for webkit browsers */
+  touch-action: auto; /* Reset touch-action */
 }
 
-.tooltip-container:hover .tooltip {
-  opacity: 1;
+/* Unique styles for left tooltip */
+.tooltip-button-left {
+  left: 50%;
+  transform: translateX(-50%);
+  transition: left 1s ease, opacity 0.3s ease;
 }
+
+.button-49:hover .tooltip-button-left {
+  opacity: 1;
+  left: -50%; 
+}
+
+/* Unique styles for right tooltip */
+.tooltip-button-right {
+  right: 50%;
+  transform: translateX(50%);
+  transition: right 1s ease, opacity 0.3s ease;
+}
+
+.button-49:hover .tooltip-button-right {
+  opacity: 1;
+  right: -50%; 
+}
+
+
 
 
 

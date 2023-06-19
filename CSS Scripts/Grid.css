@@ -111,5 +111,5 @@
 
 .grid-item:hover .tooltip-grid {
     opacity: 1;
-    top: -50px; /* Adjust this value according to your desired tooltip position */
+    top: -50px; 
 }
