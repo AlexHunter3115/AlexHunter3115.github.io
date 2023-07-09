@@ -115,11 +115,6 @@ function checkVideoVisibility() {
 document.addEventListener('DOMContentLoaded', function() {
   const buttons = document.querySelectorAll('.button-algo');
 
-
- 
-
-
-
   buttons.forEach(button => {
     button.addEventListener('click', function() {
       const title = button.getAttribute('data-title');

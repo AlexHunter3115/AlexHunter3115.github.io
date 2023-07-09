@@ -36,7 +36,7 @@ body {
 }
 
 .video-container {
-    width: 50vw;
+    width: 50%;
     height: 55vh;
     left: 25vw;
     display: flex;
