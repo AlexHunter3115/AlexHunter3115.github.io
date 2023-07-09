@@ -23,7 +23,6 @@ const data = {
             shortDescription: "Short description 2",
             longDescription: "Long description 2"
         },
-        // more items...
     ],
     unity: [
         {
@@ -36,7 +35,6 @@ const data = {
             shortDescription: "Short description 2",
             longDescription: "Long description 2"
         },
-        // more items...
     ],
     cpp: [
         {

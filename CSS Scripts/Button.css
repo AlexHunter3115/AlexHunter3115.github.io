@@ -1,5 +1,4 @@
 
-/* CSS */
 .button-49,
 .button-49:after {
   width: 150px;
@@ -115,7 +114,6 @@
 }
 
 
-/* Common styles for tooltips */
 .tooltip-button {
   opacity: 0;
   position: absolute;
@@ -124,17 +122,15 @@
   color: #fff;
   padding: 5px 10px;
   border-radius: 5px;
-  font-size: 14px; /* Set a specific font-size */
-  line-height: 1.4; /* Set a specific line-height */
+  font-size: 14px; 
+  line-height: 1.4; 
   z-index: 10;
-  /* Additional resets */
-  letter-spacing: normal; /* Reset letter-spacing */
-  user-select: auto; /* Reset user-select */
-  -webkit-user-select: auto; /* Reset user-select for webkit browsers */
-  touch-action: auto; /* Reset touch-action */
+  letter-spacing: normal; 
+  user-select: auto; 
+  -webkit-user-select: auto;
+  touch-action: auto; 
 }
 
-/* Unique styles for left tooltip */
 .tooltip-button-left {
   left: 50%;
   transform: translateX(-50%);
@@ -146,7 +142,6 @@
   left: -50%; 
 }
 
-/* Unique styles for right tooltip */
 .tooltip-button-right {
   right: 50%;
   transform: translateX(50%);
@@ -157,13 +152,3 @@
   opacity: 1;
   right: -50%; 
 }
-
-
-
-
-
-
-
-
-
-

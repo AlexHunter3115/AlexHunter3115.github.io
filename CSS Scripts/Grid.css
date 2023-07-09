@@ -1,3 +1,4 @@
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -195,24 +196,24 @@
   height: 100%;
 }
 
-.list-button-1 {
-  background-color: #4caf50;
+.list-button-js {
+  background-color: #f7df1e; 
 }
 
-.list-button-2 {
-  background-color: #2196f3;
+.list-button-py {
+  background-color: #3776ab; 
 }
 
-.list-button-3 {
-  background-color: #ff9800;
+.list-button-unity {
+  background-color: #222c37;  
 }
 
-.list-button-4 {
-  background-color: #f44336;
+.list-button-cpp {
+  background-color: #00599c;
 }
 
-.list-button-5 {
-  background-color: #0e9170;
+.list-button-rust {
+  background-color: #f38748; 
 }
 
 .tiny-grid-item {

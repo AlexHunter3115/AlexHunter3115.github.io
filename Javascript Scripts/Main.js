@@ -115,6 +115,11 @@ function checkVideoVisibility() {
 document.addEventListener('DOMContentLoaded', function() {
   const buttons = document.querySelectorAll('.button-algo');
 
+
+ 
+
+
+
   buttons.forEach(button => {
     button.addEventListener('click', function() {
       const title = button.getAttribute('data-title');
@@ -146,7 +151,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   
-    // Reveal sections on initial load
     revealSections();
   
     window.addEventListener('scroll', function() {
@@ -158,17 +162,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
   
-      // Reveal sections when scrolling
       revealSections();
   
-      // Check video visibility
       checkVideoVisibility();
     });
   
-    // Check video visibility on initial load
     checkVideoVisibility();
-  
-    // Load YouTube API
+
     const tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
     const firstScriptTag = document.getElementsByTagName('script')[0];
