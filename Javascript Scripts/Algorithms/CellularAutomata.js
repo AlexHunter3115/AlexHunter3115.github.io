@@ -3,8 +3,8 @@ class CellularAutomata extends BaseAlgorithmStateClass {
 
   slider;
 
-  numberOfQuadrantsWidth = 60;
-  numberOfRectsHeight = 60;
+  numberOfRectsX = 63;
+  numberOfRectsY = 50;
 
   heightRect = 0;
   widthRect = 0;
@@ -72,7 +72,7 @@ class CellularAutomata extends BaseAlgorithmStateClass {
     let heightCount = 0;
 
     for (let index = 0; index < this.totNumOfQuadrants; index++) {
-      if (widthCount >= this.numberOfQuadrantsWidth) {
+      if (widthCount >= this.numberOfRectsX) {
         widthCount = 0;
         heightCount++;
       }
@@ -87,8 +87,8 @@ class CellularAutomata extends BaseAlgorithmStateClass {
       this.p5Ref.rect(
         widthCount * this.widthRect,
         heightCount * this.heightRect,
-        this.heightRect,
-        this.widthRect
+        this.widthRect,
+        this.heightRect
       );
 
       boolean = !boolean;
@@ -108,11 +108,10 @@ class CellularAutomata extends BaseAlgorithmStateClass {
   Select() {
     this.p5Ref = window;
 
-    this.widthRect = this.p5Ref.width / this.numberOfQuadrantsWidth;
-    this.heightRect = this.p5Ref.height / this.numberOfRectsHeight;
+    this.widthRect = width / this.numberOfRectsX;
+    this.heightRect = height / this.numberOfRectsY;
 
-    this.totNumOfQuadrants =
-      this.numberOfQuadrantsWidth * this.numberOfRectsHeight;
+    this.totNumOfQuadrants = this.numberOfRectsX * this.numberOfRectsY;
 
     this.arrayOfStatesOne = Array.from(
       { length: this.totNumOfQuadrants },
@@ -131,8 +130,8 @@ class CellularAutomata extends BaseAlgorithmStateClass {
     let totalAlive = 0;
 
     // Calculate the row and column based on the index
-    let row = Math.floor(index / this.numberOfQuadrantsWidth);
-    let col = index % this.numberOfQuadrantsWidth;
+    let row = Math.floor(index / this.numberOfRectsX);
+    let col = index % this.numberOfRectsX;
 
     // Loop over the 3x3 grid centered around the cell
     for (let i = -1; i <= 1; i++) {
@@ -149,16 +148,16 @@ class CellularAutomata extends BaseAlgorithmStateClass {
         // Skip if the neighbor is outside the grid
         if (
           neighborRow < 0 ||
-          neighborRow >= this.numberOfRectsHeight ||
+          neighborRow >= this.numberOfRectsY ||
           neighborCol < 0 ||
-          neighborCol >= this.numberOfQuadrantsWidth
+          neighborCol >= this.numberOfRectsX
         ) {
           continue;
         }
 
         // Calculate the neighbor's index
         let neighborIndex =
-          neighborRow * this.numberOfQuadrantsWidth + neighborCol;
+          neighborRow * this.numberOfRectsX + neighborCol;
 
         // Count the neighbor if it's alive
         if (this.currentSelectedArr[neighborIndex]) {

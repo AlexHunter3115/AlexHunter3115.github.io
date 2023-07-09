@@ -77,7 +77,7 @@ class Tetris extends BaseAlgorithmStateClass {
 
       fill(tile.color[0], tile.color[1], tile.color[2]);
 
-      rect(tile.coordX * this.tilesWidth + this.oneFourthPoint, tile.coordY * this.tilesHeight, this.tilesHeight, this.tilesWidth);
+      rect(tile.coordX * this.tilesWidth + this.oneFourthPoint, tile.coordY * this.tilesHeight,this.tilesWidth, this.tilesHeight);
     }
 
 
@@ -94,9 +94,8 @@ class Tetris extends BaseAlgorithmStateClass {
           fill(this.currentPieceColour[0], this.currentPieceColour[1], this.currentPieceColour[2]);
         }
 
-
         if (this.shapeMatrix[yInMatrix][xInMatrix] === 1) {
-          rect(x * this.tilesWidth + this.oneFourthPoint, y * this.tilesHeight, this.tilesHeight, this.tilesWidth);
+          rect(x * this.tilesWidth + this.oneFourthPoint, y * this.tilesHeight, this.tilesWidth,this.tilesHeight );
         }
         xInMatrix += 1;
       }
@@ -174,24 +173,14 @@ class Tetris extends BaseAlgorithmStateClass {
 
     frameRate(60);
 
-    this.oneFourthPoint = 0.25 * width;
-    this.threeFourthPoint = 0.75 * width;
+    this.oneFourthPoint = 0.25 * width; 
+    this.threeFourthPoint = 0.75 * width; 
 
-    let widthGameplaySpace = this.threeFourthPoint - this.oneFourthPoint;
+    let widthGameplaySpace = this.threeFourthPoint - this.oneFourthPoint;  
 
-    this.tilesWidth = widthGameplaySpace / this.tilesAmountX;
-
-    if (this.tilesWidth !== Math.floor(this.tilesWidth)) {
-      this.tilesAmountX += 1;
-      this.Select();
-    }
+    this.tilesWidth = widthGameplaySpace / this.tilesAmountX; 
 
     this.tilesHeight = height / this.tilesAmountY;
-
-    if (this.tilesHeight !== Math.floor(this.tilesHeight)) {
-      this.tilesAmountY += 1;
-      this.Select();
-    }
 
     this.totAmountOfTiles = this.tilesAmountX * this.tilesAmountY;
 

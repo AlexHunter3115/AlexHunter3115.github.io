@@ -37,6 +37,7 @@
   border-radius: 50%;
   background-color: white;
   opacity: 0.5;
+  cursor: pointer;
 }
 .slider-container .bullet-container .bullet:last-child {
   margin-right: 0px;
