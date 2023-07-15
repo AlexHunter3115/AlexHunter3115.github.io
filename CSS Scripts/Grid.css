@@ -123,107 +123,6 @@
   top: -50px;
 }
 
-.list-grid-item {
-  background-color: #54525c;
-  padding: 5px;
-  border: 1px solid #6c6a75;
-  font-family: Arial, sans-serif;
-  width: 500px;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  border-radius: 5px;
-  height: 360px;
-  gap: 10px;
-}
-
-
-
-.list-container {
-  max-height: 300px;
-  overflow-y: auto;
-  flex: 1;
-  margin-top: 30px;
-}
-
-.list-item {
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-  cursor: pointer;
-  font-size: 12px;
-}
-
-.tooltip-list {
-  opacity: 0;
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(65, 64, 64, 0.75);
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 14px;
-  z-index: 10;
-  transition: top 1s ease, opacity 0.3s ease;
-}
-
-.list-item:hover .tooltip-list {
-  opacity: 1;
-  top: -50px;
-}
-
-.list-button {
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: block;
-  font-size: 14px;
-  padding: 8px 16px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  border-radius: 4px;
-  width: 100%;
-  height: 17%;
-  transition: transform 0.3s ease;
-  font-size: 18px;
-}
-
-.list-button:hover {
-  opacity: 1;
-  top: -50px;
-  transform: scale(0.95);
-}
-
-.list-button-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex: 0 0 15%;
-  height: 100%;
-}
-
-.list-button-js {
-  background-color: #f7df1e; 
-}
-
-.list-button-py {
-  background-color: #3776ab; 
-}
-
-.list-button-unity {
-  background-color: #222c37;  
-}
-
-.list-button-cpp {
-  background-color: #00599c;
-}
-
-.list-button-rust {
-  background-color: #f38748; 
-}
 
 .tiny-grid-item {
   background-color: #54525c;
@@ -242,7 +141,7 @@
 
 .grid-item-name {
   height: 50px;
-  left: 35%;
+  left: 25%;
   top: -2%;
   color: white;
   display: flex;
@@ -251,4 +150,122 @@
   font-size: 18px;
   margin-bottom: 10px;
   position: absolute;
+}
+
+
+.item-name {
+  font-size: 18px; 
+}
+
+.item-description {
+  font-size: 14px; 
+}
+
+.special-grid-item {
+  height: 380px;
+  display: grid;
+  grid-template-columns: 15% 5% 80%;
+
+  background-color: #54525c;
+  padding: 5px;
+  border: 1px solid #6c6a75;
+  font-family: Arial, sans-serif;
+  flex-direction: column;
+  position: relative;
+  border-radius: 5px;
+}
+
+.button-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.list-section {
+  overflow-y: auto;
+  height: 80%;
+  margin-top: 20px; 
+}
+
+.list-item {
+  position: relative;
+  border-bottom: 1px solid #6c6a75; 
+  padding: 10px 0;
+}
+
+.list-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.list-button:hover {
+  background-color: #45a049;
+}
+
+
+
+.tooltip-list {
+  visibility: hidden;
+  background-color: rgba(65, 64, 64, 0.75);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 10px;
+  position: absolute; 
+  z-index: 1;
+  top: 400px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  font-size: 14px;
+}
+
+[data-lang="js"] {
+  background-color: #cebd3b;
+}
+
+[data-lang="js"]:hover {
+  background-color: #a3962f;
+}
+
+[data-lang="py"] {
+  background-color: #3776ab;
+}
+
+[data-lang="py"]:hover {
+  background-color: #2b5e88;
+}
+
+[data-lang="unity"] {
+  background-color: #222c37;
+}
+
+[data-lang="unity"]:hover {
+  background-color: #141a20;
+}
+
+[data-lang="cpp"] {
+  background-color: #00599c;
+}
+
+[data-lang="cpp"]:hover {
+  background-color: #014a81;
+}
+
+[data-lang="rust"] {
+  background-color: #f38748;
+}
+
+[data-lang="rust"]:hover {
+  background-color: #c56f3d;
 }
