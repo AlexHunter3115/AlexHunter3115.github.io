@@ -89,6 +89,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       });
     });
   });
+  
   function showListForLang(lang) {
     const listContainer = document.querySelector('.list-container');
     listContainer.innerHTML = '';
@@ -106,7 +107,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         itemDescription.textContent = item.shortDescription;
         itemDescription.classList.add('item-description');
         listItem.appendChild(itemDescription);
-        
+
         if (item.longDescription && item.longDescription.trim() !== '') {
             listItem.setAttribute('data-tooltip', item.longDescription);
 
@@ -118,7 +119,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
                 if (item.githubLink) {
                     listItem.style.cursor = 'pointer';
-                    listItem.addEventListener('click', () => window.open(item.githubLink));
                     availability.textContent = 'Click here for the repo';
                     availability.style.color = 'green';
                 } else {
@@ -133,11 +133,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 const tooltip = document.querySelector('.tooltip-list');
                 tooltip.style.visibility = 'hidden';
             });
+            
+            // Add click event outside of mouseenter event
+            if (item.githubLink) {
+                listItem.addEventListener('click', () => window.open(item.githubLink));
+            }
         }
 
         listContainer.appendChild(listItem);
     });
 }
+
 
 
 

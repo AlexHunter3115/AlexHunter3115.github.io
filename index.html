@@ -1,1112 +1,864 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AB Portfolio</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
 
-    <link rel="stylesheet" href="CSS Scripts/Navbar.css" />
-    <link rel="stylesheet" href="CSS Scripts/Canvas.css" />
-    <link rel="stylesheet" href="CSS Scripts/Divider.css" />
-    <link rel="stylesheet" href="CSS Scripts/Carousel.css" />
-    <link rel="stylesheet" href="CSS Scripts/Grid.css" />
-    <link rel="stylesheet" href="CSS Scripts/Button.css" />
-    <link rel="stylesheet" href="CSS Scripts/Scrollbar.css" />
-    <link rel="stylesheet" href="CSS Scripts/Paragraph.css" />
-    <link rel="stylesheet" href="CSS Scripts/General.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AB Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <link rel="stylesheet" href="CSS Scripts/Navbar.css" />
+  <link rel="stylesheet" href="CSS Scripts/Canvas.css" />
+  <link rel="stylesheet" href="CSS Scripts/Divider.css" />
+  <link rel="stylesheet" href="CSS Scripts/Carousel.css" />
+  <link rel="stylesheet" href="CSS Scripts/Grid.css" />
+  <link rel="stylesheet" href="CSS Scripts/Button.css" />
+  <link rel="stylesheet" href="CSS Scripts/Scrollbar.css" />
+  <link rel="stylesheet" href="CSS Scripts/Paragraph.css" />
+  <link rel="stylesheet" href="CSS Scripts/General.css" />
 
-    <link rel="icon" href="pictures\favicon.jpg" type="image/x-icon" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
 
-    <style>
-      @media only screen and (max-width: 600px) {
-        .desktop {
-          display: none;
-        }
-        .algorithm-container {
-          display: none;
-        }
+  <link rel="icon" href="pictures\favicon.jpg" type="image/x-icon" />
+
+  <style>
+    @media only screen and (max-width: 600px) {
+      .desktop {
+        display: none;
       }
 
-      @media only screen and (min-width: 601px) {
-        .mobile {
-          display: none;
-        }
+      .algorithm-container {
+        display: none;
       }
+    }
 
-      
-      html {
+    @media only screen and (min-width: 601px) {
+      .mobile {
+        display: none;
+      }
+    }
+
+
+    html {
       min-width: 800px;
-      }
+    }
+  </style>
+</head>
 
-    </style>
-  </head>
+<body>
+  <header id="header">
+    <nav class="links" style="--items: 5">
+      <a href="#Start">Start</a>
+      <a href="#Featured">Featured Projects</a>
+      <a href="#Work">All Projects</a>
+      <a href="#Contact">Contact</a>
+      <a href="#Algorithms">P5.js</a>
+      <span class="line"></span>
+    </nav>
+  </header>
 
-  <body>
-    <header id="header">
-      <nav class="links" style="--items: 5">
-        <a href="#Start">Start</a>
-        <a href="#Featured">Featured Projects</a>
-        <a href="#Work">All Projects</a>
-        <a href="#Contact">Contact</a>
-        <a href="#Algorithms">P5.js</a>
-        <span class="line"></span>
-      </nav>
-    </header>
+  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <div id="customPopup" class="popup">
+    Copied Element Successfully <span id="copiedEmail"></span>
+  </div>
 
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <div id="customPopup" class="popup">
-      Copied Element Successfully <span id="copiedEmail"></span>
+  <section id="Start">
+    <div class="video-container">
+      <iframe id="video-iframe" class="video-iframe"
+        src="https://www.youtube.com/embed/Uai4vKiphKI?autoplay=1&mute=1&controls=0&loop=1&playlist=Uai4vKiphKI&enablejsapi=1"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <div class="overlay"></div>
+      <p class="video-text"><b class="b-main-text">AB</b> CODING PORTFOLIO</p>
     </div>
 
-    <section id="Start">
-      <div class="video-container">
-        <iframe
-          id="video-iframe"
-          class="video-iframe"
-          src="https://www.youtube.com/embed/Uai4vKiphKI?autoplay=1&mute=1&controls=0&loop=1&playlist=Uai4vKiphKI&enablejsapi=1"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-        <div class="overlay"></div>
-        <p class="video-text"><b class="b-main-text">AB</b> CODING PORTFOLIO</p>
+    <br /><br /><br /><br /><br />
+
+    <h1 class="divider-h1">Welcome to My Portfolio</h1>
+    <p class="paragraph">
+      Hi, I'm Alex, a Games Technology graduate from UWE. I am passionate
+      about game development and have extensive experience working with Unity.
+      My main focus is on programming systems to implement in games, with a
+      strong emphasis on Procedural Content Generation (PCG) and Artificial
+      Intelligence (AI).
+    </p>
+    <p class="paragraph">
+      During my time at UWE, I have worked on various game projects, honing my
+      skills in Unity, C#, C++, and game design principles. I'm excited to bring my
+      expertise to the industry and contribute to the development of
+      innovative and engaging gaming experiences. Check out my featured work,
+      and don't hesitate to get in touch if you'd like to collaborate or learn
+      more about me.
+    </p>
+  </section>
+
+  <section id="Featured" class="hidden-right">
+    <h1 class="divider-header">Featured Projects</h1>
+    <b class="rainbow-hr anim"></b>
+
+    <div class="slider-container">
+      <div class="slider-content">
+        <div class="slider-single">
+          <img class="slider-single-image" src="pictures\dungeonforge.png" alt="1" />
+          <h1 class="slider-single-title">Dungeon Forge</h1>
+          <a class="slider-single-likes" onclick="scrollToGridItem('Dissertation-Highlight')">
+            <p>Click here to check it out</p>
+          </a>
+        </div>
+
+        <div class="slider-single">
+          <img class="slider-single-image" src="pictures\civ_game.png" alt="2" />
+          <h1 class="slider-single-title">Civilization Simulation</h1>
+          <a class="slider-single-likes" onclick="scrollToGridItem('Civ-Highlight')">
+            <p>Click here to check it out</p>
+          </a>
+        </div>
+
+        <div class="slider-single">
+          <img class="slider-single-image" src="pictures\mesh_dest.png" alt="3" />
+          <h1 class="slider-single-title">Mesh Destruction</h1>
+          <a class="slider-single-likes" onclick="scrollToGridItem('Mesh-Dest-Highlight')">
+            <p>Click here to check it out</p>
+          </a>
+        </div>
+
+        <div class="slider-single">
+          <img class="slider-single-image" src="pictures\rootwars.png" alt="4" />
+          <h1 class="slider-single-title">Root Wars GGJ 2023</h1>
+          <a class="slider-single-likes" onclick="scrollToGridItem('GGJ-Highlight')">
+            <p>Click here to check it out</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="Work" class="hidden">
+    <h1 class="divider-header">All Projects</h1>
+    <b class="rainbow-hr anim"></b>
+    <h1 class="divider-h1">1st year of Uni</h1>
+    <div class="grid-container">
+      <!-- Pong  checked-->
+      <div class="grid-item">
+        <div class="content-wrapper">
+          <div class="image-container">
+            <img id="pong" onmouseover="toggleGif('pong', 'gifs/pong.gif')"
+              onmouseout="toggleGif('pong', 'pictures/pong_static.png')" src="pictures/pong_static.png" alt="Pong"
+              class="image" />
+          </div>
+          <div class="text-content">
+            <h3 class="image-title">C++: Pong</h3>
+            <p class="image-info">
+              Clone of the first Pong game using the SFML library.
+            </p>
+            <button class="action-button"
+              onclick="openLink('https://github.com/AlessandroBufalino3115/Uni-Cpp-Projects')">
+              Link To Repo
+            </button>
+          </div>
+        </div>
       </div>
 
-      <br /><br /><br /><br /><br />
+      <!-- idle Clicker  broken-->
+      <div class="smaller-grid-item">
+        <div class="content-wrapper">
+          <div class="text-content">
+            <h3 class="image-title">Python: Idle Clicker</h3>
+            <p class="image-info">
+              A project made of 5 difficulty challenges, the last one being to
+              make an idle clicker game that contains tasks in a specific
+              order to incentivize the use of stacks and queues.
+            </p>
+            <button class="action-button"
+              onclick="openLink('https://github.com/AlessandroBufalino3115/Uni-Py-Projects')">
+              Link To Repo
+            </button>
+          </div>
+        </div>
+      </div>
 
-      <h1 class="divider-h1">Welcome to My Portfolio</h1>
-      <p class="paragraph">
-        Hi, I'm Alex, a Games Technology graduate from UWE. I am passionate
-        about game development and have extensive experience working with Unity.
-        My main focus is on programming systems to implement in games, with a
-        strong emphasis on Procedural Content Generation (PCG) and Artificial
-        Intelligence (AI).
-      </p>
-      <p class="paragraph">
-        During my time at UWE, I have worked on various game projects, honing my
-        skills in Unity, C#, C++, and game design principles. I'm excited to bring my
-        expertise to the industry and contribute to the development of
-        innovative and engaging gaming experiences. Check out my featured work,
-        and don't hesitate to get in touch if you'd like to collaborate or learn
-        more about me.
-      </p>
-    </section>
+      <!-- Python: Asteroid simulator checked-->
+      <div class="grid-item">
+        <div class="content-wrapper">
+          <div class="image-container">
+            <img id="asteroid" onmouseover="toggleGif('asteroid', 'gifs/asteroid.gif')"
+              onmouseout="toggleGif('asteroid', 'pictures/asteroid_static.png')" src="pictures/asteroid_static.png"
+              alt="Asteroid Simulator" class="image" />
+          </div>
+          <div class="text-content">
+            <h3 class="image-title">Python: Asteroid Simulator</h3>
+            <p class="image-info">
+              A project made of 5 difficulty challenges based around sorting
+              algorithms.
+            </p>
+            <button class="action-button"
+              onclick="openLink('https://github.com/AlessandroBufalino3115/Uni-Py-Projects')">
+              Link To Repo
+            </button>
+          </div>
+        </div>
+      </div>
 
-    <section id="Featured" class="hidden-right">
-      <h1 class="divider-header">Featured Projects</h1>
-      <b class="rainbow-hr anim"></b>
+      <!-- Python: AI pathfinding checked-->
+      <div class="grid-item">
+        <div class="content-wrapper">
+          <div class="image-container">
+            <img id="pathfinding" onmouseover="toggleGif('pathfinding', 'gifs/AI.gif')"
+              onmouseout="toggleGif('pathfinding', 'pictures/a-star-static.png')" src="pictures/a-star-static.png"
+              alt="AI Pathfinding" class="image" />
+          </div>
+          <div class="text-content">
+            <h3 class="image-title">Python: AI Pathfinding</h3>
+            <p class="image-info">
+              A project made of 5 difficulty challenges, each challenges
+              explaining systems found in games.
+            </p>
+            <button class="action-button"
+              onclick="openLink('https://github.com/AlessandroBufalino3115/Uni-Py-Projects')">
+              Link To Repo
+            </button>
+          </div>
+        </div>
+      </div>
 
-      <div class="slider-container">
-        <div class="slider-content">
-          <div class="slider-single">
-            <img
-              class="slider-single-image"
-              src="pictures\dungeonforge.png"
-              alt="1"
-            />
-            <h1 class="slider-single-title">Dungeon Forge</h1>
-            <a
-              class="slider-single-likes"
-              onclick="scrollToGridItem('Dissertation-Highlight')"
-            >
-              <p>Click here to check it out</p>
+      <!-- Python: Dungeon crawler chekd-->
+      <div class="grid-item">
+        <div class="content-wrapper">
+          <div class="image-container">
+            <img id="dungeon_crawler" onmouseover="toggleGif('dungeon_crawler', 'gifs/dungeon_crawler.gif')"
+              onmouseout="toggleGif('dungeon_crawler', 'pictures/dungeon_crawler_static.png')"
+              src="pictures/dungeon_crawler_static.png" alt="Dungeon Crawler" class="image" />
+          </div>
+          <div class="text-content">
+            <h3 class="image-title">Python: Dungeon Crawler</h3>
+            <p class="image-info">
+              4 people group project: worked on part of the AI and pathfinding
+              and some other systems.
+            </p>
+            <button class="action-button"
+              onclick="openLink('https://github.com/AlessandroBufalino3115/Uni-Py-Projects')">
+              Link To Repo
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- C++: space invader-->
+      <div class="grid-item">
+        <div class="content-wrapper">
+          <div class="image-container">
+            <img id="invader" onmouseover="toggleGif('invader', 'gifs/invader.gif')"
+              onmouseout="toggleGif('invader', 'pictures/invader_static.png')" src="pictures/invader_static.png"
+              alt="Space Invader" class="image" />
+          </div>
+          <div class="text-content">
+            <h3 class="image-title">C++: Space Invader</h3>
+            <p class="image-info">
+              Copy of the original Space Invader, used to familiarize with
+              smooth motion and translate mathematical graphing equations into
+              movement patterns.
+            </p>
+            <button class="action-button"
+              onclick="openLink('https://github.com/AlessandroBufalino3115/Uni-Cpp-Projects')">
+              Link To Repo
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- C++: Angry birds-->
+      <div class="grid-item">
+        <div class="content-wrapper">
+          <div class="image-container">
+            <img id="angry_birds" onmouseover="toggleGif('angry_birds', 'gifs/angry birds.gif')"
+              onmouseout="toggleGif('angry_birds', 'pictures/angry_birds_static.png')"
+              src="pictures/angry_birds_static.png" alt="Angry Birds" class="image" />
+          </div>
+          <div class="text-content">
+            <h3 class="image-title">C++: Angry Birds</h3>
+            <p class="image-info">
+              Copy of the original Angry birds, used to familiarize with basic
+              2D physics motions and momentum.
+            </p>
+
+            <button class="action-button"
+              onclick="openLink('https://github.com/AlessandroBufalino3115/Uni-Cpp-Projects')">
+              Link To Repo
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- C++: Breakout-->
+      <div class="grid-item">
+        <div class="content-wrapper">
+          <div class="image-container">
+            <img id="breakout" onmouseover="toggleGif('breakout', 'gifs/breakout.gif')"
+              onmouseout="toggleGif('breakout', 'pictures/breakout_static.png')" src="pictures/breakout_static.png"
+              alt="Breakout" class="image" />
+          </div>
+          <div class="text-content">
+            <h3 class="image-title">C++: Breakout</h3>
+            <p class="image-info">
+              Clone of the Breakout Game, meant to be a challenge to
+              familiarise with using arrays, vectors and loading thing in and
+              out for different levels.
+            </p>
+            <button class="action-button"
+              onclick="openLink('https://github.com/AlessandroBufalino3115/Uni-Cpp-Projects')">
+              Link To Repo
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unity: 3D environment-->
+      <div class="grid-item">
+        <div class="content-wrapper">
+          <div class="image-container">
+            <img id="3d_env" onmouseover="toggleGif('3d_env', 'gifs/3d envi.gif')"
+              onmouseout="toggleGif('3d_env', 'pictures/3d_envi_static.png')" src="pictures/3d_envi_static.png"
+              alt="3D Environment" class="image" />
+          </div>
+          <div class="text-content">
+            <h3 class="image-title">Unity: 3D Environment</h3>
+            <p class="image-info">
+              Project consisted of making an intricate animation system using
+              MAYA and importing it to Unity and implementing it into a
+              function demo.
+            </p>
+            <button class="action-button" onclick="openLink('https://alexhalo3115.itch.io/3d-environment')">
+              Play The Build
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br /><br />
+
+    <hr class="rainbow-hr center-fade-hr" />
+    <h1 class="divider-h1">2nd year of Uni</h1>
+    <div class="grid-container">
+      <!-- mario_c++ -->
+      <div class="grid-item" id="grid-item-1">
+        <div class="content-wrapper">
+          <div class="image-container">
+            <img id="mario" onmouseover="toggleGif('mario', 'gifs/mario game.gif')"
+              onmouseout="toggleGif('mario', 'pictures/mario_static.png')" src="pictures/mario_static.png"
+              alt="mario_c++" class="image" />
+          </div>
+          <div class="text-content">
+            <h3 class="image-title">C++: mario clone</h3>
+            <p class="image-info">Clone of the 1st mario game.</p>
+            <button class="action-button"
+              onclick="openLink('https://github.com/UWEGames-GiC2/notmario-AlessandroBufalino3115')">
+              Link to Repo
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--  C++: network game -->
+      <div class="grid-item" id="highlight">
+        <div class="content-wrapper">
+          <div class="image-container">
+            <img id="network" onmouseover="toggleGif('network', 'gifs/multiplayer game.gif')"
+              onmouseout="toggleGif('network', 'pictures/network_mulit_static.png')"
+              src="pictures/network_mulit_static.png" alt="network game" class="image" />
+          </div>
+          <div class="text-content">
+            <h3 class="image-title">C++: network game</h3>
+            <p class="image-info">
+              2 people group project with the goal of making a tile based
+              online game. My job was to get the networking working.
+            </p>
+            <button class="action-button"
+              onclick="openLink('https://github.com/UWEGames-GiC2/asgenetgame-alex-and-callum')">
+              Link To Repo
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- C++: 12 Vaccines -->
+      <div class="grid-item">
+        <div class="content-wrapper">
+          <div class="image-container">
+            <img id="12 Vaccines" onmouseover="toggleGif('12 Vaccines', 'gifs/multi local game.gif')"
+              onmouseout="toggleGif('12 Vaccines', 'pictures/local_multi_static.png')"
+              src="pictures/local_multi_static.png" alt="12 Vaccines" class="image" />
+          </div>
+          <div class="text-content">
+            <h3 class="image-title">C++: 12 Vaccines</h3>
+            <p class="image-info">
+              A 4-person group project. My job was the implementation of the
+              AI and optimizing the game, such as drawing only the rooms where
+              the player currently was to save on GPU performance.
+            </p>
+            <button class="action-button" onclick="openLink('https://github.com/UWEGames-GiC2/asgemovie-group-2')">
+              Link To Repo
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unreal: Level design -->
+      <div class="grid-item">
+        <div class="content-wrapper">
+          <div class="image-container">
+            <img id="Unreal Level Design" onmouseover="toggleGif('Unreal Level Design', 'gifs/unreal_level_design.gif')"
+              onmouseout="toggleGif('Unreal Level Design', 'pictures/Unreal_LD_static.png')"
+              src="pictures/Unreal_LD_static.png" alt="Unreal Level Design" class="image" />
+          </div>
+          <div class="text-content">
+            <h3 class="image-title">Unreal Level Design</h3>
+            <p class="image-info">
+              Small level showing game design feature thorthought.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unity/Unreal: Telekinesis -->
+      <div class="grid-item">
+        <div class="content-wrapper">
+          <div class="image-container">
+            <img id="Unity/Unreal: Telekinesis"
+              onmouseover="toggleGif('Unity/Unreal: Telekinesis', 'gifs/unity_telekinesis.gif')"
+              onmouseout="toggleGif('Unity/Unreal: Telekinesis', 'pictures/telekinetic_static.png')"
+              src="pictures/telekinetic_static.png" alt="Unity/Unreal: Telekinesis" class="image" />
+          </div>
+          <div class="text-content">
+            <h3 class="image-title">Unity/Unreal: Telekinesis</h3>
+            <p class="image-info">
+              Task was to implement a system similar to the telekenisis found
+              in the game control in both Unity and Unreal.
+            </p>
+            <button class="action-button" onclick="openLink('https://alexhalo3115.itch.io/telekinesis')">
+              Play The Unity Build
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unity: Gameplay programming -->
+      <div class="bigger-grid-item">
+        <div class="content-wrapper">
+          <div class="image-container">
+            <img src="pictures\Capture.png" style="width: 100%" />
+          </div>
+          <div class="text-content">
+            <h3 class="image-title">Unity: Gameplay Programming</h3>
+            <p class="image-info">
+              7 tasks exploring gamplay mechanics found in games.<br />
+              Task 1: Movement and Animations<br />
+              Task 2: Interaction with world<br />
+              Task 3: Picking up Items and Abilities<br />
+              Task 4/5: Targeting Enemies and AI<br />
+              Task 6: Platforming<br />
+              Task 7: 2.5D Gameplay and spline
+            </p>
+            <button class="action-button" onclick="openLink('https://alexhalo3115.itch.io/gameplay-mechanics')">
+              Play The Unity Build
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br /><br />
+
+    <hr class="rainbow-hr center-fade-hr" />
+    <h1 class="divider-h1">3rd year of Uni</h1>
+    <div class="grid-container">
+      <!-- At AI-->
+      <div class="grid-item">
+        <div class="content-wrapper">
+          <div class="image-container">
+            <img id="atAI" onmouseover="toggleGif('atAI', 'gifs/aisquadvid.gif')"
+              onmouseout="toggleGif('atAI', 'pictures/Ai_squad.png')" src="pictures/Ai_squad.png" alt="atAI"
+              class="image" />
+          </div>
+          <div class="text-content">
+            <h3 class="image-title">Unity: AI Squad</h3>
+            <p class="image-info">
+              To create a system where the player can control a squad of
+              friendly AI by giving them orders, such as taking cover, to win
+              the level. To create the AI i used a state machine.
+            </p>
+            <button class="action-button"
+              onclick="openLink('https://github.com/AlessandroBufalino3115/AT_SquadAI_Unity')">
+              Link To Repo
+            </button>
+            <button class="action-button" onclick="openLink('https://alexhalo3115.itch.io/ai-squad')">
+              Link To Build
+            </button>
+            <a href="files/Advanced_Tech_Report_on_AI_Squad_Behvaiour.pdf" download>
+              <button class="action-button">Link To Report</button>
+            </a>
+            <button class="action-button" onclick="openLink('https://www.youtube.com/watch?v=Pq1EZ2tuQgI')">
+              Open video submission
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- AT Mesh Dest-->
+      <div class="grid-item" id="Mesh-Dest-Highlight">
+        <div class="content-wrapper">
+          <div class="image-container">
+            <img id="atMD" onmouseover="toggleGif('atMD', 'gifs/meshdest.gif')"
+              onmouseout="toggleGif('atMD', 'pictures/mesh_dest.png')" src="pictures/mesh_dest.png" alt="atMD"
+              class="image" />
+          </div>
+          <div class="text-content">
+            <h3 class="image-title">Unity: Mesh Destruction</h3>
+            <p class="image-info">
+              Implement a mesh destruction simulation similar to the one found
+              in the game Rainbow Six Siege, using algorithms such as marching
+              squares and more.
+            </p>
+            <button class="action-button"
+              onclick="openLink('https://github.com/AlessandroBufalino3115/Mesh_Destruction_AT')">
+              Link To Repo
+            </button>
+            <button class="action-button" onclick="openLink('https://alexhalo3115.itch.io/mesh-destruction')">
+              Link To Build
+            </button>
+            <a href="files/Advanced_Tech_Report_on_Mesh_Destruction.pdf" download>
+              <button class="action-button">Link To Report</button>
+            </a>
+            <button class="action-button" onclick="openLink('https://www.youtube.com/watch?v=Pq1EZ2tuQgI')">
+              Open video submission
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- AT civ game -->
+      <div class="grid-item" id="Civ-Highlight">
+        <div class="content-wrapper">
+          <div class="image-container">
+            <img id="atCiv" onmouseover="toggleGif('atCiv', 'gifs/civgif.gif')"
+              onmouseout="toggleGif('atCiv', 'pictures/civ_game.png')" src="pictures/civ_game.png" alt="atCiv"
+              class="image" />
+          </div>
+          <div class="text-content">
+            <h3 class="image-title">Unity: Civilization Simulation</h3>
+            <p class="image-info">
+              The task was to create a simulation-based game where the user
+              can place buildings and watch the civilization grow. A graph
+              with data is also available to show correlations between data
+              points.
+            </p>
+            <button class="action-button" onclick="openLink('https://github.com/AlessandroBufalino3115/Sim_Game_AT')">
+              Link To Repo
+            </button>
+            <button class="action-button" onclick="openLink('https://alexhalo3115.itch.io/civilization-simulation')">
+              Link To Build
+            </button>
+            <a href="files/Advanced_Tech_Report_on_Simulation_Based_Game.pdf" download>
+              <button class="action-button">Link To Report</button>
+            </a>
+            <button class="action-button" onclick="openLink('https://www.youtube.com/watch?v=Pq1EZ2tuQgI')">
+              Open video submission
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Classification -->
+      <div class="smaller-grid-item">
+        <div class="content-wrapper">
+          <div class="text-content">
+            <h3 class="image-title">Python: Butterfly Classification</h3>
+            <p class="image-info">
+              A neural network, implemented in Python using PyTorch, is
+              utilized to classify butterflies by training an AI to recognize
+              them.
+            </p>
+            <button class="action-button"
+              onclick="openLink('https://github.com/AlessandroBufalino3115/PythonClassificationUniModule')">
+              Link To Repo
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- jam 1 -->
+      <div class="smaller-grid-item">
+        <div class="content-wrapper">
+          <div class="text-content">
+            <h3 class="image-title">Unity: Pork Must Die 2600</h3>
+            <p class="image-info">
+              2 week game jam in a group of 7: My job was to deal with the
+              whole of the UI such as menu and HUD.<br /><br />
+              The goal was to De-Make a popular game, in this case the tower
+              defense game called Orc must Die.
+            </p>
+            <button class="action-button" onclick="openLink('https://github.com/FelixAntonelli/2600OrcsMustDie')">
+              Link To Repo
+            </button>
+            <button class="action-button" onclick="openLink('https://alexhalo3115.itch.io/2600-orcs-must-die')">
+              Link To Build
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- jam 2 -->
+      <div class="grid-item">
+        <div class="content-wrapper">
+          <div class="image-container">
+            <img src="pictures\houseHasSecrets.png" style="width: 100%" />
+          </div>
+          <div class="text-content">
+            <h3 class="image-title">Unity: The Island</h3>
+            <p class="image-info">
+              2-week game jam as a group of 5. The aim was to ensure that the
+              game could run on a low-powered machine, so we put a lot of
+              thought into the implementation. My responsibility was to create
+              the AI system using a state machine.
+            </p>
+            <button class="action-button" onclick="openLink('https://github.com/GamesTech/CGD-NookJam-Glitchlab')">
+              Link To Repo
+            </button>
+            <button class="action-button" onclick="openLink('https://alexhalo3115.itch.io/the-island')">
+              Link To Build
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- jam 3 -->
+      <div class="grid-item" id="GGJ-Highlight">
+        <div class="content-wrapper">
+          <div class="image-container">
+            <img src="pictures\rootwars.png" style="width: 100%" />
+          </div>
+          <div class="text-content">
+            <h3 class="image-title">Unity: Root Wars GGJ 2023</h3>
+            <p class="image-info">
+              GGJ of 2023 in a group of 3: the theme was roots.
+            </p>
+            <button class="action-button" onclick="openLink('https://github.com/GamesTech/CGD-NookJam-Glitchlab')">
+              Link To Repo
+            </button>
+            <button class="action-button"
+              onclick="openLink('https://alexhalo3115.itch.io/root-wars-the-thirst-for-life')">
+              Link To Build
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main jam Game -->
+      <div class="grid-item">
+        <div class="content-wrapper">
+          <div class="image-container">
+            <img src="pictures\burgla_battle_photo.png" style="width: 100%" />
+          </div>
+          <div class="text-content">
+            <h3 class="image-title">Unity: Burglar Battle</h3>
+            <p class="image-info">
+              Whole class final project: my team worked on the AI
+              implementation.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diss -->
+      <div class="bigger-grid-item" id="Dissertation-Highlight">
+        <div class="content-wrapper">
+          <div class="image-container">
+            <img src="pictures\dungeonforge.png" style="width: 100%" />
+          </div>
+          <div class="text-content">
+            <h3 class="image-title">Unity: Dungeon Forge</h3>
+            <p class="image-info">
+              My dissertation project consists of a downloadable asset pack
+              that facilitates the generation of dungeon maps in 3D and 2D
+              games through the use of several procedural content generation
+              (PCG) algorithms.
+            </p>
+            <button class="action-button"
+              onclick="openLink('https://github.com/AlessandroBufalino3115/Dissertation_PGC')">
+              Link To Development Repo
+            </button>
+            <button class="action-button" onclick="openLink('https://github.com/AlessandroBufalino3115/Dungeon-Forge')">
+              Link To Asset pack
+            </button>
+            <button class="action-button" onclick="openLink('https://youtu.be/7DBc7ZwA-ss')">
+              Link To Showcase Video
+            </button>
+            <a href="files/CCTP essay.pdf" download>
+              <button class="action-button">Check out the report here!</button>
             </a>
           </div>
+        </div>
+      </div>
+    </div>
+    <br /><br />
 
-          <div class="slider-single">
-            <img
-              class="slider-single-image"
-              src="pictures\civ_game.png"
-              alt="2"
-            />
-            <h1 class="slider-single-title">Civilization Simulation</h1>
-            <a
-              class="slider-single-likes"
-              onclick="scrollToGridItem('Civ-Highlight')"
-            >
-              <p>Click here to check it out</p>
-            </a>
-          </div>
+    <hr class="rainbow-hr center-fade-hr" />
+    <h1 class="divider-h1 minimized">Personal Projects (WIP)</h1>
+    <div class="grid-container">
 
-          <div class="slider-single">
-            <img
-              class="slider-single-image"
-              src="pictures\mesh_dest.png"
-              alt="3"
-            />
-            <h1 class="slider-single-title">Mesh Destruction</h1>
-            <a
-              class="slider-single-likes"
-              onclick="scrollToGridItem('Mesh-Dest-Highlight')"
-            >
-              <p>Click here to check it out</p>
-            </a>
-          </div>
-
-          <div class="slider-single">
-            <img
-              class="slider-single-image"
-              src="pictures\rootwars.png"
-              alt="4"
-            />
-            <h1 class="slider-single-title">Root Wars GGJ 2023</h1>
-            <a
-              class="slider-single-likes"
-              onclick="scrollToGridItem('GGJ-Highlight')"
-            >
-              <p>Click here to check it out</p>
-            </a>
+      <div class="tiny-grid-item">
+        <div class="content-wrapper">
+          <div class="text-content">
+            <h3 class="image-title">This Website!!!</h3>
+            <button class="action-button"
+              onclick="openLink('https://github.com/AlexHunter3115/AlexHunter3115.github.io')">
+              Link To Repo
+            </button>
           </div>
         </div>
       </div>
-    </section>
-
-    <section id="Work" class="hidden">
-      <h1 class="divider-header">All Projects</h1>
-      <b class="rainbow-hr anim"></b>
-      <h1 class="divider-h1">1st year of Uni</h1>
-      <div class="grid-container">
-        <!-- Pong  checked-->
-        <div class="grid-item">
-          <div class="content-wrapper">
-            <div class="image-container">
-              <img
-                id="pong"
-                onmouseover="toggleGif('pong', 'gifs/pong.gif')"
-                onmouseout="toggleGif('pong', 'pictures/pong_static.png')"
-                src="pictures/pong_static.png"
-                alt="Pong"
-                class="image"
-              />
-            </div>
-            <div class="text-content">
-              <h3 class="image-title">C++: Pong</h3>
-              <p class="image-info">
-                Clone of the first Pong game using the SFML library.
-              </p>
-              <button
-                class="action-button"
-                onclick="openLink('https://github.com/AlessandroBufalino3115/Uni-Cpp-Projects')"
-              >
-                Link To Repo
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- idle Clicker  broken-->
-        <div class="smaller-grid-item">
-          <div class="content-wrapper">
-            <div class="text-content">
-              <h3 class="image-title">Python: Idle Clicker</h3>
-              <p class="image-info">
-                A project made of 5 difficulty challenges, the last one being to
-                make an idle clicker game that contains tasks in a specific
-                order to incentivize the use of stacks and queues.
-              </p>
-              <button
-                class="action-button"
-                onclick="openLink('https://github.com/AlessandroBufalino3115/Uni-Py-Projects')"
-              >
-                Link To Repo
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Python: Asteroid simulator checked-->
-        <div class="grid-item">
-          <div class="content-wrapper">
-            <div class="image-container">
-              <img
-                id="asteroid"
-                onmouseover="toggleGif('asteroid', 'gifs/asteroid.gif')"
-                onmouseout="toggleGif('asteroid', 'pictures/asteroid_static.png')"
-                src="pictures/asteroid_static.png"
-                alt="Asteroid Simulator"
-                class="image"
-              />
-            </div>
-            <div class="text-content">
-              <h3 class="image-title">Python: Asteroid Simulator</h3>
-              <p class="image-info">
-                A project made of 5 difficulty challenges based around sorting
-                algorithms.
-              </p>
-              <button
-                class="action-button"
-                onclick="openLink('https://github.com/AlessandroBufalino3115/Uni-Py-Projects')"
-              >
-                Link To Repo
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Python: AI pathfinding checked-->
-        <div class="grid-item">
-          <div class="content-wrapper">
-            <div class="image-container">
-              <img
-                id="pathfinding"
-                onmouseover="toggleGif('pathfinding', 'gifs/AI.gif')"
-                onmouseout="toggleGif('pathfinding', 'pictures/a-star-static.png')"
-                src="pictures/a-star-static.png"
-                alt="AI Pathfinding"
-                class="image"
-              />
-            </div>
-            <div class="text-content">
-              <h3 class="image-title">Python: AI Pathfinding</h3>
-              <p class="image-info">
-                A project made of 5 difficulty challenges, each challenges
-                explaining systems found in games.
-              </p>
-              <button
-                class="action-button"
-                onclick="openLink('https://github.com/AlessandroBufalino3115/Uni-Py-Projects')"
-              >
-                Link To Repo
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Python: Dungeon crawler chekd-->
-        <div class="grid-item">
-          <div class="content-wrapper">
-            <div class="image-container">
-              <img
-                id="dungeon_crawler"
-                onmouseover="toggleGif('dungeon_crawler', 'gifs/dungeon_crawler.gif')"
-                onmouseout="toggleGif('dungeon_crawler', 'pictures/dungeon_crawler_static.png')"
-                src="pictures/dungeon_crawler_static.png"
-                alt="Dungeon Crawler"
-                class="image"
-              />
-            </div>
-            <div class="text-content">
-              <h3 class="image-title">Python: Dungeon Crawler</h3>
-              <p class="image-info">
-                4 people group project: worked on part of the AI and pathfinding
-                and some other systems.
-              </p>
-              <button
-                class="action-button"
-                onclick="openLink('https://github.com/AlessandroBufalino3115/Uni-Py-Projects')"
-              >
-                Link To Repo
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- C++: space invader-->
-        <div class="grid-item">
-          <div class="content-wrapper">
-            <div class="image-container">
-              <img
-                id="invader"
-                onmouseover="toggleGif('invader', 'gifs/invader.gif')"
-                onmouseout="toggleGif('invader', 'pictures/invader_static.png')"
-                src="pictures/invader_static.png"
-                alt="Space Invader"
-                class="image"
-              />
-            </div>
-            <div class="text-content">
-              <h3 class="image-title">C++: Space Invader</h3>
-              <p class="image-info">
-                Copy of the original Space Invader, used to familiarize with
-                smooth motion and translate mathematical graphing equations into
-                movement patterns.
-              </p>
-              <button
-                class="action-button"
-                onclick="openLink('https://github.com/AlessandroBufalino3115/Uni-Cpp-Projects')"
-              >
-                Link To Repo
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- C++: Angry birds-->
-        <div class="grid-item">
-          <div class="content-wrapper">
-            <div class="image-container">
-              <img
-                id="angry_birds"
-                onmouseover="toggleGif('angry_birds', 'gifs/angry birds.gif')"
-                onmouseout="toggleGif('angry_birds', 'pictures/angry_birds_static.png')"
-                src="pictures/angry_birds_static.png"
-                alt="Angry Birds"
-                class="image"
-              />
-            </div>
-            <div class="text-content">
-              <h3 class="image-title">C++: Angry Birds</h3>
-              <p class="image-info">
-                Copy of the original Angry birds, used to familiarize with basic
-                2D physics motions and momentum.
-              </p>
-
-              <button
-                class="action-button"
-                onclick="openLink('https://github.com/AlessandroBufalino3115/Uni-Cpp-Projects')"
-              >
-                Link To Repo
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- C++: Breakout-->
-        <div class="grid-item">
-          <div class="content-wrapper">
-            <div class="image-container">
-              <img
-                id="breakout"
-                onmouseover="toggleGif('breakout', 'gifs/breakout.gif')"
-                onmouseout="toggleGif('breakout', 'pictures/breakout_static.png')"
-                src="pictures/breakout_static.png"
-                alt="Breakout"
-                class="image"
-              />
-            </div>
-            <div class="text-content">
-              <h3 class="image-title">C++: Breakout</h3>
-              <p class="image-info">
-                Clone of the Breakout Game, meant to be a challenge to
-                familiarise with using arrays, vectors and loading thing in and
-                out for different levels.
-              </p>
-              <button
-                class="action-button"
-                onclick="openLink('https://github.com/AlessandroBufalino3115/Uni-Cpp-Projects')"
-              >
-                Link To Repo
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Unity: 3D environment-->
-        <div class="grid-item">
-          <div class="content-wrapper">
-            <div class="image-container">
-              <img
-                id="3d_env"
-                onmouseover="toggleGif('3d_env', 'gifs/3d envi.gif')"
-                onmouseout="toggleGif('3d_env', 'pictures/3d_envi_static.png')"
-                src="pictures/3d_envi_static.png"
-                alt="3D Environment"
-                class="image"
-              />
-            </div>
-            <div class="text-content">
-              <h3 class="image-title">Unity: 3D Environment</h3>
-              <p class="image-info">
-                Project consisted of making an intricate animation system using
-                MAYA and importing it to Unity and implementing it into a
-                function demo.
-              </p>
-              <button
-                class="action-button"
-                onclick="openLink('https://alexhalo3115.itch.io/3d-environment')"
-              >
-                Play The Build
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <br /><br />
-
-      <hr class="rainbow-hr center-fade-hr" />
-      <h1 class="divider-h1">2nd year of Uni</h1>
-      <div class="grid-container">
-        <!-- mario_c++ -->
-        <div class="grid-item" id="grid-item-1">
-          <div class="content-wrapper">
-            <div class="image-container">
-              <img
-                id="mario"
-                onmouseover="toggleGif('mario', 'gifs/mario game.gif')"
-                onmouseout="toggleGif('mario', 'pictures/mario_static.png')"
-                src="pictures/mario_static.png"
-                alt="mario_c++"
-                class="image"
-              />
-            </div>
-            <div class="text-content">
-              <h3 class="image-title">C++: mario clone</h3>
-              <p class="image-info">Clone of the 1st mario game.</p>
-              <button
-                class="action-button"
-                onclick="openLink('https://github.com/UWEGames-GiC2/notmario-AlessandroBufalino3115')"
-              >
-                Link to Repo
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!--  C++: network game -->
-        <div class="grid-item" id="highlight">
-          <div class="content-wrapper">
-            <div class="image-container">
-              <img
-                id="network"
-                onmouseover="toggleGif('network', 'gifs/multiplayer game.gif')"
-                onmouseout="toggleGif('network', 'pictures/network_mulit_static.png')"
-                src="pictures/network_mulit_static.png"
-                alt="network game"
-                class="image"
-              />
-            </div>
-            <div class="text-content">
-              <h3 class="image-title">C++: network game</h3>
-              <p class="image-info">
-                2 people group project with the goal of making a tile based
-                online game. My job was to get the networking working.
-              </p>
-              <button
-                class="action-button"
-                onclick="openLink('https://github.com/UWEGames-GiC2/asgenetgame-alex-and-callum')"
-              >
-                Link To Repo
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- C++: 12 Vaccines -->
-        <div class="grid-item">
-          <div class="content-wrapper">
-            <div class="image-container">
-              <img
-                id="12 Vaccines"
-                onmouseover="toggleGif('12 Vaccines', 'gifs/multi local game.gif')"
-                onmouseout="toggleGif('12 Vaccines', 'pictures/local_multi_static.png')"
-                src="pictures/local_multi_static.png"
-                alt="12 Vaccines"
-                class="image"
-              />
-            </div>
-            <div class="text-content">
-              <h3 class="image-title">C++: 12 Vaccines</h3>
-              <p class="image-info">
-                A 4-person group project. My job was the implementation of the
-                AI and optimizing the game, such as drawing only the rooms where
-                the player currently was to save on GPU performance.
-              </p>
-              <button
-                class="action-button"
-                onclick="openLink('https://github.com/UWEGames-GiC2/asgemovie-group-2')"
-              >
-                Link To Repo
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Unreal: Level design -->
-        <div class="grid-item">
-          <div class="content-wrapper">
-            <div class="image-container">
-              <img
-                id="Unreal Level Design"
-                onmouseover="toggleGif('Unreal Level Design', 'gifs/unreal_level_design.gif')"
-                onmouseout="toggleGif('Unreal Level Design', 'pictures/Unreal_LD_static.png')"
-                src="pictures/Unreal_LD_static.png"
-                alt="Unreal Level Design"
-                class="image"
-              />
-            </div>
-            <div class="text-content">
-              <h3 class="image-title">Unreal Level Design</h3>
-              <p class="image-info">
-                Small level showing game design feature thorthought.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Unity/Unreal: Telekinesis -->
-        <div class="grid-item">
-          <div class="content-wrapper">
-            <div class="image-container">
-              <img
-                id="Unity/Unreal: Telekinesis"
-                onmouseover="toggleGif('Unity/Unreal: Telekinesis', 'gifs/unity_telekinesis.gif')"
-                onmouseout="toggleGif('Unity/Unreal: Telekinesis', 'pictures/telekinetic_static.png')"
-                src="pictures/telekinetic_static.png"
-                alt="Unity/Unreal: Telekinesis"
-                class="image"
-              />
-            </div>
-            <div class="text-content">
-              <h3 class="image-title">Unity/Unreal: Telekinesis</h3>
-              <p class="image-info">
-                Task was to implement a system similar to the telekenisis found
-                in the game control in both Unity and Unreal.
-              </p>
-              <button
-                class="action-button"
-                onclick="openLink('https://alexhalo3115.itch.io/telekinesis')"
-              >
-                Play The Unity Build
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Unity: Gameplay programming -->
-        <div class="bigger-grid-item">
-          <div class="content-wrapper">
-            <div class="image-container">
-              <img src="pictures\Capture.png" style="width: 100%" />
-            </div>
-            <div class="text-content">
-              <h3 class="image-title">Unity: Gameplay Programming</h3>
-              <p class="image-info">
-                7 tasks exploring gamplay mechanics found in games.<br />
-                Task 1: Movement and Animations<br />
-                Task 2: Interaction with world<br />
-                Task 3: Picking up Items and Abilities<br />
-                Task 4/5: Targeting Enemies and AI<br />
-                Task 6: Platforming<br />
-                Task 7: 2.5D Gameplay and spline
-              </p>
-              <button
-                class="action-button"
-                onclick="openLink('https://alexhalo3115.itch.io/gameplay-mechanics')"
-              >
-                Play The Unity Build
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <br /><br />
-
-      <hr class="rainbow-hr center-fade-hr" />
-      <h1 class="divider-h1">3rd year of Uni</h1>
-      <div class="grid-container">
-        <!-- At AI-->
-        <div class="grid-item">
-          <div class="content-wrapper">
-            <div class="image-container">
-              <img
-                id="atAI"
-                onmouseover="toggleGif('atAI', 'gifs/aisquadvid.gif')"
-                onmouseout="toggleGif('atAI', 'pictures/Ai_squad.png')"
-                src="pictures/Ai_squad.png"
-                alt="atAI"
-                class="image"
-              />
-            </div>
-            <div class="text-content">
-              <h3 class="image-title">Unity: AI Squad</h3>
-              <p class="image-info">
-                To create a system where the player can control a squad of
-                friendly AI by giving them orders, such as taking cover, to win
-                the level. To create the AI i used a state machine.
-              </p>
-              <button
-                class="action-button"
-                onclick="openLink('https://github.com/AlessandroBufalino3115/AT_SquadAI_Unity')"
-              >
-                Link To Repo
-              </button>
-              <button
-                class="action-button"
-                onclick="openLink('https://alexhalo3115.itch.io/ai-squad')"
-              >
-                Link To Build
-              </button>
-              <a
-                href="files/Advanced_Tech_Report_on_AI_Squad_Behvaiour.pdf"
-                download
-              >
-                <button class="action-button">Link To Report</button>
-              </a>
-              <button
-                class="action-button"
-                onclick="openLink('https://www.youtube.com/watch?v=Pq1EZ2tuQgI')"
-              >
-                Open video submission
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- AT Mesh Dest-->
-        <div class="grid-item" id="Mesh-Dest-Highlight">
-          <div class="content-wrapper">
-            <div class="image-container">
-              <img
-                id="atMD"
-                onmouseover="toggleGif('atMD', 'gifs/meshdest.gif')"
-                onmouseout="toggleGif('atMD', 'pictures/mesh_dest.png')"
-                src="pictures/mesh_dest.png"
-                alt="atMD"
-                class="image"
-              />
-            </div>
-            <div class="text-content">
-              <h3 class="image-title">Unity: Mesh Destruction</h3>
-              <p class="image-info">
-                Implement a mesh destruction simulation similar to the one found
-                in the game Rainbow Six Siege, using algorithms such as marching
-                squares and more.
-              </p>
-              <button
-                class="action-button"
-                onclick="openLink('https://github.com/AlessandroBufalino3115/Mesh_Destruction_AT')"
-              >
-                Link To Repo
-              </button>
-              <button
-                class="action-button"
-                onclick="openLink('https://alexhalo3115.itch.io/mesh-destruction')"
-              >
-                Link To Build
-              </button>
-              <a
-                href="files/Advanced_Tech_Report_on_Mesh_Destruction.pdf"
-                download
-              >
-                <button class="action-button">Link To Report</button>
-              </a>
-              <button
-                class="action-button"
-                onclick="openLink('https://www.youtube.com/watch?v=Pq1EZ2tuQgI')"
-              >
-                Open video submission
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- AT civ game -->
-        <div class="grid-item" id="Civ-Highlight">
-          <div class="content-wrapper">
-            <div class="image-container">
-              <img
-                id="atCiv"
-                onmouseover="toggleGif('atCiv', 'gifs/civgif.gif')"
-                onmouseout="toggleGif('atCiv', 'pictures/civ_game.png')"
-                src="pictures/civ_game.png"
-                alt="atCiv"
-                class="image"
-              />
-            </div>
-            <div class="text-content">
-              <h3 class="image-title">Unity: Civilization Simulation</h3>
-              <p class="image-info">
-                The task was to create a simulation-based game where the user
-                can place buildings and watch the civilization grow. A graph
-                with data is also available to show correlations between data
-                points.
-              </p>
-              <button
-                class="action-button"
-                onclick="openLink('https://github.com/AlessandroBufalino3115/Sim_Game_AT')"
-              >
-                Link To Repo
-              </button>
-              <button
-                class="action-button"
-                onclick="openLink('https://alexhalo3115.itch.io/civilization-simulation')"
-              >
-                Link To Build
-              </button>
-              <a
-                href="files/Advanced_Tech_Report_on_Simulation_Based_Game.pdf"
-                download
-              >
-                <button class="action-button">Link To Report</button>
-              </a>
-              <button
-                class="action-button"
-                onclick="openLink('https://www.youtube.com/watch?v=Pq1EZ2tuQgI')"
-              >
-                Open video submission
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Classification -->
-        <div class="smaller-grid-item">
-          <div class="content-wrapper">
-            <div class="text-content">
-              <h3 class="image-title">Python: Butterfly Classification</h3>
-              <p class="image-info">
-                A neural network, implemented in Python using PyTorch, is
-                utilized to classify butterflies by training an AI to recognize
-                them.
-              </p>
-              <button
-                class="action-button"
-                onclick="openLink('https://github.com/AlessandroBufalino3115/PythonClassificationUniModule')"
-              >
-                Link To Repo
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- jam 1 -->
-        <div class="smaller-grid-item">
-          <div class="content-wrapper">
-            <div class="text-content">
-              <h3 class="image-title">Unity: Pork Must Die 2600</h3>
-              <p class="image-info">
-                2 week game jam in a group of 7: My job was to deal with the
-                whole of the UI such as menu and HUD.<br /><br />
-                The goal was to De-Make a popular game, in this case the tower
-                defense game called Orc must Die.
-              </p>
-              <button
-                class="action-button"
-                onclick="openLink('https://github.com/FelixAntonelli/2600OrcsMustDie')"
-              >
-                Link To Repo
-              </button>
-              <button
-                class="action-button"
-                onclick="openLink('https://alexhalo3115.itch.io/2600-orcs-must-die')"
-              >
-                Link To Build
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- jam 2 -->
-        <div class="grid-item">
-          <div class="content-wrapper">
-            <div class="image-container">
-              <img src="pictures\houseHasSecrets.png" style="width: 100%" />
-            </div>
-            <div class="text-content">
-              <h3 class="image-title">Unity: The Island</h3>
-              <p class="image-info">
-                2-week game jam as a group of 5. The aim was to ensure that the
-                game could run on a low-powered machine, so we put a lot of
-                thought into the implementation. My responsibility was to create
-                the AI system using a state machine.
-              </p>
-              <button
-                class="action-button"
-                onclick="openLink('https://github.com/GamesTech/CGD-NookJam-Glitchlab')"
-              >
-                Link To Repo
-              </button>
-              <button
-                class="action-button"
-                onclick="openLink('https://alexhalo3115.itch.io/the-island')"
-              >
-                Link To Build
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- jam 3 -->
-        <div class="grid-item" id="GGJ-Highlight">
-          <div class="content-wrapper">
-            <div class="image-container">
-              <img src="pictures\rootwars.png" style="width: 100%" />
-            </div>
-            <div class="text-content">
-              <h3 class="image-title">Unity: Root Wars GGJ 2023</h3>
-              <p class="image-info">
-                GGJ of 2023 in a group of 3: the theme was roots.
-              </p>
-              <button
-                class="action-button"
-                onclick="openLink('https://github.com/GamesTech/CGD-NookJam-Glitchlab')"
-              >
-                Link To Repo
-              </button>
-              <button
-                class="action-button"
-                onclick="openLink('https://alexhalo3115.itch.io/root-wars-the-thirst-for-life')"
-              >
-                Link To Build
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Main jam Game -->
-        <div class="grid-item">
-          <div class="content-wrapper">
-            <div class="image-container">
-              <img src="pictures\burgla_battle_photo.png" style="width: 100%" />
-            </div>
-            <div class="text-content">
-              <h3 class="image-title">Unity: Burglar Battle</h3>
-              <p class="image-info">
-                Whole class final project: my team worked on the AI
-                implementation.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Diss -->
-        <div class="bigger-grid-item" id="Dissertation-Highlight">
-          <div class="content-wrapper">
-            <div class="image-container">
-              <img src="pictures\dungeonforge.png" style="width: 100%" />
-            </div>
-            <div class="text-content">
-              <h3 class="image-title">Unity: Dungeon Forge</h3>
-              <p class="image-info">
-                My dissertation project consists of a downloadable asset pack
-                that facilitates the generation of dungeon maps in 3D and 2D
-                games through the use of several procedural content generation
-                (PCG) algorithms.
-              </p>
-              <button
-                class="action-button"
-                onclick="openLink('https://github.com/AlessandroBufalino3115/Dissertation_PGC')"
-              >
-                Link To Development Repo
-              </button>
-              <button
-                class="action-button"
-                onclick="openLink('https://github.com/AlessandroBufalino3115/Dungeon-Forge')"
-              >
-                Link To Asset pack
-              </button>
-              <button
-                class="action-button"
-                onclick="openLink('https://youtu.be/7DBc7ZwA-ss')"
-              >
-                Link To Showcase Video
-              </button>
-              <a href="files/CCTP essay.pdf" download>
-                <button class="action-button">Check out the report here!</button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br /><br />
-
-      <hr class="rainbow-hr center-fade-hr" />
-      <h1 class="divider-h1">Personal Projects (WIP)</h1>
-      <div class="grid-container">
-       
-
-
-        <div class="tiny-grid-item">
-          <div class="content-wrapper">
-            <div class="text-content">
-              <h3 class="image-title">This Website!!!</h3>
-              <button
-                class="action-button"
-                onclick="openLink('https://github.com/AlexHunter3115/AlexHunter3115.github.io')"
-              >
-                Link To Repo
-              </button>
-            </div>
-          </div>
-        </div>
-
-        
 
       <div class="smaller-grid-item">
         <div class="content-wrapper">
           <div class="text-content">
             <h3 class="image-title">Unity/React/Cairo: SKIRMISH (DROPPED PROJECT)</h3>
             <p class="image-info">
-              Card game, inspired by Gwent, built in Unity, featuring networking using the Mirror library. 
-              The game uses React to bridge the communication between Starknet and Unity for a seamless, secure, and scalable gameplay experience.
+              Card game, inspired by Gwent, built in Unity, featuring networking using the Mirror library.
+              The game uses React to bridge the communication between Starknet and Unity for a seamless, secure, and
+              scalable gameplay experience.
             </p>
-            <button
-                class="action-button"
-                onclick="openLink('https://github.com/AlexHunter3115/Skirmish')"
-              >
-                Link To Repo
-              </button>
+            <button class="action-button" onclick="openLink('https://github.com/AlexHunter3115/Skirmish')">
+              Link To Repo
+            </button>
           </div>
         </div>
         <div class="tooltip-grid">Project was dropped due to scope getting too large and time constraints</div>
       </div>
-      
-    <div class="special-grid-item">
-      <div class="grid-item-name">
-        Projects currently in the works
+
+      <div class="special-grid-item">
+        <div class="grid-item-name">
+          Projects currently in the works
+        </div>
+        <div class="tooltip-list">Tooltip Content</div>
+        <div class="button-section">
+          <button class="list-button" data-lang="js">JS</button>
+          <button class="list-button" data-lang="py">Python</button>
+          <button class="list-button" data-lang="unity">Unity</button>
+          <button class="list-button" data-lang="cpp">C++</button>
+          <button class="list-button" data-lang="rust">Rust</button>
+        </div>
+        <div></div>
+        <div class="list-section list-container"></div>
       </div>
-      <div class="tooltip-list">Tooltip Content</div>
-      <div class="button-section">
-        <button class="list-button" data-lang="js">JS</button>
-        <button class="list-button" data-lang="py">Python</button>
-        <button class="list-button" data-lang="unity">Unity</button>
-        <button class="list-button" data-lang="cpp">C++</button>
-        <button class="list-button" data-lang="rust">Rust</button>
-      </div>
-      <div></div> 
-      <div class="list-section list-container"></div>
+
     </div>
-    
-    
-</div>
 
-      </div>
-      
+    </div>
 
-    </section>
-    <br />
 
-    <section id="Contact" class="hidden-right">
-      <h1 class="divider-header">Get in touch</h1>
-      <b class="rainbow-hr anim"></b>
-      <div class="button-container-contact">
-        <div class="button-group-contact">
-          <a href="files/CV Alessandro Bufalino.pdf" download>
-            <button class="button-49">
-              CV Download
-              <div class="tooltip-button tooltip-button-right">
-                Click to download
-              </div>
-            </button>
-          </a>
-          <button
-            class="button-49"
-            onclick="copyToClipboard('alessandro.bufalino3115@gmail.com')"
-          >
-            Email
+  </section>
+  <br />
+
+  <section id="Contact" class="hidden-right">
+    <h1 class="divider-header">Get in touch</h1>
+    <b class="rainbow-hr anim"></b>
+    <div class="button-container-contact">
+      <div class="button-group-contact">
+        <a href="files/CV Alessandro Bufalino.pdf" download>
+          <button class="button-49">
+            CV Download
             <div class="tooltip-button tooltip-button-right">
-              Click to copy to clipboard
+              Click to download
             </div>
           </button>
-          <a
-            href="https://www.linkedin.com/in/alessandro-bufalino-3732b5273/"
-            target="_blank"
-          >
-            <button class="button-49">LinkedIn</button>
-          </a>
-        </div>
-        <div class="button-group-contact">
-          <a href="https://github.com/AlessandroBufalino3115" target="_blank">
-            <button class="button-49">Main GitHub</button>
-          </a>
-          <button
-            class="button-49"
-            onclick="copyToClipboard('Alexhalo3115#4505')"
-          >
-            Discord
-            <div class="tooltip-button tooltip-button-left">
-              Click to copy to clipboard
-            </div>
+        </a>
+        <button class="button-49" onclick="copyToClipboard('alessandro.bufalino3115@gmail.com')">
+          Email
+          <div class="tooltip-button tooltip-button-right">
+            Click to copy to clipboard
+          </div>
+        </button>
+        <a href="https://www.linkedin.com/in/alessandro-bufalino-3732b5273/" target="_blank">
+          <button class="button-49">LinkedIn</button>
+        </a>
+      </div>
+      <div class="button-group-contact">
+        <a href="https://github.com/AlessandroBufalino3115" target="_blank">
+          <button class="button-49">Main GitHub</button>
+        </a>
+        <button class="button-49" onclick="copyToClipboard('Alexhalo3115#4505')">
+          Discord
+          <div class="tooltip-button tooltip-button-left">
+            Click to copy to clipboard
+          </div>
+        </button>
+
+      </div>
+    </div>
+    <input type="text" value="example@example.com" id="emailToCopy" style="display: none" />
+    <div id="customPopup" class="popup">
+      Copied: <span id="copiedText"></span>
+    </div>
+  </section>
+
+  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+  <section id="Algorithms" class="hidden">
+    <h1 class="divider-header desktop">
+      p5.js Playground canvas for fun (still work in progress)
+    </h1>
+    <h1 class="divider-header mobile">p5.js - but only works on PC</h1>
+    <b class="rainbow-hr anim"></b>
+    <div class="algorithm-container">
+      <div class="left-section">
+        <h2 id="main-title">Title</h2>
+        <p id="main-description">
+          Description of the algorithm or visualization.
+        </p>
+      </div>
+      <div class="middle-section">
+        <div id="p5js-canvas"></div>
+        <div id="control-container"></div>
+      </div>
+      <div class="right-section">
+        <ul class="algorithm-list">
+          <button class="button-algo" style="--clr: #39ff14" data-title="Main Title 4" data-description="Description 4"
+            onclick="switchAlgoState(0)">
+            <span>Turn Off p5.Js</span><i></i>
           </button>
 
-        </div>
+          <button class="button-algo" style="--clr: #39ff14" data-title="Main Title 1" data-description="Description 1"
+            onclick="switchAlgoState(1)">
+            <span>Cellular Automata</span><i></i>
+          </button>
+
+          <button class="button-algo" style="--clr: #ff44cc" data-title="Main Title 2" data-description="Description 2"
+            onclick="switchAlgoState(2)">
+            <span>Test Input</span><i></i>
+          </button>
+
+          <button class="button-algo" style="--clr: #0ff0fc" data-title="Main Title 3" data-description="Description 3"
+            onclick="switchAlgoState(3)">
+            <span>Tetris</span><i></i>
+          </button>
+        </ul>
       </div>
-      <input
-        type="text"
-        value="example@example.com"
-        id="emailToCopy"
-        style="display: none"
-      />
-      <div id="customPopup" class="popup">
-        Copied: <span id="copiedText"></span>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <br /><br /><br /><br />
 
-    <section id="Algorithms" class="hidden">
-      <h1 class="divider-header desktop">
-        p5.js Playground canvas for fun (still work in progress)
-      </h1>
-      <h1 class="divider-header mobile">p5.js - but only works on PC</h1>
-      <b class="rainbow-hr anim"></b>
-      <div class="algorithm-container">
-        <div class="left-section">
-          <h2 id="main-title">Title</h2>
-          <p id="main-description">
-            Description of the algorithm or visualization.
-          </p>
-        </div>
-        <div class="middle-section">
-          <div id="p5js-canvas"></div>
-          <div id="control-container"></div>
-        </div>
-        <div class="right-section">
-          <ul class="algorithm-list">
-            <button
-              class="button-algo"
-              style="--clr: #39ff14"
-              data-title="Main Title 4"
-              data-description="Description 4"
-              onclick="switchAlgoState(0)"
-            >
-              <span>Turn Off p5.Js</span><i></i>
-            </button>
+  <script src="Javascript Scripts\Algorithms\BaseAlgoClass.js"></script>
+  <script src="Javascript Scripts\Algorithms\CellularAutomata.js"></script>
+  <script src="Javascript Scripts\Algorithms\Tetris.js"></script>
+  <script src="Javascript Scripts\Algorithms\TestInput.js"></script>
 
-            <button
-              class="button-algo"
-              style="--clr: #39ff14"
-              data-title="Main Title 1"
-              data-description="Description 1"
-              onclick="switchAlgoState(1)"
-            >
-              <span>Cellular Automata</span><i></i>
-            </button>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="Javascript Scripts/Algorithms/sketch.js"></script>
+  <script src="Javascript Scripts/Main.js"></script>
+  <script src="Javascript Scripts/Carousel.js"></script>
+  <script src="Javascript Scripts/GridList.js"></script>
+</body>
 
-            <button
-              class="button-algo"
-              style="--clr: #ff44cc"
-              data-title="Main Title 2"
-              data-description="Description 2"
-              onclick="switchAlgoState(2)"
-            >
-              <span>Test Input</span><i></i>
-            </button>
-
-            <button
-              class="button-algo"
-              style="--clr: #0ff0fc"
-              data-title="Main Title 3"
-              data-description="Description 3"
-              onclick="switchAlgoState(3)"
-            >
-              <span>Tetris</span><i></i>
-            </button>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <br /><br /><br /><br />
-
-    <script src="Javascript Scripts\Algorithms\BaseAlgoClass.js"></script>
-    <script src="Javascript Scripts\Algorithms\CellularAutomata.js"></script>
-    <script src="Javascript Scripts\Algorithms\Tetris.js"></script>
-    <script src="Javascript Scripts\Algorithms\TestInput.js"></script>
-
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <script src="Javascript Scripts/Algorithms/sketch.js"></script>
-    <script src="Javascript Scripts/Main.js"></script>
-    <script src="Javascript Scripts/Carousel.js"></script>
-    <script src="Javascript Scripts/GridList.js"></script>
-  </body>
 </html>

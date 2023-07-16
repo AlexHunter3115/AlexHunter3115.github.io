@@ -13,10 +13,10 @@
 .rainbow-hr:after, .rainbow-hr:before {
   content: "";
   position: absolute;
-  width: 100%;
+  width: 120%;
   height: 3px;
   bottom: 50%;
-  left: 0;
+  left: -10%;
 }
 .rainbow-hr:before {
   background: linear-gradient(90deg, #24272C 0%, #24272C 50%, transparent 50%, transparent 100%);
@@ -64,8 +64,6 @@
   font-size: 3.5em;
   margin: 8px;
 }
-
-
 
 .center-fade-hr {
   height: 3px; 
