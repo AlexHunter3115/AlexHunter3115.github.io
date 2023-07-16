@@ -1,8 +1,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Public+Sans&display=swap);
 
-
-.rainbow-hr{
+.rainbow-hr {
   width: 100%;
   height: 3px;
   display: block;
@@ -10,7 +9,8 @@
   margin-bottom: 0em;
   padding: 2em 0;
 }
-.rainbow-hr:after, .rainbow-hr:before {
+.rainbow-hr:after,
+.rainbow-hr:before {
   content: "";
   position: absolute;
   width: 120%;
@@ -19,14 +19,32 @@
   left: -10%;
 }
 .rainbow-hr:before {
-  background: linear-gradient(90deg, #24272C 0%, #24272C 50%, transparent 50%, transparent 100%);
+  background: linear-gradient(
+    90deg,
+    #24272c 0%,
+    #24272c 50%,
+    transparent 50%,
+    transparent 100%
+  );
   background-size: 15px;
   background-position: center;
   z-index: 1;
 }
 .rainbow-hr:after {
   transition: opacity 0.3s ease, animation 0.3s ease;
-  background: linear-gradient(to right, #62efab 5%, #F2EA7D 15%, #F2EA7D 25%, #FF8797 35%, #FF8797 45%, #e1a4f4 55%, #e1a4f4 65%, #82fff4 75%, #82fff4 85%, #62efab 95%);
+  background: linear-gradient(
+    to right,
+    #62efab 5%,
+    #f2ea7d 15%,
+    #f2ea7d 25%,
+    #ff8797 35%,
+    #ff8797 45%,
+    #e1a4f4 55%,
+    #e1a4f4 65%,
+    #82fff4 75%,
+    #82fff4 85%,
+    #62efab 95%
+  );
   background-size: 200%;
   background-position: 0%;
   animation: bar 15s linear infinite;
@@ -42,7 +60,49 @@
 }
 
 .rainbow-hr.anim:before {
-  background: linear-gradient(90deg, #24272C 0%, #24272C 5%, transparent 5%, transparent 10%, #24272C 10%, #24272C 15%, transparent 15%, transparent 20%, #24272C 20%, #24272C 25%, transparent 25%, transparent 30%, #24272C 30%, #24272C 35%, transparent 35%, transparent 40%, #24272C 40%, #24272C 45%, transparent 45%, transparent 50%, #24272C 50%, #24272C 55%, transparent 55%, transparent 60%, #24272C 60%, #24272C 65%, transparent 65%, transparent 70%, #24272C 70%, #24272C 75%, transparent 75%, transparent 80%, #24272C 80%, #24272C 85%, transparent 85%, transparent 90%, #24272C 90%, #24272C 95%, transparent 95%, transparent 100%);
+  background: linear-gradient(
+    90deg,
+    #24272c 0%,
+    #24272c 5%,
+    transparent 5%,
+    transparent 10%,
+    #24272c 10%,
+    #24272c 15%,
+    transparent 15%,
+    transparent 20%,
+    #24272c 20%,
+    #24272c 25%,
+    transparent 25%,
+    transparent 30%,
+    #24272c 30%,
+    #24272c 35%,
+    transparent 35%,
+    transparent 40%,
+    #24272c 40%,
+    #24272c 45%,
+    transparent 45%,
+    transparent 50%,
+    #24272c 50%,
+    #24272c 55%,
+    transparent 55%,
+    transparent 60%,
+    #24272c 60%,
+    #24272c 65%,
+    transparent 65%,
+    transparent 70%,
+    #24272c 70%,
+    #24272c 75%,
+    transparent 75%,
+    transparent 80%,
+    #24272c 80%,
+    #24272c 85%,
+    transparent 85%,
+    transparent 90%,
+    #24272c 90%,
+    #24272c 95%,
+    transparent 95%,
+    transparent 100%
+  );
   background-size: 150px;
   background-position: center;
   z-index: 1;
@@ -55,10 +115,9 @@
   animation-duration: 2s;
 }
 
-.divider-h1
-{
+.divider-h1 {
   text-align: center;
-  font-family: 'Public Sans', sans-serif;
+  font-family: "Public Sans", sans-serif;
   font-weight: 400;
   color: rgb(124, 124, 124);
   font-size: 3.5em;
@@ -66,28 +125,46 @@
 }
 
 .center-fade-hr {
-  height: 3px; 
+  height: 3px;
   border: none;
 }
 
-.center-fade-hr:after, .center-fade-hr:before {
+.center-fade-hr:after,
+.center-fade-hr:before {
   content: "";
   position: absolute;
   width: 100%;
-  height: 3px; 
+  height: 3px;
   bottom: 50%;
   left: 0;
 }
 
 .center-fade-hr:before {
-  background: linear-gradient(90deg, transparent 0%, transparent 45%, #24272C 50%, transparent 55%, transparent 100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 45%,
+    #24272c 50%,
+    transparent 55%,
+    transparent 100%
+  );
   background-size: 15px;
   background-position: center;
   z-index: 1;
 }
 
 .center-fade-hr:after {
-  background: linear-gradient(to left, transparent 0%, transparent 40%, #62efab 45%, #F2EA7D 50%, #FF8797 55%, #e1a4f4 60%, transparent 65%, transparent 100%);
+  background: linear-gradient(
+    to left,
+    transparent 0%,
+    transparent 40%,
+    #62efab 45%,
+    #f2ea7d 50%,
+    #ff8797 55%,
+    #e1a4f4 60%,
+    transparent 65%,
+    transparent 100%
+  );
   background-size: 200%;
   background-position: 100%;
   animation: bar 15s linear infinite;
@@ -102,7 +179,6 @@
   }
 }
 
-
 .divider-header {
   font-size: 4em;
   margin-top: 3em;
@@ -110,14 +186,8 @@
   margin-bottom: -0.25em;
   font-family: Roboto;
   font-weight: 300;
-  color: rgb(105,98,107);
+  color: rgb(105, 98, 107);
 }
-
-
-
-
-
-
 
 .hidden {
   opacity: 0;
@@ -139,9 +209,6 @@
   animation: slideIn 4s;
   visibility: visible;
 }
-
-
-
 
 .hidden-right {
   opacity: 0;

@@ -1,4 +1,3 @@
-
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -117,12 +116,10 @@
   top: -50px;
 }
 
-
 .smaller-grid-item:hover .tooltip-grid {
   opacity: 1;
   top: -50px;
 }
-
 
 .tiny-grid-item {
   background-color: #54525c;
@@ -152,13 +149,12 @@
   position: absolute;
 }
 
-
 .item-name {
-  font-size: 18px; 
+  font-size: 18px;
 }
 
 .item-description {
-  font-size: 14px; 
+  font-size: 14px;
 }
 
 .special-grid-item {
@@ -184,12 +180,12 @@
 .list-section {
   overflow-y: auto;
   height: 80%;
-  margin-top: 20px; 
+  margin-top: 20px;
 }
 
 .list-item {
   position: relative;
-  border-bottom: 1px solid #6c6a75; 
+  border-bottom: 1px solid #6c6a75;
   padding: 10px 0;
 }
 
@@ -213,8 +209,6 @@
   background-color: #45a049;
 }
 
-
-
 .tooltip-list {
   visibility: hidden;
   background-color: rgba(65, 64, 64, 0.75);
@@ -222,11 +216,11 @@
   text-align: center;
   border-radius: 6px;
   padding: 5px 10px;
-  position: absolute; 
+  position: absolute;
   z-index: 1;
-  top: 400px; 
-  left: 50%; 
-  transform: translateX(-50%); 
+  top: 400px;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 14px;
 }
 

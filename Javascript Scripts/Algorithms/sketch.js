@@ -123,7 +123,7 @@ function switchAlgoState(index) {
   allStatesArr[currentAlgoIndex].Deselect();
 
   currentAlgoIndex = index;
-  
+
   document.getElementById("control-container").innerHTML = "";
   allStatesArr[currentAlgoIndex].UpdateElements();
 

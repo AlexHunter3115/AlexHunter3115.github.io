@@ -156,8 +156,7 @@ class CellularAutomata extends BaseAlgorithmStateClass {
         }
 
         // Calculate the neighbor's index
-        let neighborIndex =
-          neighborRow * this.numberOfRectsX + neighborCol;
+        let neighborIndex = neighborRow * this.numberOfRectsX + neighborCol;
 
         // Count the neighbor if it's alive
         if (this.currentSelectedArr[neighborIndex]) {

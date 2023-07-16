@@ -1,7 +1,7 @@
 class BaseAlgorithmStateClass {
-  UpdateElements() {}
+  UpdateElements() { }
 
-  UpdateCall() {}
+  UpdateCall() { }
 
   DrawCall() {
     background(100); // Grey background
@@ -11,9 +11,9 @@ class BaseAlgorithmStateClass {
     text("Turned Off State", width / 2, height / 2);
   }
 
-  GuiDrawCall() {}
+  GuiDrawCall() { }
 
-  Select() {}
+  Select() { }
 
-  Deselect() {}
+  Deselect() { }
 }
