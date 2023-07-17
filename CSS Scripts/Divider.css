@@ -2,21 +2,22 @@
 @import url(https://fonts.googleapis.com/css2?family=Public+Sans&display=swap);
 
 .rainbow-hr {
-  width: 100%;
+  width: 120%;
   height: 3px;
   display: block;
   position: relative;
   margin-bottom: 0em;
   padding: 2em 0;
+  left: -10%;
 }
 .rainbow-hr:after,
 .rainbow-hr:before {
   content: "";
   position: absolute;
-  width: 120%;
+  width: 100%;
   height: 3px;
   bottom: 50%;
-  left: -10%;
+  left: 0;
 }
 .rainbow-hr:before {
   background: linear-gradient(
