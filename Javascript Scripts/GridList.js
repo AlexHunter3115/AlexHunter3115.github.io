@@ -1,83 +1,58 @@
 const data = {
   js: [
     {
-      name: "JavaScript Example 1",
+      name: "Backend Databse for this Website",
       shortDescription: "Short description 1",
       longDescription: "js description 1",
-    },
-    {
-      name: "JavaScript Example 2",
-      shortDescription: "Short description 2",
-      longDescription: "js description 2",
-    },
+    }
   ],
   py: [
     {
-      name: "Python Example 1",
+      name: "NFT Collection Creator",
       shortDescription: "Short description 1",
       longDescription: "py description 1",
     },
     {
-      name: "Python Example 2",
+      name: "Crypto Data Analysis -> Notion board",
       shortDescription: "Short description 2",
       longDescription: "yp description 2",
     },
   ],
   unity: [
     {
-      name: "Unity Example 1",
+      name: "Testing Ideas",
       shortDescription: "Short description 1",
       longDescription: "un description 1",
     },
     {
-      name: "Unity Example 2",
+      name: "Learning Shaders and Compute Shaders",
       shortDescription: "Short description 2",
-      longDescription: "un description 2 \nun description 2 \n",
-      githubLink: "https://github.com/AlexHunter3115/Uni-Py-Projects",
+      longDescription: "un description 2 \nun description 2 \n"
     },
   ],
   cpp: [
     {
-      name: "C++ Example 1",
+      name: "Raylib: Perfect Collision",
       shortDescription: "Short description 1",
+      longDescription: "",
     },
     {
-      name: "C++ Example 2",
+      name: "Raylib: Asteroid and 2D Physics simulation",
       shortDescription: "Short description 2",
       longDescription: "cpp description 2",
     },
   ],
   rust: [
     {
-      name: "Rust Example 1",
+      name: "Bevy: Pong",
       shortDescription: "Short description 1",
       longDescription: "ru description 1",
     },
     {
-      name: "Rust Example 2",
-      shortDescription: "Short description 2",
+      name: "Raylib: Perfect Collision",
+      shortDescription: "Rust version of the C++ task",
       longDescription: "ru description 2",
-    },
-    {
-      name: "Rust Example 1",
-      shortDescription: "Short description 1",
-      longDescription: "ru description 1",
-    },
-    {
-      name: "Rust Example 2",
-      shortDescription: "Short description 2",
-      longDescription: "ru description 2",
-    },
-    {
-      name: "Rust Example 1",
-      shortDescription: "Short description 1",
-      longDescription: "ru description 1",
-    },
-    {
-      name: "Rust Example 2",
-      shortDescription: "Short description 2",
-      longDescription: "ru description 2",
-    },
+    }
   ],
 };
 
@@ -93,6 +68,9 @@ function showListForLang(lang) {
   const listContainer = document.querySelector(".list-container");
   listContainer.innerHTML = "";
 
+  let hideTooltipTimeout;
+  let isTooltipVisible = false;
+
   data[lang].forEach((item) => {
     const listItem = document.createElement("div");
     listItem.classList.add("list-item");
@@ -107,17 +85,21 @@ function showListForLang(lang) {
     itemDescription.classList.add("item-description");
     listItem.appendChild(itemDescription);
 
+    const availability = document.createElement("p");
+
     if (item.longDescription && item.longDescription.trim() !== "") {
       listItem.setAttribute("data-tooltip", item.longDescription);
 
       listItem.addEventListener("mouseenter", (event) => {
         const tooltip = document.querySelector(".tooltip-list");
+
+        clearTimeout(hideTooltipTimeout); // clear any previous timeouts
+
+        // Update the tooltip content even if it's currently visible
         tooltip.innerHTML = event.target.getAttribute("data-tooltip");
 
-        const availability = document.createElement("p");
-
         if (item.githubLink) {
-          listItem.style.cursor = "pointer";
+          availability.style.cursor = "pointer";
           availability.textContent = "Click here for the repo";
           availability.style.color = "green";
         } else {
@@ -126,19 +108,39 @@ function showListForLang(lang) {
         }
         tooltip.appendChild(availability);
         tooltip.style.visibility = "visible";
+        isTooltipVisible = true;
+
       });
 
       listItem.addEventListener("mouseleave", (event) => {
-        const tooltip = document.querySelector(".tooltip-list");
-        tooltip.style.visibility = "hidden";
+        if (isTooltipVisible) { // if the tooltip is visible
+          hideTooltipTimeout = setTimeout(() => {
+            const tooltip = document.querySelector(".tooltip-list");
+            tooltip.style.visibility = "hidden";
+            isTooltipVisible = false;
+          }, 3000);
+        }
       });
 
-      // Add click event outside of mouseenter event
       if (item.githubLink) {
-        listItem.addEventListener("click", () => window.open(item.githubLink));
+        availability.addEventListener("click", () => window.open(item.githubLink));
       }
     }
 
     listContainer.appendChild(listItem);
   });
+
+  const tooltip = document.querySelector(".tooltip-list");
+  tooltip.addEventListener("mouseenter", () => {
+    clearTimeout(hideTooltipTimeout);
+  });
+  tooltip.addEventListener("mouseleave", () => {
+    hideTooltipTimeout = setTimeout(() => {
+      tooltip.style.visibility = "hidden";
+      isTooltipVisible = false;
+    }, 3000);
+  });
 }
+
+
+
