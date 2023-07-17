@@ -35,6 +35,8 @@ body {
   transform: translateX(-50%) translateY(0);
 }
 
+
+
 .video-container {
   width: 50vw;
   height: 55vh;
@@ -48,6 +50,13 @@ body {
   scale: 1.2;
   border-radius: 5px;
 }
+
+@media (max-width: 800px) {
+  .video-container {
+    width: 800px;
+  }
+}
+
 
 .video-iframe {
   width: 100%;
