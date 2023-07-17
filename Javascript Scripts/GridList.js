@@ -15,7 +15,7 @@ const data = {
       longDescription: "py description 1",
     },
     {
-      name: "Crypto Data Analysis -> Notion board",
+      name: "Crypto Data Analysis ➡️ Notion board",
       shortDescription: "Short description 2",
       longDescription: "yp description 2",
     },
@@ -30,19 +30,20 @@ const data = {
       name: "Learning Shaders and Compute Shaders",
       shortDescription: "Short description 2",
       longDescription: "un description 2 \nun description 2 \n",
-    },
+    }
   ],
   cpp: [
     {
       name: "Raylib: Perfect Collision",
       shortDescription: "Short description 1",
       longDescription: "",
+      githubLink: "https://github.com/example/repo1",
     },
     {
       name: "Raylib: Asteroid and 2D Physics simulation",
       shortDescription: "Short description 2",
-      longDescription: "cpp description 2",
-    },
+      longDescription: "cpp description 2 jioadjioawdjioadijoasdjiosadijosadjioasdjio"
+    }
   ],
   rust: [
     {
@@ -64,9 +65,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     projectsContainer.style.visibility = "visible";
     projectsContainer.style.maxHeight = "none";
-    let naturalHeight = `${projectsContainer.offsetHeight}px`;
+    let naturalHeight = `${projectsContainer.offsetHeight + 400}px`;
 
-    let showing = (projectsContainer.style.display !== "none");
+    let showing = projectsContainer.style.display !== "none";
     if (!showing) {
       projectsContainer.style.maxHeight = "0px";
       projectsContainer.style.visibility = "hidden";
@@ -96,10 +97,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 function showListForLang(lang) {
   const listContainer = document.querySelector(".list-container");
-  listContainer.innerHTML = "";
+  const tooltip = document.querySelector(".tooltip-section");
 
-  let hideTooltipTimeout;
-  let isTooltipVisible = false;
+  // Clear out the list and tooltip contents
+  listContainer.innerHTML = "";
+  tooltip.innerHTML = "";
 
   data[lang].forEach((item) => {
     const listItem = document.createElement("div");
@@ -115,61 +117,38 @@ function showListForLang(lang) {
     itemDescription.classList.add("item-description");
     listItem.appendChild(itemDescription);
 
-    const availability = document.createElement("p");
+    listItem.addEventListener("click", (event) => {
+      tooltip.innerHTML = ""; // Clear the tooltip on each click
 
-    if (item.longDescription && item.longDescription.trim() !== "") {
-      listItem.setAttribute("data-tooltip", item.longDescription);
+      const longDescription = document.createElement("p");
 
-      listItem.addEventListener("mouseenter", (event) => {
-        const tooltip = document.querySelector(".tooltip-list");
+      if (item.longDescription && item.longDescription.trim() !== "") {
+        longDescription.textContent = item.longDescription;
+      } else {
+        longDescription.textContent =
+          "The currently selected item has no more data";
+        longDescription.style.color = "orange";
+      }
 
-        clearTimeout(hideTooltipTimeout); // clear any previous timeouts
+      tooltip.appendChild(longDescription);
 
-        // Update the tooltip content even if it's currently visible
-        tooltip.innerHTML = event.target.getAttribute("data-tooltip");
-
-        if (item.githubLink) {
-          availability.style.cursor = "pointer";
-          availability.textContent = "Click here for the repo";
-          availability.style.color = "green";
-        } else {
-          availability.textContent = "Repo not available";
-          availability.style.color = "red";
-        }
-        tooltip.appendChild(availability);
-        tooltip.style.visibility = "visible";
-        isTooltipVisible = true;
-      });
-
-      listItem.addEventListener("mouseleave", (event) => {
-        if (isTooltipVisible) {
-          // if the tooltip is visible
-          hideTooltipTimeout = setTimeout(() => {
-            const tooltip = document.querySelector(".tooltip-list");
-            tooltip.style.visibility = "hidden";
-            isTooltipVisible = false;
-          }, 3000);
-        }
-      });
+      const availability = document.createElement("p");
 
       if (item.githubLink) {
-        availability.addEventListener("click", () =>
-          window.open(item.githubLink)
-        );
+        const repoLink = document.createElement("a");
+        repoLink.href = item.githubLink;
+        repoLink.textContent = "Click here for the repo";
+        repoLink.style.color = "green";
+        repoLink.target = "_blank"; // Opens the link in a new tab
+        availability.appendChild(repoLink);
+      } else {
+        availability.textContent = "Repo not available";
+        availability.style.color = "red";
       }
-    }
+
+      tooltip.appendChild(availability);
+    });
 
     listContainer.appendChild(listItem);
-  });
-
-  const tooltip = document.querySelector(".tooltip-list");
-  tooltip.addEventListener("mouseenter", () => {
-    clearTimeout(hideTooltipTimeout);
-  });
-  tooltip.addEventListener("mouseleave", () => {
-    hideTooltipTimeout = setTimeout(() => {
-      tooltip.style.visibility = "hidden";
-      isTooltipVisible = false;
-    }, 3000);
   });
 }
