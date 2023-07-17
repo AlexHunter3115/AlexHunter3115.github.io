@@ -124,6 +124,17 @@
   margin: 8px;
 }
 
+
+.divider-h1-toogle {
+  cursor: pointer;
+  text-align: center;
+  font-family: "Public Sans", sans-serif;
+  font-weight: 400;
+  color: rgb(124, 124, 124);
+  font-size: 3.5em;
+  margin: 8px;
+}
+
 .center-fade-hr {
   height: 3px;
   border: none;
@@ -167,7 +178,7 @@
   );
   background-size: 200%;
   background-position: 100%;
-  animation: bar 15s linear infinite;
+  animation: bar 10s linear infinite;
 }
 
 @keyframes bar {
@@ -197,7 +208,7 @@
 @keyframes slideIn {
   0% {
     opacity: 0;
-    transform: translateX(-400px);
+    transform: translateX(-350px);
   }
   100% {
     opacity: 1;
@@ -206,7 +217,7 @@
 }
 
 .reveal {
-  animation: slideIn 4s;
+  animation: slideIn 3s;
   visibility: visible;
 }
 
@@ -218,7 +229,7 @@
 @keyframes slideInRight {
   0% {
     opacity: 0;
-    transform: translateX(400px);
+    transform: translateX(350px);
   }
   100% {
     opacity: 1;
@@ -227,6 +238,6 @@
 }
 
 .reveal-right {
-  animation: slideInRight 4s;
+  animation: slideInRight 3s;
   visibility: visible;
 }

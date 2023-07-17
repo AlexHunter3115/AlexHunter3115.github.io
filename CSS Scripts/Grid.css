@@ -4,7 +4,11 @@
   grid-gap: 20px;
   padding: 10px;
   grid-auto-flow: dense;
+  transition: max-height 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  overflow: hidden; /* To prevent contents from being shown when container height is 0 */
+  max-height: 2000px; /* This should be larger than the height of your content */
 }
+
 
 .grid-item,
 .smaller-grid-item,

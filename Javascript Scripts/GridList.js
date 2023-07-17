@@ -1,10 +1,12 @@
+let showing = true;
+
 const data = {
   js: [
     {
       name: "Backend Databse for this Website",
       shortDescription: "Short description 1",
       longDescription: "js description 1",
-    }
+    },
   ],
   py: [
     {
@@ -27,7 +29,7 @@ const data = {
     {
       name: "Learning Shaders and Compute Shaders",
       shortDescription: "Short description 2",
-      longDescription: "un description 2 \nun description 2 \n"
+      longDescription: "un description 2 \nun description 2 \n",
     },
   ],
   cpp: [
@@ -52,11 +54,39 @@ const data = {
       name: "Raylib: Perfect Collision",
       shortDescription: "Rust version of the C++ task",
       longDescription: "ru description 2",
-    }
+    },
   ],
 };
 
 document.addEventListener("DOMContentLoaded", (event) => {
+  document.querySelectorAll(".divider-h1-toogle").forEach((header) => {
+    let projectsContainer = header.nextElementSibling;
+
+    projectsContainer.style.visibility = "visible";
+    projectsContainer.style.maxHeight = "none";
+    let naturalHeight = `${projectsContainer.offsetHeight}px`;
+
+    let showing = (projectsContainer.style.display !== "none");
+    if (!showing) {
+      projectsContainer.style.maxHeight = "0px";
+      projectsContainer.style.visibility = "hidden";
+    } else {
+      projectsContainer.style.maxHeight = naturalHeight;
+    }
+
+    header.addEventListener("click", () => {
+      if (showing) {
+        showing = false;
+        projectsContainer.style.maxHeight = "0px";
+        projectsContainer.style.visibility = "hidden";
+      } else {
+        showing = true;
+        projectsContainer.style.maxHeight = naturalHeight;
+        projectsContainer.style.visibility = "visible";
+      }
+    });
+  });
+
   document.querySelectorAll(".list-button").forEach((button) => {
     button.addEventListener("click", (event) => {
       showListForLang(event.target.getAttribute("data-lang"));
@@ -109,11 +139,11 @@ function showListForLang(lang) {
         tooltip.appendChild(availability);
         tooltip.style.visibility = "visible";
         isTooltipVisible = true;
-
       });
 
       listItem.addEventListener("mouseleave", (event) => {
-        if (isTooltipVisible) { // if the tooltip is visible
+        if (isTooltipVisible) {
+          // if the tooltip is visible
           hideTooltipTimeout = setTimeout(() => {
             const tooltip = document.querySelector(".tooltip-list");
             tooltip.style.visibility = "hidden";
@@ -123,7 +153,9 @@ function showListForLang(lang) {
       });
 
       if (item.githubLink) {
-        availability.addEventListener("click", () => window.open(item.githubLink));
+        availability.addEventListener("click", () =>
+          window.open(item.githubLink)
+        );
       }
     }
 
@@ -141,6 +173,3 @@ function showListForLang(lang) {
     }, 3000);
   });
 }
-
-
-
