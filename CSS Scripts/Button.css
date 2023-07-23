@@ -161,7 +161,6 @@
   right: -50%;
 }
 
-
 .button-container {
   display: flex;
   flex-direction: column;
@@ -170,32 +169,79 @@
   height: 100%;
 }
 
-.contact-section-container
-{
+.contact-section-container {
   display: grid;
   grid-template-columns: 20% 3% 54% 3% 20%;
+}
+
+.backgraound-1 {
+  height: 100%;
+}
+.backgraound-2 {
+  height: 100%;
+}
+.backgraound-3 {
+  height: 100%;
+}
+.backgraound-4 {
+  height: 100%;
+}
+.backgraound-5 {
+  height: 100%;
+}
+
+.title-achivement-section {
+  padding: 10px;
+  font-size: 3em;
+}
+
+.achievement-contact-section-container {
+  display: grid;
+  grid-template-rows: auto 1fr;
   height: 200px;
+  place-items: center;
+  background-color: #413638;
+  border-radius: 10px;
 }
 
-.backgraound-1
-{
-  height: 100%;
-}
-.backgraound-2
-{
-  height: 100%;
-}
-.backgraound-3
-{
-  height: 100%;
-}
-.backgraound-4
-{height: 100%;
-}
-.backgraound-5
-{height: 100%;
+.achievement-contact-section-container .title {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
+.achievement {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.achievement img {
+  width: 140px;
+  height: 140px;
+  padding-right: 20px;
+  transition: transform 0.3s ease; /* This will animate the scaling */
+}
+
+.achievement img:hover {
+  transform: scale(0.9); /* This will scale down the image to 90% of its original size */
+  cursor: pointer;
+}
+
+
+.achievement .award-info {
+  margin-left: 10px;
+}
+
+.achievement .award-info .award-name {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.achievement .award-info .award-description {
+  font-size: 1.4em;
+}
 
 .button-49,
 .button-49:after,
@@ -256,7 +302,6 @@
   animation: 1s glitch;
   animation-timing-function: steps(2, end);
 }
-
 
 @media (min-width: 768px) {
   .button-49,
