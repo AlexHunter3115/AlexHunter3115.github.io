@@ -136,7 +136,7 @@
   <section id="Work" class="hidden">
     <h1 class="divider-header">All Projects</h1>
     <b class="rainbow-hr anim"></b>
-    <h1 class="divider-h1-toogle"title="Click to resize">1st year of Uni</h1>
+    <h1 class="divider-h1-toogle" title="Click to resize">1st year of Uni</h1>
     <div class="grid-container">
       <!-- Pong  checked-->
       <div class="grid-item">
@@ -471,7 +471,8 @@
             <button class="action-button" onclick="openLink('https://alexhalo3115.itch.io/gameplay-mechanics')">
               Play The Unity Build
             </button>
-            <button class="action-button" onclick="openLink('https://www.youtube.com/playlist?list=PL4cb9ht9AoArFmdOqd8yUkdutFrJNu7S0')">
+            <button class="action-button"
+              onclick="openLink('https://www.youtube.com/playlist?list=PL4cb9ht9AoArFmdOqd8yUkdutFrJNu7S0')">
               Check out the video for each!
             </button>
           </div>
@@ -755,12 +756,12 @@
           <button class="list-button" data-lang="rust">Rust</button>
         </div>
         <div></div>
-      <div class="text-section">
-        <div class="list-section list-container"></div>
-        <div></div>
-        <div class="tooltip-section"></div>
-      </div>
-        
+        <div class="text-section">
+          <div class="list-section list-container"></div>
+          <div></div>
+          <div class="tooltip-section"></div>
+        </div>
+
       </div>
 
     </div>
@@ -774,36 +775,54 @@
   <section id="Contact" class="hidden-right">
     <h1 class="divider-header">Get in touch</h1>
     <b class="rainbow-hr anim"></b>
-    <div class="button-container-contact">
-      <div class="button-group-contact">
-        <a href="files/CV Alessandro Bufalino.pdf" download>
-          <button class="button-49">
-            CV Download
-            <div class="tooltip-button tooltip-button-right">
-              Click to download
-            </div>
-          </button>
-        </a>
-        <button class="button-49" onclick="copyToClipboard('alessandro.bufalino3115@gmail.com')">
-          Email
-          <div class="tooltip-button tooltip-button-right">
-            Click to copy to clipboard
-          </div>
-        </button>
-        <a href="https://www.linkedin.com/in/alessandro-bufalino-3732b5273/" target="_blank">
-          <button class="button-49">LinkedIn</button>
-        </a>
+
+    <div class="contact-section-container">
+
+      <div class="backgraound-1">
+
+        <div class="button-container">
+          <a href="https://github.com/AlexHunter3115" target="_blank">
+            <button class="button-49-mirrored">
+              <div class="button-content">Main GitHub</div>
+            </button>
+          </a>
+
+          <a href="https://www.linkedin.com/in/alessandro-bufalino-3732b5273/" target="_blank">
+            <button class="button-49-mirrored">
+              <div class="button-content">LinkedIn</div>
+            </button>
+          </a>
+
+        </div>
       </div>
-      <div class="button-group-contact">
-        <a href="https://github.com/AlessandroBufalino3115" target="_blank">
-          <button class="button-49">Main GitHub</button>
-        </a>
+
+      <div></div>
+      <div class="backgraound-3"></div>
+      <div></div>
+      <div class="button-container">
+
         <button class="button-49" onclick="copyToClipboard('Alexhalo3115#4505')">
           Discord
           <div class="tooltip-button tooltip-button-left">
             Click to copy to clipboard
           </div>
         </button>
+
+        <button class="button-49" onclick="copyToClipboard('alessandro.bufalino3115@gmail.com')">
+          Email
+          <div class="tooltip-button tooltip-button-left">
+            Click to copy to clipboard
+          </div>
+        </button>
+
+        <a href="files/CV Alessandro Bufalino.pdf" download>
+          <button class="button-49">
+            CV Download
+            <div class="tooltip-button tooltip-button-left">
+              Click to download
+            </div>
+          </button>
+        </a>
 
       </div>
     </div>
@@ -851,7 +870,7 @@
 
           <button class="button-algo" style="--clr: #0ff0fc" data-title="Main Title 3" data-description="Description 3"
             onclick="switchAlgoState(3)">
-            <span>Tetris</span><i></i>
+            <span>Tetris (WIP)</span><i></i>
           </button>
         </ul>
       </div>
