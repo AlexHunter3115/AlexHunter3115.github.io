@@ -1,12 +1,9 @@
-// navbarComponent.tsx
 
 import React from 'react';
 import "../App.css";
 import "../styles/navbarStyles.css";
 
 import { toast } from 'react-toastify';
-
-
 
 export enum MenuState {
   MAIN,
@@ -23,6 +20,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onMenuChange }) => {
   const [menuState, setMenuState] = React.useState(MenuState.MAIN);
 
   const toggleMenu = (newMenuState: MenuState) => {
+
+    if (newMenuState === menuState) {
+      return;
+    }
+
     setMenuState(newMenuState);
     onMenuChange(newMenuState); 
     console.log(newMenuState);
@@ -42,13 +44,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onMenuChange }) => {
   return (
     <div className="navbar-main-container">
       <div className='navbar-state-changers-container'>
-        <button className={`navbar-button ${menuState === MenuState.MAIN ? 'selected' : ''}`} onClick={() => toggleMenu(MenuState.MAIN)}>HOME</button>
+        <button className={`navbar-button `} onClick={() => toggleMenu(MenuState.MAIN)}>HOME</button>
         <div className="navbar-divider"></div>
-        <button className={`navbar-button ${menuState === MenuState.ABOUT_ME ? 'selected' : ''}`} onClick={() => toggleMenu(MenuState.ABOUT_ME)}>ABOUT ME</button>
+        <button className={`navbar-button `} onClick={() => toggleMenu(MenuState.ABOUT_ME)}>ABOUT ME</button>
         <div className="navbar-divider"></div>
-        <button className={`navbar-button ${menuState === MenuState.PROJECTS ? 'selected' : ''}`} onClick={() => toggleMenu(MenuState.PROJECTS)}>PROJECTS</button>
+        <button className={`navbar-button `} onClick={() => toggleMenu(MenuState.PROJECTS)}>PROJECTS</button>
         <div className="navbar-divider"></div>
-        <button className={`navbar-button ${menuState === MenuState.PROJECTS ? 'selected' : ''}`} onClick={() => toggleMenu(MenuState.BEVY)}>BEVY</button>
+        <button className={`navbar-button `} onClick={() => toggleMenu(MenuState.BEVY)}>BEVY</button>
       </div>
       <div className='navbar-blank-space'></div>
       <div className='navbar-grid-container'>

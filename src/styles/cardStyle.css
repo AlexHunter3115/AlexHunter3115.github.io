@@ -1,0 +1,25 @@
+.info-card-grid
+{
+    position: relative;
+    /* top: 10%; */
+    /* left: 10%; */
+
+    width: 400px;
+    height: 400px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(8,1fr);
+
+    gap: 10px;
+    padding: 10px;
+
+    background-color: chocolate;
+}
+
+/* 
+.card-data
+{
+    
+    background-color: rgb(226, 196, 28);
+} */

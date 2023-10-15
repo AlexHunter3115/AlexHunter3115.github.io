@@ -4,86 +4,107 @@
     width: 100%;
 
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainepage-text-conatiner {
+    width: 60%;
+    height: 100%;
+
+    background-color: aquamarine;
+
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.mainpage-video-container {
-    overflow: hidden;
 
-    flex: 1;
+.mainpage-logo-conatiner
+{
+    width: 40%;
+    height: 100%;
+
+    background-color: rosybrown;
 
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: center;
+}
+
+
+.logo-container
+{
+    width: 50%;
+    aspect-ratio: 1/1; 
+
+    position: relative;
+    left: 0;
     background-color: blue;
-
-    pointer-events: none;
-
-    height: 100%;
-    width: 100%;
-    padding-bottom: 5%;
 }
 
 
-.mainpage-text-container {
-    flex: 1;
-    background-color: antiquewhite;
-}
 
 
-.tv {
-    border: 16px solid #444;
-    border-radius: 10px;
-    width: 46%;
-    height: 80%;
-    overflow: hidden;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.text-container
+{
+    padding: 20px;
+    width: 70%;
+    height: 30%;
+
     position: relative;
-}
 
-.screen {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.scanlines-one::before,
-.scanlines-two::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(transparent, transparent 5px, rgba(255, 255, 255, 0.5) 5px, rgba(255, 255, 255, 0.5) 10px);
-    opacity: 0.2;
-}
-
-@keyframes moveScanlinesOne {
-    from {
-        transform: translateY(-100%);
-    }
-
-    to {
-        transform: translateY(0%);
-    }
-}
-
-.scanlines-one::before {
-    animation: moveScanlinesOne 5s linear infinite;
+    background-color: red;
 }
 
 
-.scanlines-two::before {
-    animation: moveScanlinesTwo 5s linear infinite;
+
+
+
+
+.text-container h1
+{
+    color: black;
+    font-size: 4rem;
 }
 
-@keyframes moveScanlinesTwo {
-    from {
-        transform: translateY(-200%);
-    }
 
-    to {
-        transform: translateY(-100%);
-    }
+.text-container h2
+{
+    color: green;
+    font-size: 2.5rem;
 }
+
+
+.text-container h4
+{
+    font-size: 1.5rem;
+    color: aqua;
+}
+
+
+
+
+
