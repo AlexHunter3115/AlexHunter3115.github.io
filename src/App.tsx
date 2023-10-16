@@ -17,11 +17,13 @@ function App() {
   const [menuState, setMenuState] = useState(MenuState.MAIN);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  // Ensure that if the menu state changes to itself, it goes to the main menu state
   const handleMenuChange = (newMenuState: MenuState) => {
+
+    if (menuState === newMenuState) {
+      return;
+    }
     setIsTransitioning(true);
 
-    // Wait for the transition to complete before updating the menu state
     setTimeout(() => {
       setIsTransitioning(false);
       setMenuState(newMenuState);
@@ -33,9 +35,9 @@ function App() {
       <Navbar onMenuChange={handleMenuChange} />
 
       <div className={`page-content-container ${isTransitioning ? 'transition-out' : 'transition-in'}`}>
-        {menuState === MenuState.MAIN && <MainPageComponent />}
-        {menuState === MenuState.ABOUT_ME && <ShowcasePageComponent />}
-        {menuState === MenuState.PROJECTS && <ContactPageComponent />}
+        {menuState === MenuState.MAIN && <MainPageComponent onMenuChange={handleMenuChange}/>}
+        {menuState === MenuState.PROJECTS && <ShowcasePageComponent />}
+        {menuState === MenuState.ABOUT_ME && <ContactPageComponent />}
         {menuState === MenuState.BEVY && <BevyPageComponent />}
       </div>
       <ToastContainer />

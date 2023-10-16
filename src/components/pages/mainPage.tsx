@@ -1,9 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import "../../styles/pagesStyles/mainPageStyles.css";
-import "../../styles/glitchStyleLogo.css"
+import "../../styles/glitchStyleLogo.css";
 
 
-export const MainPageComponent: React.FC = () => {
+import { MenuState } from '../navbarComponent';
+
+interface MainPageProps {
+  onMenuChange: (newMenuState: MenuState) => void;
+}
+
+
+
+export const MainPageComponent: React.FC<MainPageProps> = ({ onMenuChange }) => {
   const imageUrls = [
     'cv.svg',
     'discord.svg',
@@ -12,40 +20,43 @@ export const MainPageComponent: React.FC = () => {
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  const glitchRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const changeImage = () => {
       setCurrentImageIndex((prevIndex) =>
         prevIndex === imageUrls.length - 1 ? 0 : prevIndex + 1
       );
+
+      // Randomly set the position of the glitch class
+      const glitchElement = glitchRef.current;
+      if (glitchElement) {
+        const parentWidth = glitchElement.parentElement?.offsetWidth || 0;
+        const parentHeight = glitchElement.parentElement?.offsetHeight || 0;
+
+        const glitchWidth = glitchElement.offsetWidth;
+        const glitchHeight = glitchElement.offsetHeight;
+
+        const randomLeft = Math.random() * (parentWidth - glitchWidth);
+        const randomTop = Math.random() * (parentHeight - glitchHeight);
+
+        glitchElement.style.left = `${randomLeft}px`;
+        glitchElement.style.top = `${randomTop}px`;
+      }
     };
 
-    const intervalId = setInterval(changeImage, 10000);
+    const intervalId = setInterval(changeImage, 1000);
 
     return () => clearInterval(intervalId);
   }, []);
 
-
-
   return (
     <div className='mainpage-container'>
-      <div className='mainepage-text-conatiner'>
-        <div className='text-container'>
-          <h1>Hi there, I am Alex</h1>
-          <h2>Games Technology graduate from UWE</h2>
-          <h4>
-            I am passionate about game development with my main focus being on
-            programming systems to implement in games, with a strong emphasis on
-            Procedural Content Generation (PCG) and Artificial Intelligence (AI).
-          </h4>
-          <h4>
-            Check out my featured work, and don't hesitate to get in touch if
-            you'd like to collaborate or learn more about me.
-          </h4>
-        </div>
-      </div>
-      <div className='mainpage-logo-conatiner'>
-        <div className='logo-container'>
-          <div className="glitch">
+      <div className='mainepage-spacer'></div>
+
+      <div className='mainepage-intro-container'>
+        <div className='intro-logo-container'>
+          <div className="glitch" ref={glitchRef}>
             <img className="" src={imageUrls[currentImageIndex]} alt={`Image ${currentImageIndex}`} />
             <div className="glitch__layers">
               <div className="glitch__layer" style={{ backgroundImage: `url(${imageUrls[currentImageIndex]})` }}></div>
@@ -53,6 +64,16 @@ export const MainPageComponent: React.FC = () => {
               <div className="glitch__layer" style={{ backgroundImage: `url(${imageUrls[currentImageIndex]})` }}></div>
             </div>
           </div>
+        </div>
+        <div className='intro-text-container'></div>
+        <div className='intro-links-container'></div>
+      </div>
+
+      <div className='mainpage-info-container'>
+        <div className='info-boxes-container'>
+          <div className='info-box-container' onMouseDown={() => {onMenuChange(MenuState.ABOUT_ME )}}></div>
+          <div className='info-box-container' onMouseDown={() => {onMenuChange(MenuState.PROJECTS )}}></div>
+          <div className='info-box-container' onMouseDown={() => {onMenuChange(MenuState.BEVY )}}></div>
         </div>
       </div>
     </div>

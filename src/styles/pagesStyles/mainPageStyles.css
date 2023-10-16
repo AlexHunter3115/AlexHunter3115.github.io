@@ -5,106 +5,109 @@
 
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+
 }
 
-.mainepage-text-conatiner {
-    width: 60%;
+
+.mainepage-spacer {
+    width: 10%;
+    height: 100%;
+
+    background-color: rgb(147, 238, 28);
+}
+
+
+
+
+
+.mainepage-intro-container {
+    width: 50%;
     height: 100%;
 
     background-color: aquamarine;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 
-.mainpage-logo-conatiner
+.intro-logo-container
+{
+    margin-top: 15%;
+
+    width: 95%;
+    height: 20%;
+
+    background-color: rgb(0, 22, 216);
+}
+
+.intro-text-container
+{
+    margin: 2% 0px;
+
+    width: 80%;
+    height: 30%;
+
+    background-color: rgb(117, 212, 7);
+}
+
+.intro-links-container
+{
+    
+
+    width: 80%;
+    height: 10%;
+
+    background-color: rgb(0, 22, 216);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mainpage-info-container
 {
     width: 40%;
     height: 100%;
 
     background-color: rosybrown;
 
+    padding: 20px 0px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    box-sizing: border-box;
+}
+
+
+.info-boxes-container
+{
+    width: 70%;
+    height: 80%;
+
+    background-color: blueviolet;
+
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-
-.logo-container
+.info-box-container
 {
     width: 50%;
-    aspect-ratio: 1/1; 
-
-    position: relative;
-    left: 0;
-    background-color: blue;
+    height: 25%;
+    background-color: azure;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.text-container
-{
-    padding: 20px;
-    width: 70%;
-    height: 30%;
-
-    position: relative;
-
-    background-color: red;
-}
-
-
-
-
-
-
-.text-container h1
-{
-    color: black;
-    font-size: 4rem;
-}
-
-
-.text-container h2
-{
-    color: green;
-    font-size: 2.5rem;
-}
-
-
-.text-container h4
-{
-    font-size: 1.5rem;
-    color: aqua;
-}
-
-
-
-
 

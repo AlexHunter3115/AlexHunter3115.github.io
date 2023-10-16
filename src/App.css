@@ -1,5 +1,5 @@
 body {
-  /* overflow-x: hidden; */
+  /* overflow: hidden; */
 }
 
 .main-page-container {
@@ -9,22 +9,20 @@ body {
   left: 0;
   height: 100%;
   background-color: black;
-
-  display: flex;
-  flex-direction: row;
 }
 
 .page-content-container {
-  height: 100%;
-  width: 92%;
+  height: 95%;
+  width: 100%;
   transform: translateY(0);
   transition: transform 0.5s ease-in-out;
+  z-index: 2;
 }
 
 .transition-out {
-  transform: translateY(-100%); /* Translate out towards the top */
+  transform: translateY(-110%); 
 }
 
 .transition-in {
-  transform: translateY(0); /* Translate in from the bottom */
+  transform: translateY(0); 
 }

@@ -1,8 +1,12 @@
 .glitch {
     position: relative;
     overflow: hidden;
+    
     /* opacity: 1;
     transition: opacity 1s ease-in-out; */
+
+    aspect-ratio: 1/1;
+    height: 50%;
     animation: fade-transition-anim 10s infinite linear
 }
 
