@@ -40,17 +40,15 @@
     width: 80%;
     height: 10%;
 
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    grid-gap: 10px;
     gap: 5%;
 }
 
 .intro-links-container img {
-    height: 80%;
+    height: 90px;
     aspect-ratio: 1/1;
-
     transition: 0.5s scale ease-in-out, 0.5s transform ease-in-out;
 }
 

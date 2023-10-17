@@ -5,6 +5,8 @@ import "../styles/navbarStyles.css";
 
 import { toast } from 'react-toastify';
 
+import { fileNamesDictionary } from '../data/constants';
+
 export enum MenuState {
   MAIN,
   ABOUT_ME,
@@ -36,9 +38,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onMenuChange }) => {
   return (
     <div className="navbar-main-container">
         <div className="navbar-contact-containter">
-          <img className='navbar-logo-img' src="discord.svg" alt="GitHub Logo" onMouseDown={() => { notify("discord clicked") }}/>
-          <img className='navbar-logo-img' src="discord.svg" alt="GitHub Logo" onMouseDown={() => { notify("discord clicked") }}/>
-          <img className='navbar-logo-img' src="discord.svg" alt="GitHub Logo" onMouseDown={() => { notify("discord clicked") }}/>
+          <img className='navbar-logo-img' src={fileNamesDictionary.cv} alt="GitHub Logo" onMouseDown={() => { notify("discord clicked") }}/>
+          <img className='navbar-logo-img' src={fileNamesDictionary.github} alt="GitHub Logo" onMouseDown={() => { notify("discord clicked") }}/>
+          <img className='navbar-logo-img' src={fileNamesDictionary.linkedin} alt="GitHub Logo" onMouseDown={() => { notify("discord clicked") }}/>
         </div>
         <div className="navbar-spacer"></div>
         <div className="navbar-home-button-container">

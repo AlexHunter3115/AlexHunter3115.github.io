@@ -1,0 +1,30 @@
+
+export const fileNamesDictionary: { [key: string]: string } = {
+    discord: 'icons/cv.svg',
+    github: 'icons/github.svg',
+    gmail: 'icons/gmail.svg',
+    linkedin: 'icons/linkedin.svg',
+    cv: 'icons/cv.svg',
+
+    unity: 'icons/unity.svg',
+    rust: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg',
+    cpp: 'https://cdn.worldvectorlogo.com/logos/c.svg',
+    csharp: 'https://cdn.worldvectorlogo.com/logos/c--4.svg',
+    python: 'https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/files/python-logo-only.svg',
+    typescript: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg',
+    react: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg',
+    unreal: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg',
+    bevy: 'icons/bevy.svg',
+    cairo: 'https://starkware.co/wp-content/uploads/2021/05/logoicon.svg',
+    dojo: 'https://www.dojoengine.org/_next/static/media/dojo-mark-full-dark.877b85ce.svg',
+    figma: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg',
+    blender: 'https://cdn.worldvectorlogo.com/logos/blender-2.svg',
+    obs: 'https://upload.wikimedia.org/wikipedia/commons/d/d3/OBS_Studio_Logo.svg',
+    shotcut: 'https://www.shotcut.org/assets/img/media/shotcut-logo-512x512.png',
+    p5js: 'https://upload.wikimedia.org/wikipedia/commons/c/c6/P5.js_icon.svg',
+    phaser: 'icons/phaser.png',
+    raylib: 'icons/raylib.png',
+    html: 'https://cdn.worldvectorlogo.com/logos/html-1.svg',
+    css: 'https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg',
+};  
+  

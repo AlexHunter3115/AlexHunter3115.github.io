@@ -2,20 +2,21 @@ import React, { useState, useEffect, useRef } from 'react';
 import "../../styles/pagesStyles/mainPageStyles.css";
 import "../../styles/glitchStyleLogo.css";
 
-
 import { MenuState } from '../navbarComponent';
+
+import { fileNamesDictionary } from '../../data/constants';
 
 interface MainPageProps {
   onMenuChange: (newMenuState: MenuState) => void;
 }
 
 
-
 export const IntroPageComponent: React.FC<MainPageProps> = ({ onMenuChange }) => {
   const imageUrls = [
-    'cv.svg',
-    'discord.svg',
-    'gmail.svg',
+    fileNamesDictionary.unity,
+    fileNamesDictionary.cpp,
+    fileNamesDictionary.bevy,
+    fileNamesDictionary.unreal,
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -45,7 +46,7 @@ export const IntroPageComponent: React.FC<MainPageProps> = ({ onMenuChange }) =>
       }
     };
 
-    const intervalId = setInterval(changeImage, 1000);
+    const intervalId = setInterval(changeImage, 10000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -57,7 +58,7 @@ export const IntroPageComponent: React.FC<MainPageProps> = ({ onMenuChange }) =>
       <div className='mainepage-intro-container'>
         <div className='intro-logo-container'>
           <div className="glitch" ref={glitchRef}>
-            <img className="" src={imageUrls[currentImageIndex]} alt={`Image ${currentImageIndex}`} />
+            <img style={{backgroundColor: "green"}} src={imageUrls[currentImageIndex]} alt={`Image ${currentImageIndex}`} />
             <div className="glitch__layers">
               <div className="glitch__layer" style={{ backgroundImage: `url(${imageUrls[currentImageIndex]})` }}></div>
               <div className="glitch__layer" style={{ backgroundImage: `url(${imageUrls[currentImageIndex]})` }}></div>
@@ -69,10 +70,9 @@ export const IntroPageComponent: React.FC<MainPageProps> = ({ onMenuChange }) =>
           <h1>Hey, I'm Alex, a Game Developer</h1>
         </div>
         <div className='intro-links-container'>
-          <img src="discord.svg" alt="github" />
-          <img src="discord.svg" alt="github" />
-          <img src="discord.svg" alt="github" />
-
+          <img src={fileNamesDictionary.github} alt="github" />
+          <img src={fileNamesDictionary.cv} alt="github" />
+          <img src={fileNamesDictionary.linkedin} alt="github" />
         </div>
       </div>
 
