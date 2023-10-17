@@ -11,7 +11,7 @@ interface MainPageProps {
 
 
 
-export const MainPageComponent: React.FC<MainPageProps> = ({ onMenuChange }) => {
+export const IntroPageComponent: React.FC<MainPageProps> = ({ onMenuChange }) => {
   const imageUrls = [
     'cv.svg',
     'discord.svg',
@@ -65,15 +65,42 @@ export const MainPageComponent: React.FC<MainPageProps> = ({ onMenuChange }) => 
             </div>
           </div>
         </div>
-        <div className='intro-text-container'></div>
-        <div className='intro-links-container'></div>
+        <div className='intro-text-container'>
+          <h1>Hey, I'm Alex, a Game Developer</h1>
+        </div>
+        <div className='intro-links-container'>
+          <img src="discord.svg" alt="github" />
+          <img src="discord.svg" alt="github" />
+          <img src="discord.svg" alt="github" />
+
+        </div>
       </div>
 
       <div className='mainpage-info-container'>
         <div className='info-boxes-container'>
-          <div className='info-box-container' onMouseDown={() => {onMenuChange(MenuState.ABOUT_ME )}}></div>
-          <div className='info-box-container' onMouseDown={() => {onMenuChange(MenuState.PROJECTS )}}></div>
-          <div className='info-box-container' onMouseDown={() => {onMenuChange(MenuState.BEVY )}}></div>
+          <div className='info-box-container' onMouseDown={() => {onMenuChange(MenuState.ABOUT_ME )}}>
+            <div className='info-box-title-container'>
+              <h1 style={{color: "rgb(113, 113, 113)"}}>01.</h1>
+              <h1 style={{color: "white"}}>About Me</h1>
+            </div>
+            <div className='info-box-text'>I am a game developer based in the UK. I am currently working freelance</div>
+          </div>
+
+          <div className='info-box-container' onMouseDown={() => {onMenuChange(MenuState.PROJECTS )}}>
+          <div className='info-box-title-container'>
+              <h1 style={{color: "rgb(113, 113, 113)"}}>02.</h1>
+              <h1 style={{color: "white"}}>Projects</h1>
+            </div>
+            <div className='info-box-text'>Check out my best projects</div>
+          </div>
+
+          <div className='info-box-container' onMouseDown={() => {onMenuChange(MenuState.BEVY )}}>
+          <div className='info-box-title-container'>
+              <h1 style={{color: "rgb(113, 113, 113)"}}>03.</h1>
+              <h1 style={{color: "white"}}>Bevy</h1>
+            </div>
+            <div className='info-box-text'>Run the bevy simulation (Upcoming)</div>
+          </div>
         </div>
       </div>
     </div>

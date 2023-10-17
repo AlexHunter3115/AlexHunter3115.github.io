@@ -1,5 +1,7 @@
 body {
-  /* overflow: hidden; */
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+
 }
 
 .main-page-container {
@@ -8,7 +10,6 @@ body {
   top: 0;
   left: 0;
   height: 100%;
-  background-color: black;
 }
 
 .page-content-container {
@@ -16,7 +17,10 @@ body {
   width: 100%;
   transform: translateY(0);
   transition: transform 0.5s ease-in-out;
-  z-index: 2;
+
+  background-color: var(--background);
+  /* z-index: 2; */
+
 }
 
 .transition-out {
@@ -25,4 +29,12 @@ body {
 
 .transition-in {
   transform: translateY(0); 
+}
+
+:root {
+  --text: rgb(252, 252, 253);
+  --background: rgb(16, 16, 16);
+  --primary: rgb(31, 31, 31);
+  --secondary: rgb(32, 32, 34);
+  --accent: rgb(113, 113, 113);
 }
