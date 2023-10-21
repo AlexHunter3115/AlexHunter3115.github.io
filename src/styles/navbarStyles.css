@@ -11,20 +11,20 @@
 }
 
 .navbar-button{
-    background-color: #1E1E1E;
+    background-color: #1f1e1e;
     color: white;
     border: none;
     border-radius: 5px;
     padding: 10px;
     margin: 10px;
-    cursor: pointer;
     font-size: 1.2rem;
     font-weight: bold;
     transition: 0.3s;
 }
 
 .navbar-button:hover{
-    background-color: #2E2E2E;
+    background-color: #3b3a3a;
+    cursor: pointer;
 }
 
 
@@ -32,7 +32,6 @@
 {
     height: 100%;
     width: 20%;
-    background-color: red;
 
     display: flex;
     flex-direction: row;
@@ -46,12 +45,10 @@
 {
     height: 100%;
     width: 60%;
-    background-color: burlywood;
 }
 
 .navbar-home-button-container
 {
-    background-color: blue;
     height: 100%;
     width: 20%;
 
@@ -65,5 +62,12 @@
 {
     height: 75%;
     aspect-ratio: 1/1;
-    background-color: rgb(142, 161, 161);
+
+    transition: scale 0.5s ease-in-out;
+}
+
+.navbar-logo-img:hover
+{
+    cursor: pointer;
+    scale: 0.9;
 }

@@ -31,9 +31,10 @@
 }
 
 .intro-text-container h1 {
-    font-size: 6rem;
+    font-size: 4cqw;
     font-weight: bold;
     color: white;
+
 }
 
 .intro-links-container {
@@ -47,7 +48,7 @@
 }
 
 .intro-links-container img {
-    height: 90px;
+    height: 90%;
     aspect-ratio: 1/1;
     transition: 0.5s scale ease-in-out, 0.5s transform ease-in-out;
 }
@@ -115,13 +116,13 @@
 }
 
 .info-box-title-container h1 {
-    font-size: 4rem;
+    font-size: 2.4cqw;
     font-weight: bold;
 }
 
 .info-box-text {
     height: 60%;
 
-    font-size: 2rem;
+    font-size: 1.3cqw;
     color: var(--text);
 }

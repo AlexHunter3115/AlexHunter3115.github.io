@@ -9,33 +9,32 @@ export const ContactPageComponent: React.FC = () => {
     <div className="contact-container">
       <div className="text-section">
         <div className="text-box-container">
-          <h2 className="text-box-title">About Me</h2>
-          <h4>
+          <div className="text-box-title">About Me</div>
+          <div className="text-box-text ">
             Hi, I'm Alex, a Games Technology graduate from UWE. I am passionate
             about game development and have extensive experience working with
             Unity. My main focus is on programming systems to implement in
             games, with a strong emphasis on Procedural Content Generation (PCG)
             and Artificial Intelligence (AI).
-          </h4>
-          <h4>
+          </div>
+          <div className="text-box-text ">
             During my time at UWE, I have worked on various game projects,
             honing my skills in Unity, C#, C++, and game design principles. I'm
             excited to bring my expertise to the industry and contribute to the
             development of innovative and engaging gaming experiences. Check out
             my featured work, and don't hesitate to get in touch if you'd like
             to collaborate or learn more about me.
-          </h4>
+          </div>
 
-          <h4>currently working at: <span className="highlighted-word">SOMEWHERE</span></h4>
+          <div className="text-box-text ">currently working at: <span className="highlighted-word">SOMEWHERE</span></div>
         </div>
 
         <div className='intro-links-container'>
-        <img src={fileNamesDictionary.github} alt="github" />
-        <img className="unique-animation" src={fileNamesDictionary.cv} alt="github" />
-        <img src={fileNamesDictionary.linkedin} alt="github" />
-        <img src={fileNamesDictionary.discord} alt="github" />
-        <img src={fileNamesDictionary.gmail} alt="github" />
-
+          <img src={fileNamesDictionary.github} alt="github" />
+          <img className="unique-animation" src={fileNamesDictionary.cv} alt="github" />
+          <img src={fileNamesDictionary.linkedin} alt="github" />
+          <img src={fileNamesDictionary.discord} alt="github" />
+          <img src={fileNamesDictionary.gmail} alt="github" />
         </div>
       </div>
       <div className="logos-section">
@@ -53,7 +52,7 @@ export const ContactPageComponent: React.FC = () => {
               <img src={fileNamesDictionary.cairo} title="cairo.svg"></img>
             </div>
           </div>
-          
+
           <div className="logo-box-container">
             <div className="logo-box-title">Softwares</div>
             <div className="logo-box-grid">

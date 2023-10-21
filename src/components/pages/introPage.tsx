@@ -58,7 +58,7 @@ export const IntroPageComponent: React.FC<MainPageProps> = ({ onMenuChange }) =>
       <div className='mainepage-intro-container'>
         <div className='intro-logo-container'>
           <div className="glitch" ref={glitchRef}>
-            <img style={{backgroundColor: "green"}} src={imageUrls[currentImageIndex]} alt={`Image ${currentImageIndex}`} />
+            <img src={imageUrls[currentImageIndex]} alt={`Image ${currentImageIndex}`} />
             <div className="glitch__layers">
               <div className="glitch__layer" style={{ backgroundImage: `url(${imageUrls[currentImageIndex]})` }}></div>
               <div className="glitch__layer" style={{ backgroundImage: `url(${imageUrls[currentImageIndex]})` }}></div>
@@ -80,24 +80,21 @@ export const IntroPageComponent: React.FC<MainPageProps> = ({ onMenuChange }) =>
         <div className='info-boxes-container'>
           <div className='info-box-container' onMouseDown={() => {onMenuChange(MenuState.ABOUT_ME )}}>
             <div className='info-box-title-container'>
-              <h1 style={{color: "rgb(113, 113, 113)"}}>01.</h1>
-              <h1 style={{color: "white"}}>About Me</h1>
+            <h1 style={{color: "white"}}>   <span style={{color: "rgb(113, 113, 113)"}}> 01. </span> About Me</h1>
             </div>
             <div className='info-box-text'>I am a game developer based in the UK. I am currently working freelance</div>
           </div>
 
           <div className='info-box-container' onMouseDown={() => {onMenuChange(MenuState.PROJECTS )}}>
           <div className='info-box-title-container'>
-              <h1 style={{color: "rgb(113, 113, 113)"}}>02.</h1>
-              <h1 style={{color: "white"}}>Projects</h1>
+          <h1 style={{color: "white"}}>   <span style={{color: "rgb(113, 113, 113)"}}> 02. </span>Projects</h1>
             </div>
             <div className='info-box-text'>Check out my best projects</div>
           </div>
 
           <div className='info-box-container' onMouseDown={() => {onMenuChange(MenuState.BEVY )}}>
           <div className='info-box-title-container'>
-              <h1 style={{color: "rgb(113, 113, 113)"}}>03.</h1>
-              <h1 style={{color: "white"}}>Bevy</h1>
+          <h1 style={{color: "white"}}>   <span style={{color: "rgb(113, 113, 113)"}}> 03. </span>Bevy</h1>
             </div>
             <div className='info-box-text'>Run the bevy simulation (Upcoming)</div>
           </div>
