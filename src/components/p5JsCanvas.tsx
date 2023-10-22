@@ -1,22 +1,31 @@
-import * as React from "react";
-import { P5CanvasInstance, ReactP5Wrapper } from "@p5-wrapper/react";
+import React from "react";
+import Sketch from "react-p5";
+import p5Types from "p5"; //Import this for typechecking and intellisense
 
-// P5Canvas component
-export const P5Canvas: React.FC = () => {
-  const sketch = (p5: P5CanvasInstance) => {
-    p5.setup = () => p5.createCanvas(1440,1000 , p5.WEBGL);
+interface ComponentProps {
+  // Your component props
+}
 
-    p5.draw = () => {
-      p5.background(0);
-      p5.normalMaterial();
-      p5.push();
-      p5.rotateZ(p5.frameCount * 0.01);
-      p5.rotateX(p5.frameCount * 0.01);
-      p5.rotateY(p5.frameCount * 0.01);
-      p5.plane(100);
-      p5.pop();
-    };
+let x = 50;
+const y = 50;
+  
+export const P5Canvas: React.FC<ComponentProps> = (props: ComponentProps) => {
+
+  // See annotations in JS for more information
+  const setup = (p5: p5Types, canvasParentRef: Element) => {
+    console.log(canvasParentRef)
+    p5.createCanvas(window.innerWidth, window.innerHeight).parent(canvasParentRef);
   };
 
-  return <ReactP5Wrapper sketch={sketch}/>;
+  const draw = (p5: p5Types) => {
+    p5.background(0);
+    p5.ellipse(x, y, 70, 70);
+    x++;
+
+    if ( x > window.innerWidth ) {
+      x = 0;
+    }
+  };
+
+  return <Sketch setup={setup} draw={draw} style={{position: "absolute", top:"0px", left:"0px", width:"100%", height:"100%"}}/>;
 };
