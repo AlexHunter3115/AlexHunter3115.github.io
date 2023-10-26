@@ -48,7 +48,7 @@
 }
 
 .intro-links-container img {
-    height: 90%;
+    height: 90px;
     aspect-ratio: 1/1;
     transition: 0.5s scale ease-in-out, 0.5s transform ease-in-out;
 }

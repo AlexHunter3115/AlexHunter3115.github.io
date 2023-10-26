@@ -49,7 +49,7 @@ export const IntroPageComponent: React.FC<MainPageProps> = ({ onMenuChange }) =>
     const intervalId = setInterval(changeImage, 10000);
 
     return () => clearInterval(intervalId);
-  }, []);
+  });
 
   return (
     <div className='mainpage-container'>
@@ -58,7 +58,7 @@ export const IntroPageComponent: React.FC<MainPageProps> = ({ onMenuChange }) =>
       <div className='mainepage-intro-container'>
         <div className='intro-logo-container'>
           <div className="glitch" ref={glitchRef}>
-            <img src={imageUrls[currentImageIndex]} alt={`Image ${currentImageIndex}`} />
+            <img src={imageUrls[currentImageIndex]} alt={`${currentImageIndex}`} />
             <div className="glitch__layers">
               <div className="glitch__layer" style={{ backgroundImage: `url(${imageUrls[currentImageIndex]})` }}></div>
               <div className="glitch__layer" style={{ backgroundImage: `url(${imageUrls[currentImageIndex]})` }}></div>

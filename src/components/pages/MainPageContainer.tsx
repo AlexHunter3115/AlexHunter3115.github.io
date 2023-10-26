@@ -1,12 +1,12 @@
 
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import "../../App.css";
 
-import { BevyPageComponent } from './bevyPage';
-import { ShowcasePageComponent } from './showcasePage';
-import { ContactPageComponent } from './contactPage';
-import { IntroPageComponent } from './introPage';
+import { BevyPageComponent } from './BevySimulationPage';
+import { ShowcasePageComponent } from './ProjectsShowcasePages';
+import { ContactPageComponent } from './AboutMePage';
+import { IntroPageComponent } from './LandingPage';
 
 
 import {ToastContainer} from 'react-toastify';

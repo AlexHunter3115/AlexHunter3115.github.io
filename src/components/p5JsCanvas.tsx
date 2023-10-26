@@ -28,4 +28,4 @@ export const P5Canvas: React.FC<ComponentProps> = (props: ComponentProps) => {
   };
 
   return <Sketch setup={setup} draw={draw} style={{position: "absolute", top:"0px", left:"0px", width:"100%", height:"100%"}}/>;
-};
+}

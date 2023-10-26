@@ -5,9 +5,9 @@
     justify-content: space-evenly;
     align-items: center;
     height: 5%;
-    background-color: #2E2E2E;
+    background-color: #b13939;
 
-    z-index: 4;
+    z-index: 9999;
 }
 
 .navbar-button{
@@ -39,6 +39,8 @@
     align-items: center;
 
     gap: 5px;
+
+    z-index: inherit;
 }
 
 .navbar-spacer
@@ -56,6 +58,8 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+
+    z-index: inherit;
 }
 
 .navbar-logo-img

@@ -1,7 +1,7 @@
 
 import './App.css';
 
-import { MainPageComponent } from './components/pages/mainPageContainer';
+import { MainPageComponent } from './components/pages/MainPageContainer';
 
 import {P5Canvas} from './components/p5JsCanvas';
 
