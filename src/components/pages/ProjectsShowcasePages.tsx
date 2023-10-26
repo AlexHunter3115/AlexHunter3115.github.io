@@ -8,7 +8,7 @@ export const ShowcasePageComponent: React.FC = () => {
 
   const [state, setState] = React.useState<number>(0);
 
-  const onStateChnage = (newState: number) => {
+  const onStateChange = (newState: number) => {
 
     if ( state === newState ) {
       return;
@@ -20,8 +20,8 @@ export const ShowcasePageComponent: React.FC = () => {
   return (
     <div className='showcase-container'>
 
-      {state === 0 && <HighlightedProjectsComponents onStateChange={onStateChnage} />}
-      {state === 1 && <FilteredDatabase onStateChange={onStateChnage} />}
+      {state === 0 && <HighlightedProjectsComponents onStateChange={onStateChange} />}
+      {state === 1 && <FilteredDatabase onStateChange={onStateChange} />}
 
       {/* <FilteredDatabase /> */}
       {/* <HighlightedProjectsComponents /> */}

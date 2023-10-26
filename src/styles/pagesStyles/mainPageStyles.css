@@ -31,10 +31,8 @@
 }
 
 .intro-text-container h1 {
-    font-size: 4cqw;
     font-weight: bold;
     color: white;
-
 }
 
 .intro-links-container {
@@ -88,7 +86,8 @@
 }
 
 .info-box-container {
-    width: 80%;
+    width: 90%;
+    height: 30%;
     border-radius: 20px;
     flex: 1;
     background-color: var(--primary);
@@ -96,6 +95,7 @@
     padding: 3% 6%;
 
     transition: transform 0.5s ease-in-out;
+    overflow: hidden;
 }
 
 .info-box-container:hover {
@@ -111,18 +111,14 @@
     justify-content: flex-start;
     align-items: center;
 
-    margin: 5% 0px;
     gap: 6%;
 }
 
 .info-box-title-container h1 {
-    font-size: 2.4cqw;
     font-weight: bold;
 }
 
 .info-box-text {
     height: 60%;
-
-    font-size: 1.3cqw;
     color: var(--text);
 }

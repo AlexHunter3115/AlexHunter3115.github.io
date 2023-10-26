@@ -5,7 +5,6 @@
     justify-content: space-evenly;
     align-items: center;
     height: 5%;
-    background-color: #b13939;
 
     z-index: 9999;
 }
@@ -20,13 +19,13 @@
     font-size: 1.2rem;
     font-weight: bold;
     transition: 0.3s;
+    height: 90%;
 }
 
 .navbar-button:hover{
     background-color: #3b3a3a;
     cursor: pointer;
 }
-
 
 .navbar-contact-containter
 {
@@ -41,12 +40,18 @@
     gap: 5px;
 
     z-index: inherit;
+
+    background-color: #2E2E2E;
 }
 
 .navbar-spacer
 {
     height: 100%;
     width: 60%;
+
+    z-index: inherit;
+
+    background-color: #2E2E2E;
 }
 
 .navbar-home-button-container
@@ -60,6 +65,8 @@
     align-items: center;
 
     z-index: inherit;
+
+    background-color: #2E2E2E;
 }
 
 .navbar-logo-img

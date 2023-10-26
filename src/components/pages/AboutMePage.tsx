@@ -9,22 +9,22 @@ export const ContactPageComponent: React.FC = () => {
     <div className="contact-container">
       <div className="text-section">
         <div className="text-box-container">
-          <div className="text-box-title">About Me</div>
-          <div className="text-box-text ">
+          <h1>About Me</h1>
+          <h3 >
             Hi, I'm Alex, a Games Technology graduate from UWE. I am passionate
             about game development and have extensive experience working with
             Unity. My main focus is on programming systems to implement in
             games, with a strong emphasis on Procedural Content Generation (PCG)
             and Artificial Intelligence (AI).
-          </div>
-          <div className="text-box-text ">
+          </h3>
+          <h3 >
             During my time at UWE, I have worked on various game projects,
             honing my skills in Unity, C#, C++, and game design principles. I'm
             excited to bring my expertise to the industry and contribute to the
             development of innovative and engaging gaming experiences. Check out
             my featured work, and don't hesitate to get in touch if you'd like
             to collaborate or learn more about me.
-          </div>
+          </h3>
 
           <div className="text-box-text ">currently working at: <span className="highlighted-word">SOMEWHERE</span></div>
         </div>
@@ -40,7 +40,7 @@ export const ContactPageComponent: React.FC = () => {
       <div className="logos-section">
         <div className="logo-boxes-container">
           <div className="logo-box-container">
-            <div className="logo-box-title">Languages</div>
+            <div className="logo-box-title"> <h2>Languages</h2></div>
             <div className="logo-box-grid">
               <img src={fileNamesDictionary.cpp} title="cpp.svg" alt="CPP"></img>
               <img src={fileNamesDictionary.csharp} title="csharp.svg" alt="C#"></img>
@@ -54,7 +54,19 @@ export const ContactPageComponent: React.FC = () => {
           </div>
 
           <div className="logo-box-container">
-            <div className="logo-box-title">Softwares</div>
+            <div className="logo-box-title"><h2>Libraries</h2></div>
+            <div className="logo-box-grid">
+              <img src={fileNamesDictionary.react} title="react.svg" alt="React"></img>
+              <img src={fileNamesDictionary.bevy} title="bevy.svg" alt="Bevy"></img>
+              <img src={fileNamesDictionary.raylib} title="raylib.svg" alt="Raylib"></img>
+              <img src={fileNamesDictionary.dojo} title="dojo.svg" alt="Dojo"></img>
+              <img src={fileNamesDictionary.p5js} title="p5.svg" alt="P5js"></img>
+              <img src={fileNamesDictionary.phaser} title="phaser.svg" alt="Phaser"></img>
+            </div>
+          </div>
+
+          <div className="logo-box-container">
+            <div className="logo-box-title"><h2>Software</h2></div>
             <div className="logo-box-grid">
               <img src={fileNamesDictionary.unity} title="unity.svg" alt="Unity"></img>
               <img src={fileNamesDictionary.unreal} title="unreal.svg" alt="Unreal"></img>
@@ -62,18 +74,6 @@ export const ContactPageComponent: React.FC = () => {
               <img src={fileNamesDictionary.figma} title="figma.svg" alt="Figma"></img>
               <img src={fileNamesDictionary.obs} title="obs.svg" alt="OBS"></img>
               <img src={fileNamesDictionary.shotcut} title="shotcut.svg" alt="ShotCut"></img>
-            </div>
-          </div>
-
-          <div className="logo-box-container">
-            <div className="logo-box-title">Libraries</div>
-            <div className="logo-box-grid">
-              <img src={fileNamesDictionary.react} title="react.svg" alt="React"></img>
-              <img src={fileNamesDictionary.bevy} title="bevy.svg" alt="Bevy"></img>
-              <img src={fileNamesDictionary.raylib} title="raylib.svg" alt="Raylib"></img>
-              <img src={fileNamesDictionary.dojo} title="dojo.svg" alt="Dojo"></img>
-              <img src={fileNamesDictionary.p5js} title="p5.svg" alt="P5js"></img>
-              <img src={fileNamesDictionary.phaser} title="phaser.svg"alt="Phaser"></img>
             </div>
           </div>
         </div>

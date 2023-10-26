@@ -38,9 +38,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onMenuChange }) => {
   return (
     <div className="navbar-main-container">
         <div className="navbar-contact-containter">
-          <img className='navbar-logo-img' src={fileNamesDictionary.cv} alt="GitHub Logo" onMouseDown={() => { notify("discord clicked") }}/>
-          <img className='navbar-logo-img' src={fileNamesDictionary.github} alt="GitHub Logo" onMouseDown={() => { notify("discord clicked") }}/>
-          <img className='navbar-logo-img' src={fileNamesDictionary.linkedin} alt="GitHub Logo" onMouseDown={() => { notify("discord clicked") }}/>
+          <img className='navbar-logo-img' src={fileNamesDictionary.cv} alt="CV" onMouseDown={() => { notify("Downloading CV") }}/>
+          <img className='navbar-logo-img' src={fileNamesDictionary.github} alt="Github" onMouseDown={() => { notify("Github Redirect") }}/>
+          <img className='navbar-logo-img' src={fileNamesDictionary.linkedin} alt="LinkedIn" onMouseDown={() => { notify("LinkedIn Redirect") }}/>
         </div>
         <div className="navbar-spacer"></div>
         <div className="navbar-home-button-container">

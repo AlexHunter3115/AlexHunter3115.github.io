@@ -67,7 +67,7 @@ export const IntroPageComponent: React.FC<MainPageProps> = ({ onMenuChange }) =>
           </div>
         </div>
         <div className='intro-text-container'>
-          <h1>Hey, I'm Alex, a Game Developer</h1>
+          <h1 style={{ fontSize: "clamp(2.6rem, min(5.5vh, 4.5vw) + 1.6rem, 8rem)" }}>Hey, I'm Alex, a Game Developer</h1>
         </div>
         <div className='intro-links-container'>
           <img src={fileNamesDictionary.github} alt="github" />
@@ -78,25 +78,25 @@ export const IntroPageComponent: React.FC<MainPageProps> = ({ onMenuChange }) =>
 
       <div className='mainpage-info-container'>
         <div className='info-boxes-container'>
-          <div className='info-box-container' onMouseDown={() => {onMenuChange(MenuState.ABOUT_ME )}}>
+          <div className='info-box-container' onMouseDown={() => { onMenuChange(MenuState.ABOUT_ME) }}>
             <div className='info-box-title-container'>
-            <h1 style={{color: "white"}}>   <span style={{color: "rgb(113, 113, 113)"}}> 01. </span> About Me</h1>
+              <h1 style={{ color: "white", whiteSpace: "nowrap" }}>   <span style={{ color: "rgb(113, 113, 113)" }}> 01. </span> About Me</h1>
             </div>
-            <div className='info-box-text'>I am a game developer based in the UK. I am currently working freelance</div>
+            <h2 className='info-box-text'>I am a game developer based in the UK. I am currently working freelance</h2>
           </div>
 
-          <div className='info-box-container' onMouseDown={() => {onMenuChange(MenuState.PROJECTS )}}>
-          <div className='info-box-title-container'>
-          <h1 style={{color: "white"}}>   <span style={{color: "rgb(113, 113, 113)"}}> 02. </span>Projects</h1>
+          <div className='info-box-container' onMouseDown={() => { onMenuChange(MenuState.PROJECTS) }}>
+            <div className='info-box-title-container'>
+              <h1 style={{ color: "white", whiteSpace: "nowrap" }}>   <span style={{ color: "rgb(113, 113, 113)" }}> 02. </span>Projects</h1>
             </div>
-            <div className='info-box-text'>Check out my best projects</div>
+            <h2 className='info-box-text'>Check out my best projects</h2>
           </div>
 
-          <div className='info-box-container' onMouseDown={() => {onMenuChange(MenuState.BEVY )}}>
-          <div className='info-box-title-container'>
-          <h1 style={{color: "white"}}>   <span style={{color: "rgb(113, 113, 113)"}}> 03. </span>Bevy</h1>
+          <div className='info-box-container' onMouseDown={() => { onMenuChange(MenuState.BEVY) }}>
+            <div className='info-box-title-container'>
+              <h1 style={{ color: "white", whiteSpace: "nowrap" }}>   <span style={{ color: "rgb(113, 113, 113)" }}> 03. </span>Bevy</h1>
             </div>
-            <div className='info-box-text'>Run the bevy simulation (Upcoming)</div>
+            <h2 className='info-box-text'>Run the bevy simulation (Upcoming)</h2>
           </div>
         </div>
       </div>
